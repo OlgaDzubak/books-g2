@@ -1,0 +1,8 @@
+import './js/list_of_categories'
+import './js/best_sellers_books'
+import './js/support_ukraine'
+import './js/category_books'
+import './js/autorization_modal_window'
+import './js/book_modal_window'
+import './js/shopping_list'
+import './js/mobile_menu'

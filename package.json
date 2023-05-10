@@ -1,11 +1,11 @@
 {
-  "name": "parcel-project-template",
+  "name": "books-g2",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://goitacademy.github.io/parcel-project-template",
+  "homepage": "https://OlgaDzubak.github.io/books-g2",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+    "build": "parcel build src/*.html --public-url /books-g2/"
   },
   "repository": {
     "type": "git",

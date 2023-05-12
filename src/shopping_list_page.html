@@ -9,11 +9,25 @@
     <script type="module" src="./index.js"></script>
   </head>
   <body>
-    <p>Я в shopping_list_page</p>
 
     <include src="./partials/header.html"></include> 
-    <include src="./partials/support_ukraine.html"></include>       
-    <include src="./partials/shopping_list/shoppimg_list.html"></include> 
+
+    <div class = "container">
+
+      <include src="./partials/support_ukraine.html"></include>   
+
+      <!------------------------------------------------------------------------------------------------>
+      <h2 class="shopping_list_title">Shopping <span class="shopping_list_title_span">List</span></h2>
+
+      <div class="shopping-list-container">
+        <ul class = "shopping_booklist list"></ul>         <!-- сюди рендериться список обраних книжок -->
+        <div class="shopping_booklist_pagination"></div>   <!-- це контейнер для пагынації -->
+      </div>
+      <!----------------------------------------------------------------------------------------------->
+
+    </div>
+
     <include src="./partials/footer.html"></include>
+  
   </body>
 </html>

@@ -1,1 +1,76 @@
 // прописати стилі для shopping list
+
+// Стилі для блоку shopping_list на сторінці shopping_list_page
+.book_card{
+    display: flex;
+    padding: 14px;
+    border: 2px solid rgba(79, 46, 232, 0.4);
+    border-radius: 16px;
+}
+.shopping_booklist {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.shopping_list_title{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.1875;
+    letter-spacing: -0.04em;
+    margin-bottom: 40px;
+    color: var(--text-dark-color);
+}
+.shopping_list_title_span{
+    color: var(--accent-color1);
+}
+.book-title{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.125;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--text-dark-color);
+    margin-bottom: 4px;
+}
+.book-category{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.167;
+    letter-spacing: 0.03em;
+    color: var(--text-light-color);
+    margin-bottom: 8px;
+}
+.book-description{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.128;
+    letter-spacing: -0.04em;
+    width: 193px;
+    height: 68px;
+    color: var(--text-dark-color);
+    margin-bottom: 14px;
+
+}
+.book-author{
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: -0.04em;
+    color: var(--text-light-color);
+}
+.book-image-div{
+    width: 100%;
+}
+.market_places_div{
+    height: 16px;
+}
+.market_placers_list{
+    display: flex;
+}
+.marketplacer-icon-svg{
+    //width: 24px;
+    height: 16px
+
+}
+

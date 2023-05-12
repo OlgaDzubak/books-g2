@@ -2,8 +2,7 @@ export const supportItems = [
   {
     title: 'Save the Children',
     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    // img: '/src/images/svg/sprite.svg#save_the_children_icon',
-    img: '/src/images/svg/sprite.svg#ukrainian_gerb_icon',
+    img: "./images/svg/sprite.svg#project_hope_icon",
   },
   {
     title: 'Project HOPE',

@@ -1,1 +1,94 @@
 // прописати стилі для галереї книжок по категоріях на homepage
+
+.best-books {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    margin-left: 40px;
+    font-family: var(--main-font);
+    max-width: 1002px;
+}
+
+.img-book {
+    margin-bottom: 14px;
+
+    height: 256px;
+    width: 180px;
+    border-radius: 8px;
+}
+
+.list-books {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    flex-basis: calc((100% - 96px) / 5);
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.title-theme-book {
+    font-family: 'DM Sans';
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: -0.04em;
+    margin-bottom: 40px;
+
+    color: #111111;
+}
+
+.theme-book {
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px; 
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #B4AFAF; 
+}
+
+.title-book {
+    margin-bottom: 4px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #111111;
+}
+
+.author {
+    font-family: 'DM Sans';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: -0.04em;
+    color: #B4AFAF;
+}
+
+.button-more {
+    margin-bottom: 40px;
+    padding: 14px 28px;
+    align-self: end;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #111111;
+    background-color: transparent;
+    cursor: pointer;
+
+    border: 2px solid #4F2EE8;
+    border-radius: 40px;
+
+    transition: background-color 300ms linear, color 300ms linear;
+}
+
+.button-more:hover {
+    background-color: #4F2EE8;
+    color: #ffffff;
+}

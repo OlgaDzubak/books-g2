@@ -31,14 +31,17 @@
 }
 
 .title-theme-book {
-    font-family: 'DM Sans';
     font-weight: 700;
     font-size: 48px;
     line-height: 52px;
     letter-spacing: -0.04em;
     margin-bottom: 40px;
 
-    color: #111111;
+    color: var(--text-dark-color);
+}
+
+.title-theme-book:last-child {
+    color: var(--accent-color1);
 }
 
 .theme-book {
@@ -48,7 +51,7 @@
     line-height: 24px; 
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    color: #B4AFAF; 
+    color: var(--text-light-color); 
 }
 
 .title-book {
@@ -59,7 +62,7 @@
     line-height: 18px;
     letter-spacing: -0.04em;
     text-transform: uppercase;
-    color: #111111;
+    color: var(--text-dark-color);
 }
 
 .author {
@@ -69,7 +72,7 @@
     font-size: 12px;
     line-height: 14px;
     letter-spacing: -0.04em;
-    color: #B4AFAF;
+    color: var(--text-light-color)
 }
 
 .button-more {
@@ -82,17 +85,17 @@
     line-height: 18px;
     letter-spacing: -0.01em;
     text-transform: uppercase;
-    color: #111111;
+    color: var(--text-dark-color);
     background-color: transparent;
     cursor: pointer;
 
-    border: 2px solid #4F2EE8;
+    border: 2px solid var(--accent-color1);
     border-radius: 40px;
 
-    transition: background-color 300ms linear, color 300ms linear;
+    transition: background-color var(--transition), color var(--transition);
 }
 
 .button-more:hover {
-    background-color: #4F2EE8;
-    color: #ffffff;
+    background-color: var(--accent-color1);
+    color: var(--white-color);
 }

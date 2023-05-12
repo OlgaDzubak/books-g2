@@ -1,23 +1,14 @@
-import axios from 'axios';
+
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
+import { booksAPI } from './booksAPI';
 //import ...
 
 // Змінна що зберігає дів куди добавляти розмітку
 const list = document.querySelector('.best-books')
 list.addEventListener('click', loadMore)
-
-
-// Функція для запиту за бест бук
-async function fetchBooks () {
-    return await axios.get('https://books-backend.p.goit.global/books/top-books');
-}
-
-// Функція для запиту за категорією
-async function fetchCategoryBooks (param) {
-    return await axios.get(`https://books-backend.p.goit.global/books/category?category=${param}`);
-}
+const fetchBooks = new booksAPI();
 
 // Функція що скорочує title i author на книгаг до 17 символів та додає три крапки в кінці
 function shortTitle(string) {
@@ -56,7 +47,9 @@ async function createBestBook() {
     const pageWidth = document.documentElement.scrollWidth;
 
     try {
-        const { data } = await fetchBooks();
+        const { data } = await fetchBooks.getTopBooks();
+        console.log(data);
+
         console.log(data);
 
         if (data.length) {
@@ -174,13 +167,16 @@ async function loadMore(event) {
     event.preventDefault();
 
     const { target } = event;
+    console.log(target);
     try {
         if(!target.classList.contains('js-btn-more')) {
             return
         } else {
-            const category = target.dataset.category.toString();
-            const param = categoryParam(category);
-            const { data } = await fetchCategoryBooks(param);
+            const param = target.dataset.category.toString();
+            fetchBooks.category = categoryParam(param);
+            console.log(fetchBooks.category);
+            const { data } = await fetchBooks.getBooksByCategory();
+            console.log(data);
             list.innerHTML = createMarcupCategoryBook(data);
         }
     } catch (error) {

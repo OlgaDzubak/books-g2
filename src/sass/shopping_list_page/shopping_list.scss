@@ -71,14 +71,6 @@
 .marketplacer-icon-svg{
     //width: 24px;
     height: 16px
-  //  fill: var(--cloud);
+
 }
 
-@media screen and (min-device-pixel-ratio: 1) and (max-width: 767.8px),
-       screen and (min-resolution : 96dpi) and (max-width: 767.8px),
-       screen and (min-resolution : 1dppx) and (max-width: 767.8px){
-
-    .shopping-list-container{
-        width: 100%;
-    }
-}

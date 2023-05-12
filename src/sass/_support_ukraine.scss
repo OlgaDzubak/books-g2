@@ -32,18 +32,15 @@
   /* identical to box height, or 114% */
   letter-spacing: -0.04em;
 
-  color: #ffffff;
+  color:aquamarine;
 }
 
-.svg-support-ukraine{
-
-}
 
 .support-ukraine-gallery{
   // list-style-type: decimal-leading-zero;
   // list-style-position: inside; 
   // padding: 0px;
- list-style: none;
+  list-style: none;
   counter-reset: my-awesome-counter;
   display: flex;
   flex-wrap: wrap;
@@ -53,6 +50,13 @@
   margin-bottom: px;
 }
 
+.support_gallery_link_svg{
+  // color:rgba(245, 245, 247, 0.1);
+  // fill: #4F28;
+  // stroke: #FFFFFF;
+  height: 32px;
+  width: 120px;
+}
 .support-ukraine-gallery li{  
   // width: 18px;
     height: 18px;      

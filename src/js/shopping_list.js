@@ -15,7 +15,7 @@ if (orderedBooksId_str  === null){
 } else{
     orderedBooksId = JSON.parse(orderedBooksId_str);
     orderedBooksId.forEach(id => { getOrderedBookCard(id);});
-}
+} 
 
 //-----------ОПИС ФУНКЦІЙ ---------------------------------------------------------
 

@@ -1,1 +1,229 @@
 // прописати стилі для shopping list
+.osnova {
+    position: absolute;
+}
+
+.title {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 52px;
+    color: #111111;
+}
+
+.title-span {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 52px;
+
+    color: #4F2EE8;
+}
+
+.list {
+    border-radius: 16px;
+    border: 2px solid rgba(79, 46, 232, 0.4);
+    background-color: #FFFFFF;
+
+    display: flex;
+    margin-bottom: 44px;
+    padding: 24px;
+    position: relative;
+    width: 335px;
+}
+
+@media screen and (min-width: 768px) {
+    .list {
+        border-radius: 16px;
+        border: 2px solid rgba(79, 46, 232, 0.4);
+        background-color: #FFFFFF;
+        overflow: hidden;
+        display: flex;
+        margin-bottom: 44px;
+        padding: 24px;
+        position: relative;
+        width: 704px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .list {
+        border-radius: 16px;
+        border: 2px solid rgba(79, 46, 232, 0.4);
+        background-color: #FFFFFF;
+
+        display: flex;
+        margin-bottom: 44px;
+        padding: 24px;
+        position: relative;
+        width: 996px;
+    }
+}
+
+
+.shopping_booklist {
+    margin-left: 24px;
+    max-width: 1024px;
+}
+
+.text-one {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: #111111;
+
+    margin: 0;
+    margin-bottom: 4px;
+    width: 808px;
+}
+
+.text-two {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #B4AFAF;
+
+    margin: 0;
+    margin-bottom: 14px;
+}
+
+
+
+
+
+
+
+.text-three {
+
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #111111;
+    width: 193px;
+    margin: 0;
+}
+
+
+@media screen and (min-width: 768px) {
+    .text-three {
+        width: 508px;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .text-three {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        color: #111111;
+        width: 808px;
+        margin: 0;
+        margin-bottom: 48px;
+    }
+}
+
+
+
+
+
+.text-four {
+    font-family: 'DM Sans';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #B4AFAF;
+
+    margin: 0;
+    position: absolute;
+    top: 175px;
+}
+
+.links {
+    display: flex;
+}
+
+.link-one {
+    position: absolute;
+    right: 116px;
+    top: 159px;
+    margin-top: 7px;
+}
+
+.link-two {
+    position: absolute;
+    right: 72px;
+    top: 159px;
+}
+
+.link-three {
+    position: absolute;
+    right: 24px;
+    top: 159px;
+}
+
+.btn-box {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+
+    background-color: #4F2EE8;
+    border: none;
+    border-radius: 20px;
+    color: white;
+}
+
+
+.button-click {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+
+}
+
+
+.btn {
+    background-color: #111111;
+    color: #B4AFAF;
+    margin-right: 24px;
+    border-radius: 100px;
+    border: #111111;
+}
+
+.btn:first-child {
+    margin-right: 8px;
+}
+
+.btn-two {
+    background: none;
+    margin-right: 10px;
+    border-color: black;
+    border-radius: 100px;
+}
+
+.btn-two:last-child {}
+
+.btn-three {
+    margin-left: 14px;
+    background-color: #EAC645;
+    border-color: #111111;
+    border-radius: 100px;
+}
+
+.btn-three:last-child {
+    margin-left: 10px;
+}

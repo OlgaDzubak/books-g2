@@ -11,7 +11,7 @@ export class booksAPI {
     getTopBooks() {return axios.get(`${this.#BASE_URL}top-books`);}
     getCategoryList() {return axios.get(`${this.#BASE_URL}categoty-list`);}
     getBooksByCategory(category) {return axios.get(`${this.#BASE_URL}categoty`, {params:{category: category}});};
-
+ 
     // сеттери
     set category(newCategory) {this.#category = newCategory;};
 }

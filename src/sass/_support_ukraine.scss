@@ -35,7 +35,7 @@
   line-height: 1.14;  
   letter-spacing: -0.04em;
 
-  color: #ffffff;
+  color:aquamarine;
 }
 
 .svg-support-ukraine {
@@ -56,23 +56,11 @@
   margin-bottom: px;
 }
 
-.support-ukraine-gallery li {
-  // width: 18px;
+.support-ukraine-gallery li{  
   height: 18px;
-
   font-size: 14px;
   line-height: 1.29;
-
   color: #ffffff;
-    color: black;
-
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: center;
-  // align-items: center;
-  // padding: 0px;
-  // gap: 16px;
-
   counter-increment: my-awesome-counter;
   display: flex;
   font-size: 0.8rem;

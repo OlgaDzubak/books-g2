@@ -1,1 +1,144 @@
 // прописати стилі для галереї книжок по категоріях на homepage
+
+.best-books {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    margin-left: auto;
+    max-width: 1002px;
+}
+
+.img-book {
+    height: 256px;
+    width: 180px;
+    border-radius: 8px;
+}
+
+.list-books {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    flex-basis: calc((100% - 96px) / 5);
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.list-books.category {
+    gap: 40px 24px;
+    margin-bottom: 0;
+}
+
+.title-theme-book {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: -0.04em;
+    margin-bottom: 40px;
+
+    color: var(--text-dark-color);
+}
+
+.title-theme-book:last-child {
+    color: var(--accent-color1);
+}
+
+.theme-book {
+    margin-bottom: 18px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px; 
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--text-light-color); 
+}
+
+.title-book {
+    margin-bottom: 4px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--text-dark-color);
+}
+
+.author {
+    font-family: 'DM Sans';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: -0.04em;
+    color: var(--text-light-color)
+}
+
+.button-more {
+    margin-bottom: 40px;
+    padding: 14px 28px;
+    align-self: end;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--text-dark-color);
+    background-color: transparent;
+    cursor: pointer;
+
+    border: 2px solid var(--accent-color1);
+    border-radius: 40px;
+
+    transition: background-color var(--transition), color var(--transition);
+}
+
+.button-more:hover {
+    background-color: var(--accent-color1);
+    color: var(--accent-color3);
+}
+
+
+.img-owerlay {
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 8px;
+    margin-bottom: 14px;
+  }
+  
+  .owerlay {
+    position: absolute;
+    margin: auto;
+    bottom: 0;
+    left: 0;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--accent-color2);
+    background-blend-mode: soft-light;
+    width: 100%;
+    height: 70px;
+  
+    transform: translateY(100%);
+    transition: transform var(--transition);
+  } 
+  
+  .item-book:hover .owerlay,
+  .item-book:focus .owerlay {
+    transform: translateY(0);
+  }
+  
+  .owerlay-content {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    
+    text-transform: uppercase;
+    color: var(--text-dark-color);
+    cursor: pointer;
+  }

@@ -5,15 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Books-shopping list</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css">
-    <link rel="stylesheet" href="./sass/shopping_list_page/shopping_list.scss" />
-    <script type="module" src="./index.js"></script>
+    <link rel="stylesheet" href="./sass/shopping_list._page.scss" />
+    
   </head>
   <body>
-    <p>Я в shopping_list_page</p>
 
     <include src="./partials/header.html"></include> 
-    <include src="./partials/support_ukraine.html"></include>       
-    <include src="./partials/shopping_list/shoppimg_list.html"></include> 
+
+    <div class = "container">
+
+      <include src="./partials/support_ukraine.html"></include>   
+
+      <!------------------------------------------------------------------------------------------------>
+      <h2 class="shopping_list_title">Shopping <span class="shopping_list_title_span">List</span></h2>
+
+      <div class="shopping-list-container">
+        <ul class = "shopping_booklist list"></ul>         <!-- сюди рендериться список обраних книжок -->
+        <div class="shopping_booklist_pagination"></div>   <!-- це контейнер для пагінації -->
+      </div>
+      <!----------------------------------------------------------------------------------------------->
+
+    </div>
+
     <include src="./partials/footer.html"></include>
+    <include src="./partials/mobile_menu.html"></include>
+
+    <script type="module" src="./shopping_list_page.js"></script>
+  
   </body>
 </html>

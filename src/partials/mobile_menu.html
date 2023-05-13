@@ -1,14 +1,21 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
-  </head>
-  <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    
-  </body>
-</html>
+<div class="mobile-menu is-hidden-modal js-mobile-menu">
+  <div class="mobile-menu-container container">
+    <button class="user-sign-up-mobile link">Sign up<svg class="icon-arrow-right" width="20" height="20">
+      <use href="./images/svg/sprite.svg#arrow_narrow_right_icon"></use></svg>
+    </button>
+    <nav class="mobile-navigation">
+        <ul class="mobile-nav-list list">
+            <li class="mobile-nav-item">
+                <a class="mobile-home-link link js-mobile-nav-homelink" href="./index.html" aria-label="Посилання на головну сторінку">HOME</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a class="mobile-shopping-link link js-mobile-nav-shoppinglistlink" href="./shopping_list_page.html" aria-label="Посилання на сторінку Shopping List">
+                    <span>SHOPPING LIST</span>
+                    <svg class="mobile-shopping-bag-icon js-mobile-shopping-bag-icon" width="20" height="20">
+                        <use href="./images/svg/sprite.svg#shopping-bag-icon"></use>
+                    </svg></a>
+                </li>
+            </ul>
+        </nav>
+  </div>
+</div>

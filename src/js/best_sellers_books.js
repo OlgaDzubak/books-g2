@@ -6,19 +6,10 @@ import { booksAPI } from './booksAPI';
 //import ...
 
 // Змінна що зберігає дів куди добавляти розмітку
-const list = document.querySelector('.best-books')
+const list = document.querySelector('.homepage-books')
+console.log(list);
 list.addEventListener('click', loadMore)
 const fetchBooks = new booksAPI();
-
-// Функція що скорочує title i author на книгаг до 17 символів та додає три крапки в кінці
-function shortTitle(string) {
-    if(string.length > 17) {
-        return string.slice(0, 17) + '...';
-    }
-    
-    return string
-}
-
 
 // Функція для розмітки бест бук
 function createMarcup(arr, querty) {
@@ -35,17 +26,17 @@ function createMarcup(arr, querty) {
                 <p class="owerlay-content">quick view</p>
             </div>
             </div>
-            <p class="title-book">${shortTitle(title)}</p>
-            <p class="author">${shortTitle(author)}</p>
+            <p class="title-book">${shortTitle(title, 17)}</p>
+            <p class="author">${shortTitle(author, 34)}</p>
             </li>`).join('');
 
-            return `${titleBook}<ul class="list-books">${book}</ul>
-            <button type="button" class="button-more js-btn-more" data-category="${list_name}">See more</button>`
+            return `<div class="best-book-container">${titleBook}<ul class="list-books">${book}</ul>
+            <button type="button" class="button-more js-btn-more" data-category="${list_name}">See more</button></div>`
         } else {
-            return `${titleBook}<div class="off-books"><p>Sorry, there are no books in this category, please choose another category</p></div>`
+            return `<div class="off-books"><p class="off-books-text">Sorry, there are no books in this category, please choose another category</p></div>`
         }}).join('');
 
-        return `<h2 class="title-theme-book">Best Sellers Books</h2>${markup}`;
+        return `<h2 class="title-theme-book">Best Sellers <span class="last-word-color">Books</span></h2>${markup}`;
 }
 
 // Початкова функція яка робить запит та промальовує бест бук
@@ -59,23 +50,13 @@ async function createBestBook() {
         console.log(data);
 
         if (data.length) {
-            if (pageWidth >= 1440) {
-                list.innerHTML = createMarcup(data, 5);
-                return
-            }
-        
-            if (pageWidth < 1440 && pageWidth >= 768) {
-                list.innerHTML = createMarcup(data, 3);
-                return
-            }
-        
             if (pageWidth < 768) {
                 list.innerHTML = createMarcup(data, 1);
-                return
+            } else if (pageWidth < 1440 && pageWidth >= 768) {
+                list.innerHTML = createMarcup(data, 3);
+            } else {
+                list.innerHTML = createMarcup(data, 5);
             }
-        } else {
-            Notify.failure("Sorry, there was a server error, please reload the page")
-            return
         }
     } catch (error) {
         console.error(error);
@@ -96,14 +77,17 @@ if(arr.length){
         <p class="owerlay-content">quick view</p>
         </div>
         </div>
-        <p class="title-book">${shortTitle(title)}</p>
-        <p class="author">${shortTitle(author)}</p>
+        <p class="title-book">${shortTitle(title, 17)}</p>
+        <p class="author">${shortTitle(author, 34)}</p>
         </li>`
         ).join('')
 
-        return `<h2 class="title-theme-book">${arr[0].list_name}</h2><ul class="list-books category">${markup}</ul>`
+        return `<h2 class="title-theme-book">${lastBlueWord(arr[0].list_name)}</h2><ul class="list-books category">${markup}</ul>`
     } else {
-        return `<div class="off-books"><p>Sorry, there are no books in this category, please choose another category</p></div>`
+        return `<div class="off-books">
+        <p class="off-books-text">Sorry, there are no books in this category, please choose another category</p>
+        <div class="container-img-no-books"></div>
+        </div>`
     }
 }
 
@@ -112,7 +96,7 @@ function categoryParam(key) {
     let param = null;
     switch (key) {
         case 'Advice How-To and Miscellaneous':
-            param = 'Advice%20How-To%20and%20Miscellaneous';
+            param = 'Advice%20How-To%20and%20Miscellaneou';
             break;
         case 'Audio Fiction':
             param = 'Audio%20Fiction';
@@ -178,7 +162,7 @@ async function loadMore(event) {
     event.preventDefault();
 
     const { target } = event;
-    console.log(target);
+    
     try {
         if(!target.classList.contains('js-btn-more')) {
             return
@@ -192,5 +176,20 @@ async function loadMore(event) {
         console.error(error);
         Notify.failure('Sorry, there was a server error, please reload the page');
     }
+}
 
+// Функція що скорочує title i author на книгаг до вказаного числа символів та додає три крапки в кінці
+function shortTitle(string, value) {
+    if(string.length > Number(value)) {
+        return string.slice(0, Number(value)) + '...';
+    }
+    
+    return string
+}
+
+// Функція що робить синім кольором останнє слово 
+function lastBlueWord(string) {
+    const arrWord = string.split(" ");
+    const firstWord = arrWord.splice(0, arrWord.length - 1);
+    return `${firstWord.join(' ')} <span class="last-word-color">${arrWord.join('')}</span>`
 }

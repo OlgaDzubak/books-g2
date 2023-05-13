@@ -2,7 +2,7 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
-import { booksAPI } from './booksAPI';
+import { booksAPI } from './booksAPI'; 
 //import ...
 
 // Змінна що зберігає дів куди добавляти розмітку

@@ -23,7 +23,10 @@ function createFundsMarkup(supportItems) {
                 <use href="${img}"></use>
                 </svg>
               </a>
-            </li>';}).join('');
+            </li>
+            `
+            ;})
+            .join('');
 }
 
 console.log(supportItems);

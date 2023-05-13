@@ -19,6 +19,7 @@ function shortTitle(string) {
     return string
 }
 
+
 // Функція для розмітки бест бук
 function createMarcup(arr, querty) {
 
@@ -28,7 +29,12 @@ function createMarcup(arr, querty) {
         if (books.length) {
             let book = books.splice(0, querty).map(({_id, book_image, title, author}) => 
             `<li class="item-book" data-id="${_id}">
+            <div class="img-owerlay">
             <img src="${book_image}" alt="${title}" class="img-book">
+            <div class="owerlay">
+                <p class="owerlay-content">quick view</p>
+            </div>
+            </div>
             <p class="title-book">${shortTitle(title)}</p>
             <p class="author">${shortTitle(author)}</p>
             </li>`).join('');
@@ -84,7 +90,12 @@ function createMarcupCategoryBook(arr) {
 if(arr.length){
         const markup = arr.map(({_id, book_image, author, title}) => 
         `<li class="item-book" data-id="${_id}">
+        <div class="img-owerlay">
         <img src="${book_image}" alt="${title}" class="img-book">
+        <div class="owerlay">
+        <p class="owerlay-content">quick view</p>
+        </div>
+        </div>
         <p class="title-book">${shortTitle(title)}</p>
         <p class="author">${shortTitle(author)}</p>
         </li>`
@@ -174,9 +185,7 @@ async function loadMore(event) {
         } else {
             const param = target.dataset.category.toString();
             fetchBooks.category = categoryParam(param);
-            console.log(fetchBooks.category);
             const { data } = await fetchBooks.getBooksByCategory();
-            console.log(data);
             list.innerHTML = createMarcupCategoryBook(data);
         }
     } catch (error) {

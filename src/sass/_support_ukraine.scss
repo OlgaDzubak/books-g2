@@ -35,54 +35,54 @@
   line-height: 1.14;  
   letter-spacing: -0.04em;
 
-  color:aquamarine;
+  color: #ffffff;
 }
 
 .svg-support-ukraine {
   fill: #ffffff;
 }
 
-.support-ukraine-gallery {
-  // list-style-type: decimal-leading-zero;
-  // list-style-position: inside; 
-  // padding: 0px;
-  list-style: none;
-  counter-reset: my-awesome-counter;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-  margin-bottom: px;
-}
+// .support-ukraine-gallery {
+//   // list-style-type: decimal-leading-zero;
+//   // list-style-position: inside; 
+//   // padding: 0px;
+//   list-style: none;
+//   counter-reset: my-awesome-counter;
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 20px;
+//   margin: 0;
+//   padding: 0;
+//   margin-bottom: px;
+// }
 
-.support-ukraine-gallery li{  
-  height: 18px;
-  font-size: 14px;
-  line-height: 1.29;
-  color: #ffffff;
-  counter-increment: my-awesome-counter;
-  display: flex;
-  font-size: 0.8rem;
-  margin-bottom: 0.5rem;
-}
+// .support-ukraine-gallery li{  
+//   height: 18px;
+//   font-size: 14px;
+//   line-height: 1.29;
+//   color: #ffffff;
+//   counter-increment: my-awesome-counter;
+//   display: flex;
+//   font-size: 0.8rem;
+//   margin-bottom: 0.5rem;
+// }
 
-.support-ukraine-gallery li::before {
-  content: "0" counter(my-awesome-counter);
-  font-size: 14px;
-  line-height: 1.29;
-  letter-spacing: -0.04em;
-  margin-right: 16px;
+// .support-ukraine-gallery li::before {
+//   content: "0" counter(my-awesome-counter);
+//   font-size: 14px;
+//   line-height: 1.29;
+//   letter-spacing: -0.04em;
+//   margin-right: 16px;
 
-  width: 14px;
-  height: 18px;
-}
+//   width: 14px;
+//   height: 18px;
+// }
 
-.svg-support-ukraine{
-  // display: flex;
-  // align-items: center;
-  // justify-content: start ;
-}
+// .svg-support-ukraine{
+//   // display: flex;
+//   // align-items: center;
+//   // justify-content: start ;
+// }
 
 .scroll-up-btn {
   position: absolute;

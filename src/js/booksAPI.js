@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export class booksAPI {
+    // Конструктор зі змінною що передає категорію
     constructor() {
         this.category = null;
     }
@@ -14,6 +15,7 @@ export class booksAPI {
     getCategoryList() {return axios.get(`${this.#BASE_URL}categoty-list`);}
     getBooksByCategory() {return axios.get(`${this.#BASE_URL}category?category=${this.category}`)};
 
+    // Сеттер для зміни категорії
     set categoryBook(newCategory){
         this.category = newCategory;
     }

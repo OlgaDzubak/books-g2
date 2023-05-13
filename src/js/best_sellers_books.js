@@ -185,9 +185,7 @@ async function loadMore(event) {
         } else {
             const param = target.dataset.category.toString();
             fetchBooks.category = categoryParam(param);
-            console.log(fetchBooks.category);
             const { data } = await fetchBooks.getBooksByCategory();
-            console.log(data);
             list.innerHTML = createMarcupCategoryBook(data);
         }
     } catch (error) {

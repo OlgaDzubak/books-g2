@@ -9,8 +9,6 @@
 }
 
 .img-book {
-    margin-bottom: 14px;
-
     height: 256px;
     width: 180px;
     border-radius: 8px;
@@ -45,7 +43,8 @@
 }
 
 .theme-book {
-    font-family: 'DM Sans';
+    margin-bottom: 18px;
+
     font-weight: 400;
     font-size: 14px;
     line-height: 24px; 
@@ -97,5 +96,49 @@
 
 .button-more:hover {
     background-color: var(--accent-color1);
-    color: var(--white-color);
+    color: var(--accent-color3);
 }
+
+
+.img-owerlay {
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 8px;
+    margin-bottom: 14px;
+  }
+  
+  .owerlay {
+    position: absolute;
+    margin: auto;
+    bottom: 0;
+    left: 0;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--accent-color2);
+    background-blend-mode: soft-light;
+    width: 100%;
+    height: 70px;
+  
+    transform: translateY(100%);
+    transition: transform var(--transition);
+  } 
+  
+  .item-book:hover .owerlay,
+  .item-book:focus .owerlay {
+    transform: translateY(0);
+  }
+  
+  .owerlay-content {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    
+    text-transform: uppercase;
+    color: var(--text-dark-color);
+    cursor: pointer;
+  }

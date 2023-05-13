@@ -19,6 +19,7 @@ function shortTitle(string) {
     return string
 }
 
+
 // Функція для розмітки бест бук
 function createMarcup(arr, querty) {
 
@@ -28,7 +29,12 @@ function createMarcup(arr, querty) {
         if (books.length) {
             let book = books.splice(0, querty).map(({_id, book_image, title, author}) => 
             `<li class="item-book" data-id="${_id}">
+            <div class="img-owerlay">
             <img src="${book_image}" alt="${title}" class="img-book">
+            <div class="owerlay">
+                <p class="owerlay-content">quick view</p>
+            </div>
+            </div>
             <p class="title-book">${shortTitle(title)}</p>
             <p class="author">${shortTitle(author)}</p>
             </li>`).join('');
@@ -84,7 +90,12 @@ function createMarcupCategoryBook(arr) {
 if(arr.length){
         const markup = arr.map(({_id, book_image, author, title}) => 
         `<li class="item-book" data-id="${_id}">
+        <div class="img-owerlay">
         <img src="${book_image}" alt="${title}" class="img-book">
+        <div class="owerlay">
+        <p class="owerlay-content">quick view</p>
+        </div>
+        </div>
         <p class="title-book">${shortTitle(title)}</p>
         <p class="author">${shortTitle(author)}</p>
         </li>`

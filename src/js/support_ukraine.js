@@ -3,19 +3,18 @@ import { supportItems } from './support_ukraie_items';
 const galleryItemsContainer = document.querySelector('.swiper-wrapper');
 const fundsMarkup = createFundsMarkup(supportItems);
 
-galleryItemsContainer.insertAdjacentHTML('beforeend', createFundsMarkup);
+galleryItemsContainer.insertAdjacentHTML('beforeend', fundsMarkup);
 
-function numberFounds(arr) {
-  for (let i = 0; i < arr.length; i += 1) {
-    console.log(arr[i]);
-  }
-}
-numberFounds(supportItems);
+// function numberFounds(arr) {
+//   for (let i = 0; i < arr.length; i += 1) {}
+// }
+// numberFounds(supportItems);
 
 function createFundsMarkup(supportItems) {
-  console.log(supportItems.children);
+  // console.log(supportItems.children);
 
-  return supportItems.map(({ title, url, img }) => {
+  return supportItems
+    .map(({ title, url, img }) => {
       return `
             <li class="support_gallery_item swiper-slide">
               <a class="support_gallery_link link" href="${url}" title="${title}">
@@ -24,9 +23,9 @@ function createFundsMarkup(supportItems) {
                 </svg>
               </a>
             </li>
-            `
-            ;})
-            .join('');
+            `;
+    })
+    .join('');
 }
 
 console.log(supportItems);

@@ -3,7 +3,7 @@ import axios from "axios";
 export class booksAPI {
     // Конструктор зі змінною що передає категорію
     constructor() {
-        this.category = null;
+        this.category = null; 
     }
 
     // приватні властивості для запиту 

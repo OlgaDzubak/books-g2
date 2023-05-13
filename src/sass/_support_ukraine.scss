@@ -1,8 +1,6 @@
 .olala {
   background: palevioletred;
 }
-
-
 .support-ukraine-container {
   position: absolute;
   left: 20px;
@@ -20,53 +18,51 @@
 
   
 }
-
 .support-ukraine-text {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   padding: 0px;
   margin-bottom: 40px;
-  gap: 12px;
 }
-
 .support-ukraine-title {
   font-size: 28px;
   line-height: 1.14;  
   letter-spacing: -0.04em;
-
+  margin-right: 12px;
   color:aquamarine;
 }
-
 .svg-support-ukraine {
   fill: #ffffff;
 }
-
 .support-ukraine-gallery {
-  // list-style-type: decimal-leading-zero;
-  // list-style-position: inside; 
-  // padding: 0px;
-  list-style: none;
-  counter-reset: my-awesome-counter;
+  // list-style: none;
+  // counter-reset: my-awesome-counter;
   display: flex;
   flex-wrap: wrap;
+  // justify-content:flex-start;
+  // align-items: center;
   gap: 20px;
-  margin: 0;
-  padding: 0;
+  // margin: 0;
+  // padding: 0;
   margin-bottom: px;
 }
+.support-ukraine-gallery li{ 
 
-.support-ukraine-gallery li{  
-  height: 18px;
   font-size: 14px;
   line-height: 1.29;
   color: #ffffff;
   counter-increment: my-awesome-counter;
   display: flex;
   font-size: 0.8rem;
-  margin-bottom: 0.5rem;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.285;
+  letter-spacing: -0.04em;
+  align-items: center;
 }
-
 .support-ukraine-gallery li::before {
   content: "0" counter(my-awesome-counter);
   font-size: 14px;
@@ -78,11 +74,14 @@
   height: 18px;
 }
 
-.svg-support-ukraine{
-  // display: flex;
-  // align-items: center;
-  // justify-content: start ;
-}
+.svg-support-ukraine_2{
+  display: block;
+  width:129px;
+  height: 32px;
+  fill: white;
+  text-align: left;
+ }
+
 
 .scroll-up-btn {
   position: absolute;
@@ -111,31 +110,15 @@
   fill: #4F2EE8;  
 }
 
-// // < !-- Swiper -->
-html,
-body {
-  position: relative;
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-
-  font-size: 14px;
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  color: #ffffff !important; 
+.swiper-and-button:first-child{
+  margin-bottom: 16px;
 }
 
 .swiper {
   width: 159px !important;
   height: 188px !important;  
   margin: 0 !important;  
-}
-
-.swiper-wrapper{
- 
+  margin-bottom: 40px;
 }
 
 .swiper-slide {
@@ -144,13 +127,11 @@ body {
   align-items: center;
   text-align: left !important;
 
-  width: 159px !important;
+  width: 159px !important;  
   height: 32px !important;
 
   font-size: 18px;
   background: transparent;  
-  background: green;
-  
 }
 
 .swiper-slide img {

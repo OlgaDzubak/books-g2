@@ -96,7 +96,7 @@ function categoryParam(key) {
     let param = null;
     switch (key) {
         case 'Advice How-To and Miscellaneous':
-            param = 'Advice%20How-To%20and%20Miscellaneou';
+            param = 'Advice%20How-To%20and%20Miscellaneous';
             break;
         case 'Audio Fiction':
             param = 'Audio%20Fiction';

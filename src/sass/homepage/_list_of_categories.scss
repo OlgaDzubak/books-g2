@@ -109,18 +109,21 @@
         width: 180px;
     }
 
+    .item-book:not(:last-child),
     .item-book.category:not(:last-child) {
         margin-bottom: 40px;
     }
 
-    .list-books {
+    .list-books,
+    .list-books.category {
         margin-bottom: 8px;
-        margin-left: auto;
-        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .button-more {
-        align-self: center;
+        margin-top: 8px;
     }
 }
 
@@ -268,50 +271,3 @@
 }
 
 
-@media screen and (min-width: 1440px) {
-    .container-img-no-books {
-        background-image:  url('/src/images/shopping_list/stack_of_books_desktop@1x.png');
-        width: 349px;
-    }
-}
-
-@media (min-device-pixel-ratio: 2)  and (min-width: 1440px),
-(-webkit-min-device-pixel-ratio: 2)  and (min-width: 1440px),
-(min-resolution: 192dpi)  and (min-width: 1440px),
-(min-resolution: 2dppx)  and (min-width: 1440px) {
-    .container-img-no-books {
-        background-image:  url('/src/images/shopping_list/stack_of_books_desktop@2x.png');
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1439px) {
-    .container-img-no-books {
-        background-image:  url('/src/images/shopping_list/stack_of_books_tablet@1x.png');
-        width: 322px;
-    }
-}
-
-@media (min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1439px),
-    (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1439px),
-    (min-resolution: 192dpi) and (min-width: 768px) and (max-width: 1439px),
-    (min-resolution: 2dppx) and (min-width: 768px) and (max-width: 1439px) {
-    .container-img-no-books {
-        background-image:  url('/src/images/shopping_list/stack_of_books_tablet@2x.png');
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .container-img-no-books {
-        background-image:  url('/src/images/shopping_list/stack_of_books_mobile@1x.png');
-        width: 265px;
-    }
-}
-    
-@media (min-device-pixel-ratio: 2) and (max-width: 767px),
-    (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px),
-    (min-resolution: 192dpi) and (max-width: 767px),
-    (min-resolution: 2dppx) and (max-width: 767px) {
-    .container-img-no-books {
-        background-image:  url('/src/images/shopping_list/stack_of_books_mobile@2x.png');
-    }
-}

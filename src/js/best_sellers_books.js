@@ -45,9 +45,6 @@ async function createBestBook() {
 
     try {
         const { data } = await fetchBooks.getTopBooks();
-        console.log(data);
-
-        console.log(data);
 
         if (data.length) {
             if (pageWidth < 768) {
@@ -57,12 +54,15 @@ async function createBestBook() {
             } else {
                 list.innerHTML = createMarcup(data, 5);
             }
-        }
-    } catch (error) {
+        } else {
+            Notify.failure("Sorry, there was a server error, please reload the page");
+            return}}
+    catch (error) {
         console.error(error);
         Notify.failure('Sorry, there was a server error, please reload the page');
     }   
 }
+
 // Виклик даної функції для промальовки всього при завантажені сторінки
 createBestBook()
 
@@ -86,92 +86,28 @@ if(arr.length){
     } else {
         return `<div class="off-books">
         <p class="off-books-text">Sorry, there are no books in this category, please choose another category</p>
-        <div class="container-img-no-books"></div>
         </div>`
     }
 }
 
-// Функція яка считує датасет кнопки провіряє його та дає параметер запиту за категорією
-function categoryParam(key) {
-    let param = null;
-    switch (key) {
-        case 'Advice How-To and Miscellaneous':
-            param = 'Advice%20How-To%20and%20Miscellaneous';
-            break;
-        case 'Audio Fiction':
-            param = 'Audio%20Fiction';
-            break;
-        case 'Audio Nonfiction':
-            param = 'Audio%20Nonfiction';
-            break;
-        case 'Trade Fiction Paperback':
-            param = 'Trade%20Fiction%20Paperback';
-            break;    
-        case 'Series Books':
-            param = 'Series%20Books';
-            break;
-        case 'Picture Books':
-            param = 'Picture%20Books';
-            break;
-        case 'Hardcover Fiction':
-            param = 'Hardcover%20Fiction';
-            break;
-        case 'Hardcover Nonfiction':
-            param = 'Hardcover%20Nonfiction';
-            break;
-        case 'Paperback Nonfiction':
-            param = 'Paperback%20Nonfiction';
-            break;
-        case 'Childrens Middle Grade Hardcover':
-            param = 'Childrens%20Middle%20Grade%20Hardcover';
-            break;
-        case 'Young Adult Hardcover':
-            param = 'Young%20Adult%20Hardcover';
-            break;
-        case 'Combined Print and E-Book Nonfiction':
-            param = 'Combined%20Print%20and%20E-Book%20Nonfiction';
-            break;
-        case 'Business Books':
-            param = 'Business%20Books';
-            break;
-        case 'Combined Print and E-Book Fiction':
-            param = 'Combined%20Print%20and%20E-Book%20Fiction';
-            break;
-        case 'Graphic Books and Manga':
-            param = 'Graphic%20Books%20and%20Manga';
-            break;
-        case 'Mass Market Monthly':
-            param = 'Mass%20Market%20Monthly';
-            break;
-        case 'Middle Grade Paperback Monthly':
-            param = 'Middle%20Grade%20Paperback%20Monthly';
-            break;
-        case 'Young Adult Paperback Monthly':
-            param = 'Young%20Adult%20Paperback%20Monthly';
-            break;
-        default:
-            console.log('не знайшли=(');
-            break;
-    }
-
-    return param
-}
-
-// Функція для здійснення запиту за категорією при нажатті на кнопку load more яка діє за зчиткою датасету з кнопки 
+//Функція для списку книг в обраній категорії
 async function loadMore(event) {
     event.preventDefault();
-
+        
     const { target } = event;
-    
+            
     try {
-        if(!target.classList.contains('js-btn-more')) {
-            return
+        if(!target.classList.contains('js-btn-more')) { 
+            return;
         } else {
-            const param = target.dataset.category.toString();
-            fetchBooks.category = categoryParam(param);
-            const { data } = await fetchBooks.getBooksByCategory();
+            let category = target.dataset.category.split(" ").join("%20");
+            const { data } = await fetchBooks.getBooksByCategory(category);
             list.innerHTML = createMarcupCategoryBook(data);
-        }
+
+    // Робимо Scroll на початок сторінки після її завантаження, щоб одразу була видка категорія книжок
+    const { height: cardHeight } = list.lastElementChild.getBoundingClientRect();
+    window.scrollBy({top: -cardHeight, behavior: "smooth",});
+    }
     } catch (error) {
         console.error(error);
         Notify.failure('Sorry, there was a server error, please reload the page');
@@ -183,7 +119,6 @@ function shortTitle(string, value) {
     if(string.length > Number(value)) {
         return string.slice(0, Number(value)) + '...';
     }
-    
     return string
 }
 
@@ -193,3 +128,6 @@ function lastBlueWord(string) {
     const firstWord = arrWord.splice(0, arrWord.length - 1);
     return `${firstWord.join(' ')} <span class="last-word-color">${arrWord.join('')}</span>`
 }
+    
+    
+

@@ -1,6 +1,6 @@
 import { supportItems } from './support_ukraie_items';
 
-const galleryItemsContainer = document.querySelector('.swiper-wrapper');
+const galleryItemsContainer = document.querySelector('.mySwiper');
 const fundsMarkup = createFundsMarkup(supportItems);
 
 galleryItemsContainer.insertAdjacentHTML('beforeend', fundsMarkup);
@@ -13,8 +13,7 @@ galleryItemsContainer.insertAdjacentHTML('beforeend', fundsMarkup);
 function createFundsMarkup(supportItems) {
   // console.log(supportItems.children);
 
-  return supportItems
-    .map(({ title, url, img }) => {
+  return supportItems.map(({ title, url, img }) => {
       return `
             <li class="support_gallery_item swiper-slide">
               <a class="support_gallery_link link" href="${url}" title="${title}">
@@ -24,11 +23,10 @@ function createFundsMarkup(supportItems) {
               </a>
             </li>
             `;
-    })
-    .join('');
+    }).join('');
 }
 
-console.log(supportItems);
+// console.log(supportItems);
 
 // const swiper = new Swiper('.mySwiper', {
 //   slidesPerView: 4,

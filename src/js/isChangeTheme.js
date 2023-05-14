@@ -21,10 +21,10 @@ checkBoxEl.addEventListener('change', (event) => {
     export default function addDarkClassToHTML() {
    
     if (localStorage.getItem('theme') === 'dark') {
-    document.querySelector('body').classList.add('dark-theme');
+    document.querySelector('body').classList.add('dark');
     }
     else {
-    document.querySelector('body').classList.remove('dark-theme');
+    document.querySelector('body').classList.remove('dark');
     // document.querySelector('.themetoggle span').textContent = 'wb_sunny';
     }
     } 

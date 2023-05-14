@@ -1,7 +1,60 @@
 
 
-body.dark-theme {
-    background-color: #333333;
-    color: #fff;
-  }
-  
+.dark {
+    background-color: var(--dark-body-color);
+    color: var(--accent-color3);
+}
+
+body.dark {
+    background-color: var(--text-dark-color);
+    color: var(--accent-color3);
+}
+
+body.dark .header {
+    background-color: var(--text-dark-color);
+    color: var(--accent-color3);
+    border: 1.5px solid #ffffff;
+}
+
+body.dark .logo-link,
+body.dark .home-link,
+body.dark .shopping-link,
+body.dark .shopping-bag-icon,
+body.dark .burger-logo {
+    color: var(--accent-color3);
+    fill: var(--accent-color3);
+    stroke: var(--accent-color3);
+}
+
+body.dark .shopping-link:hover,
+body.dark .shopping-link:focus,
+body.dark .shopping-link:hover .shopping-bag-icon,
+body.dark .shopping-link:focus .shopping-bag-icon,
+body.dark .home-link:hover,
+body.dark .home-link:focus {
+    color: var(--text-dark-color);
+    fill: var(--text-dark-color);
+}
+
+body.dark .category {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+body.dark .category:hover,
+body.dark .category:focus {
+    color: var(--accent-color2);
+}
+
+body.dark .category-title,
+body.dark .book-name,
+body.dark .button-see-more {
+    color: var(--accent-color3);
+}
+
+body.dark .title-theme-book {
+    color: var(--accent-color3);
+}
+
+body.dark .title-book {
+    color: var(--accent-color3);
+}

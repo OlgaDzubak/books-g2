@@ -1,0 +1,226 @@
+.backdrop {
+  position: fixed;
+  padding: 214px 20px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  padding-top: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  min-height: 384px;
+  min-width: 335px;
+  background-color: #f6f6f6;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border-radius: 18px;
+
+  @media screen and (min-width: 768px) {
+    min-width: 579px;
+    padding-top: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+.close-button {
+  position: absolute;
+  background-color: transparent;
+  border-color: transparent;
+  width: 20px;
+  height: 20px;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    top: 24px;
+    right: 24px;
+  }
+}
+
+.close-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+
+  @media screen and (min-width: 768px) {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.modalForm-field {
+  margin-bottom: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .modalForm-field {
+    margin-bottom: 0;
+  }
+
+  .margin-name {
+    margin-bottom: 28px;
+  }
+
+  .margin-email {
+    margin-bottom: 28px;
+  }
+
+  .margin-password {
+    margin-bottom: 40px;
+  }
+}
+
+.modalForm-inputWrap {
+  position: relative;
+}
+
+.modalForm-input {
+  width: 100%;
+  padding: 16px 24px 16px;
+  border: 2px solid var(--text-dark-color);
+  background-color: transparent;
+  border-radius: 40px;
+  color: var(--text-dark-color);
+  font-size: 16px;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    border: 2px solid var(--accent-color1);
+    outline: none;
+    border-color: var(--accent-color1);
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 20px 40px 20px;
+    font-size: 18px;
+  }
+}
+
+.modalForm-input::placeholder {
+  font-size: 16px;
+  color: var(--text-dark-color);
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+.modalForm-icon {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+
+  @media screen and (min-width: 768px) {
+    top: 22px;
+    right: 34px;
+  }
+}
+
+.modalForm-icon.email {
+  @media screen and (min-width: 768px) {
+    width: 23px;
+    height: 18px;
+  }
+}
+
+.modalForm-icon.password {
+  @media screen and (min-width: 768px) {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+.modalWrapper-btn {
+  display: block;
+}
+
+.btnSingUp {
+  display: block;
+  border-radius: 40px;
+  width: 100%;
+  padding: 16px 0;
+  margin-bottom: 14px;
+  font-size: 16px;
+  color: var(--logo-theme-dark);
+  background-color: var(--dark-theme-background);
+  cursor: pointer;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color1);
+    border: 2px solid var(--text-dark-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+}
+
+.modalLink-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.modalLink {
+  position: relative;
+  font-size: 14px;
+  text-decoration: none;
+  color: rgba(17, 17, 17, 0.5);
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color1);
+  }
+
+  cursor: pointer;
+  &.current {
+    color: var(--accent-color1);
+  }
+
+  &.current::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 1px;
+    background: var(--accent-color1);
+    // border-radius: 1px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+.link-sing-up {
+  margin-right: 20px;
+}

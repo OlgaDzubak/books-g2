@@ -1,6 +1,49 @@
 <header class="header">
-
-
-    <a href="./shopping_list_page.html">Перейти на shopping_list_page</a>
-
+  <div class="container header-container">
+    <!-- логотип-посилання на головну сторінку -->
+    <a class="logo-link link" href="./index.html" aria-label="Посилання на головну сторінку">
+        <svg class="logo-icon" width="24" height="24">
+            <use href="./images/svg/sprite.svg#logo-icon"></use>
+        </svg>Bookshelf</a>
+    <nav class="navigation">
+        <ul class="nav-list list">
+            <li class="nav-item">
+                <a class="home-link link js-nav-homelink" href="./index.html" aria-label="Посилання на головну сторінку">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="shopping-link link js-nav-shoppinglistlink" href="./shopping_list_page.html" aria-label="Посилання на сторінку Shopping List">
+                    <span>SHOPPING LIST</span>
+                    <svg class="shopping-bag-icon" width="20" height="20">
+                        <use href="./images/svg/sprite.svg#shopping-bag-icon"></use>
+                    </svg></a>
+                </li>
+            </ul>
+    </nav> 
+    
+    <label class="switch">
+        <input type="checkbox" name="theme" id="theme-switch-toggle"
+        aria-label="Переключить между тёмной и светлой темой" />
+        <span class="slider round"></span>
+    </label>
+    <button class="burger-menu js-open-mobile-menu">
+        <svg class="burger-logo" width="28" height="28">
+        <use class="icon-burger-mobile-menu" href="./images/svg/sprite.svg#burger-menu-icon"></use>
+        <use class="icon-close-mobile-menu is-hidden" href="./images/svg/sprite.svg#x-close-icon"></use>
+        </svg>
+    </button>
+    <button class="user-login link jsOpenBtn">Sign up<svg class="icon-arrow-right" width="20" height="20">
+        <use href="./images/svg/sprite.svg#arrow-narrow-right-icon"></use></svg>
+    </button>
+    <!-- розмітка після логування -->
+    <!-- <div class="icon-user-wrapper">
+       <svg class="icon-user" width="19" height="19">
+        <use href="./img/svg/sprite.svg#icon-user"></use>
+       </svg>
+     </div>
+      Stephen
+    <svg class="icon-registration-triangle" width="23" height="26">
+      <use href="./img/svg/sprite.svg#icon-registration-triangle"></use>
+    </svg>
+    </button> -->
+  </div>
 </header>

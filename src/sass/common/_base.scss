@@ -3,9 +3,11 @@ html{
   }
 
 body {
-font-family: 'Montserrat', sans-serif;
+font-family: 'DM Sans', sans-serif;
 font-size: 12px;
 letter-spacing: 0.02em;
+background-color: var(--light-theme-background);
+width: 100vw;
 }
 
 .list {
@@ -34,8 +36,9 @@ h3,
 h4,
 h5,
 h6 {
-margin-top: 0;
-margin-bottom: 0;
+  font-family: 'DM Sans', sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 img {
@@ -46,15 +49,23 @@ height: auto;
 
 .container {
   max-width: 100%;
-  padding-left: 24px;
-  padding-right: 24px;
+  border: 1px solid red;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.is-hidden{
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 @media screen and (min-width: 375px) {
   .container {
     width: 375px;
-    margin-left: auto;
-    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 @media screen and (min-width: 768px) {

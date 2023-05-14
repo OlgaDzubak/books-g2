@@ -1,29 +1,24 @@
-.olala {
-  background: palevioletred;
-}
 
+.support-ukraine-container {  
+  margin-top: 308px;
+  margin-left: auto;
+  margin-right: auto;
 
-.support-ukraine-container {
-  position: absolute;
-  left: 20px;
-  top: 372px;
+  max-width: 335px;
+  height: 352px; 
 
-  width: 335px;
-  height: 352px;  
   padding-left: 40px;
+  padding-right: 40px;
   padding-top: 24px;
   padding-bottom: 20px;  
   border-radius: 16px;
 
   background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
-  box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
-
-  
+  box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);  
 }
 
 .support-ukraine-text {
-  display: flex;
-  flex-direction: row;
+  display: flex;  
   align-items: flex-start;
   padding: 0px;
   margin-bottom: 40px;
@@ -34,26 +29,21 @@
   font-size: 28px;
   line-height: 1.14;  
   letter-spacing: -0.04em;
-
-  color:aquamarine;
+  margin: 0;  
 }
 
 .svg-support-ukraine {
   fill: #ffffff;
 }
 
-.support-ukraine-gallery {
-  // list-style-type: decimal-leading-zero;
-  // list-style-position: inside; 
-  // padding: 0px;
+//____________
+
+.support-ukraine-gallery {  
   list-style: none;
-  counter-reset: my-awesome-counter;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  counter-reset: my-awesome-counter;  
   margin: 0;
   padding: 0;
-  margin-bottom: px;
+  
 }
 
 .support-ukraine-gallery li{  
@@ -84,10 +74,13 @@
   // justify-content: start ;
 }
 
-.scroll-up-btn {
-  position: absolute;
-  bottom: 20px;
-  left: 152px;
+//____________
+.scroll-up-btn {  
+  margin-top: 16px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  
 
   display: flex;
   align-items: center;
@@ -131,7 +124,8 @@ body {
 .swiper {
   width: 159px !important;
   height: 188px !important;  
-  margin: 0 !important;  
+  margin: 0 !important; 
+   
 }
 
 .swiper-wrapper{
@@ -149,7 +143,7 @@ body {
 
   font-size: 18px;
   background: transparent;  
-  background: green;
+  
   
 }
 
@@ -160,8 +154,11 @@ body {
   object-fit: cover;
 }
 
-.swiper-button-next {
-  left: auto;
-  right: auto !important;
+.swiper-button-next { 
+  position: static !important;  
+   margin-top: 0 !important;
+
+  // left: auto;
+  // right: auto !important;
 }
 

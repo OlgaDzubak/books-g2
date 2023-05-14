@@ -1,12 +1,8 @@
 import axios from "axios";
 
 export class booksAPI {
-    // Конструктор зі змінною що передає категорію
-    constructor() {
-        this.category = null; 
-    }
 
-    // приватні властивості для запиту 
+  // приватні властивості для запиту 
     #BASE_URL = 'https://books-backend.p.goit.global/books/';
 
 

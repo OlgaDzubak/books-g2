@@ -95,12 +95,21 @@
 .modalForm-input {
   width: 100%;
   padding: 16px 24px 16px;
-  //   padding-left: 24px;
   border: 2px solid var(--text-dark-color);
   background-color: transparent;
   border-radius: 40px;
   color: var(--text-dark-color);
   font-size: 16px;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    border: 2px solid var(--accent-color1);
+    outline: none;
+    border-color: var(--accent-color1);
+  }
 
   @media screen and (min-width: 768px) {
     padding: 20px 40px 20px;
@@ -121,6 +130,11 @@
   position: absolute;
   top: 16px;
   right: 24px;
+
+  @media screen and (min-width: 768px) {
+    top: 22px;
+    right: 34px;
+  }
 }
 
 .modalForm-icon.email {
@@ -151,11 +165,14 @@
   color: var(--logo-theme-dark);
   background-color: var(--dark-theme-background);
   cursor: pointer;
-  border: var(--dark-theme-background);
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
     background-color: var(--accent-color1);
+    border: 2px solid var(--text-dark-color);
   }
 
   @media screen and (min-width: 768px) {
@@ -170,11 +187,34 @@
 }
 
 .modalLink {
+  position: relative;
   font-size: 14px;
   text-decoration: none;
   color: rgba(17, 17, 17, 0.5);
 
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color1);
+  }
+
   cursor: pointer;
+  &.current {
+    color: var(--accent-color1);
+  }
+
+  &.current::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 1px;
+    background: var(--accent-color1);
+    // border-radius: 1px;
+  }
 
   @media screen and (min-width: 768px) {
     font-size: 18px;

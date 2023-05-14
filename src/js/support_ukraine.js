@@ -1,6 +1,6 @@
 import { supportItems } from './support_ukraie_items';
 
-const galleryItemsContainer = document.querySelector('.swiper-wrapper');
+const galleryItemsContainer = document.querySelector('.mySwiper');  // стояло '.swiper-wrapper' але ламає сторінку чомусь тому поставила поки .mySwiper
 const fundsMarkup = createFundsMarkup(supportItems);
 
 galleryItemsContainer.insertAdjacentHTML('beforeend', fundsMarkup);

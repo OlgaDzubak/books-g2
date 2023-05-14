@@ -7,6 +7,7 @@ import './js/category_books'
 import './js/autorization_modal_window'
 import './js/book_modal_window'
 import './js/mobile_menu'
+import './js/isChangeTheme'
 
 const homeLinkEl = document.querySelector('.js-nav-homelink');
 const mobileHomeLinkEl = document.querySelector('.js-mobile-nav-homelink');

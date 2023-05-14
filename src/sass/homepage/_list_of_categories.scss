@@ -6,7 +6,6 @@
     padding: 0;
     overflow-y: scroll;
 }
-
 /* phone screen */
 @media screen and (min-width: 320px) {
     .category-list-box {
@@ -15,7 +14,6 @@
         margin-left: 20px;
     }
 }
-
 /* tablet screen */
 @media screen and (min-width: 768px) {
     .category-list-box {
@@ -24,7 +22,6 @@
         margin-left: 32px;
     }
 }
-
 /* desctop screen */
 @media screen and (min-width: 1158px) {
     .category-list-box {
@@ -32,13 +29,11 @@
 margin-left: 24px;
     }
 }
-
 #category-list-title {
     color: #4F2EE8;
     font-weight: 700;
     text-transform: uppercase;
 }
-
 .category-list-item {
     font-family: 'DM Sans';
     font-weight: 400;

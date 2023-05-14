@@ -30,13 +30,13 @@ function createFundsMarkup(supportItems) {
 
 console.log(supportItems);
 
-const swiper = new Swiper('.mySwiper', {
-  slidesPerView: 4,
-  spaceBetween: 20,
-  direction: 'vertical',
-  loop: true,
+// const swiper = new Swiper('.mySwiper', {
+//   slidesPerView: 4,
+//   spaceBetween: 20,
+//   direction: 'vertical',
+//   loop: true,
 
-  navigation: {
-    nextEl: '.swiper-button-next',
-  },
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//   },
 });

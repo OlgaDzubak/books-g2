@@ -39,4 +39,4 @@ console.log(supportItems);
 //   navigation: {
 //     nextEl: '.swiper-button-next',
 //   },
-});
+//});

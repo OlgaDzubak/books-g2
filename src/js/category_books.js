@@ -4,7 +4,7 @@ const categoryListBox = document.querySelector(".category-list-box");
 const categoryNames = document.querySelectorAll(".category-list-item");
 const URL = 'https://books-backend.p.goit.global/books/category-list';
 
-let response = [];
+let response = []; 
 async function fetchCategoryList() {
     try {
         response = await axios.get(`${URL}`);

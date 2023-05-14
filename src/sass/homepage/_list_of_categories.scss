@@ -1,54 +1,46 @@
 // прописати стилі для галереї книжок по категоріях на homepage
 
-.best-books {
-    display: flex;
-    flex-direction: column;
+.homepage-books {
     padding-top: 40px;
-    margin-left: auto;
+    padding-bottom: 40px;
     max-width: 1002px;
 }
 
-.img-book {
-    margin-bottom: 14px;
-
-    height: 256px;
-    width: 180px;
-    border-radius: 8px;
+.best-book-container {
+    display: flex;
+    flex-direction: column;
 }
+
+.best-book-container:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.img-book {
+    border-radius: 8px;
+} 
 
 .list-books {
-    display: flex;
-    flex-wrap: wrap;
     list-style: none;
-    flex-basis: calc((100% - 96px) / 5);
-    gap: 24px;
-    margin-bottom: 32px;
-}
-
-.list-books.category {
-    gap: 40px 24px;
-    margin-bottom: 0;
+    letter-spacing: -0.04em;
 }
 
 .title-theme-book {
     font-weight: 700;
-    font-size: 48px;
-    line-height: 52px;
     letter-spacing: -0.04em;
     margin-bottom: 40px;
 
     color: var(--text-dark-color);
 }
 
-.title-theme-book:last-child {
+.last-word-color{
     color: var(--accent-color1);
 }
 
 .theme-book {
-    font-family: 'DM Sans';
+    margin-bottom: 18px;
+    
     font-weight: 400;
-    font-size: 14px;
-    line-height: 24px; 
+    font-size: 14px; 
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--text-light-color); 
@@ -59,8 +51,7 @@
 
     font-weight: 700;
     font-size: 16px;
-    line-height: 18px;
-    letter-spacing: -0.04em;
+    line-height: 0.9;
     text-transform: uppercase;
     color: var(--text-dark-color);
 }
@@ -71,15 +62,13 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
-    letter-spacing: -0.04em;
     color: var(--text-light-color)
 }
 
 .button-more {
-    margin-bottom: 40px;
     padding: 14px 28px;
-    align-self: end;
 
+    align-self: flex-end;
     font-weight: 700;
     font-size: 14px;
     line-height: 18px;
@@ -97,5 +86,188 @@
 
 .button-more:hover {
     background-color: var(--accent-color1);
-    color: var(--white-color);
+    color: var(--accent-color3);
 }
+
+// Мобілка і планшет__________________________
+@media screen and (max-width: 1439px){
+    .homepage-books {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+// Мобілка_____________________________________
+@media screen and (max-width: 375px) {
+    .homepage-books {
+        text-align: center;
+    }
+
+    .img-book {
+        height: 256px;
+        width: 180px;
+    }
+
+    .item-book:not(:last-child),
+    .item-book.category:not(:last-child) {
+        margin-bottom: 40px;
+    }
+
+    .list-books,
+    .list-books.category {
+        margin-bottom: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-more {
+        margin-top: 8px;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+    .img-book {
+        width: 335px;
+        height: 485px;
+    }
+
+    .list-books {
+        margin-bottom: 8px;
+    }
+
+    .item-book:not(:last-child) {
+        margin-bottom: 40px;
+    }
+
+    .title-theme-book {
+        font-size: 32px;
+        line-height: 0.8;
+    }
+
+    .theme-book {
+        line-height: 0.8;
+    }
+}
+
+// Планшет______________________________________________________
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+    .img-book {
+        width: 218px;
+        height: 316px;
+    }
+
+    .list-books {
+        margin-bottom: 20px;
+        flex-basis: calc((100% - 48px) / 3);
+    }
+}
+
+// Планшет і ПК________________________________________________
+@media screen and (min-width: 768px) {
+    .list-books{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .list-books.category {
+        gap: 40px 24px;
+        margin-bottom: 0;
+    }
+
+    .title-theme-book {
+        font-size: 48px;
+        line-height: 1;
+    }
+
+    .theme-book {
+        line-height: 0.6;
+    }
+}
+
+// ПК_____________________________________________________________
+@media screen and (min-width: 1440px) {
+    .homepage-books {
+        margin-left: auto;
+    }
+
+    .img-book {
+        height: 256px;
+        width: 180px;
+    }
+
+    .list-books {
+        margin-bottom: 32px;
+        flex-basis: calc((100% - 96px) / 5);
+    }
+}
+
+
+// Стилі оверлея при ховері на книгу________________________________________________________________________________
+.img-owerlay {
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 8px;
+    margin-bottom: 14px;
+}
+
+.owerlay {
+    position: absolute;
+    margin: auto;
+    bottom: 0;
+    left: 0;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--accent-color2);
+    background-blend-mode: soft-light;
+    width: 100%;
+    height: 70px;
+
+    transform: translateY(100%);
+    transition: transform var(--transition);
+} 
+
+.item-book:hover .owerlay,
+.item-book:focus .owerlay {
+    transform: translateY(0);
+}
+
+.owerlay-content {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 0.8;
+    letter-spacing: -0.04em;
+    
+    text-transform: uppercase;
+    color: var(--text-dark-color);
+    cursor: pointer;
+}
+
+// Стилі вразі якщо прожить пустий масив____________________________________________
+
+.off-books {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.off-books-text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 0.8;
+    letter-spacing: -0.04em;
+    text-align: center;
+    
+    color: var(--text-light-color);
+}
+
+

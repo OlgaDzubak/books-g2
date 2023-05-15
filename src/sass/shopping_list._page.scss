@@ -3,6 +3,706 @@
 @import './common/base';
 @import './header';
 @import './support_ukraine';
-@import './shopping_list';
 @import './footer';
 @import './isChangeTheme';
+
+// Стилі для блоку shopping_list на сторінці shopping_list_page
+.book_card {
+    display: flex;
+    padding: 14px;
+    border: 2px solid rgba(79, 46, 232, 0.4);
+    border-radius: 16px;
+    margin-left: 210px;
+}
+
+.shopping_booklist {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.shopping_list_title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.1875;
+    letter-spacing: -0.04em;
+    margin-bottom: 40px;
+    color: var(--text-dark-color);
+    margin-left: 210px;
+}
+
+.shopping_list_title_span {
+    color: var(--accent-color1);
+}
+
+.book-title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.125;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--text-dark-color);
+    margin-bottom: 4px;
+}
+
+.book-category {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.167;
+    letter-spacing: 0.03em;
+    color: var(--text-light-color);
+    margin-bottom: 8px;
+}
+
+.book-description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.128;
+    letter-spacing: -0.04em;
+    width: 193px;
+    height: 68px;
+    color: var(--text-dark-color);
+    margin-bottom: 14px;
+
+}
+
+.book-author {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: -0.04em;
+    color: var(--text-light-color);
+}
+
+.book-image-div {
+    width: 100%;
+}
+
+.market_places_div {
+    height: 16px;
+}
+
+.market_placers_list {
+   display: flex;
+   width: 15px;
+   height: 15px;
+}
+
+.marketplacer-icon-svg {
+    //width: 24px;
+    height: 16px
+}
+
+
+
+
+
+
+
+// Стилі для блоку shopping_list на сторінці shopping_list_page
+.shopping-list-container {
+    max-width: 335px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .shopping-list-container {
+        max-width: 704px;
+        margin: 0 auto;
+        padding: 0px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .shopping-list-container {
+        max-width: 1158px;
+        margin: 0 auto;
+        padding-right: 24px;
+        padding-left: 24px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+.shopping-text {
+    margin-top: 40px;
+    padding-left: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .shopping-text {
+        padding-left: 40px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .shopping-text {
+        padding-left: 40px;
+    }
+}
+
+.book_card {
+    display: flex;
+    padding: 14px;
+    border: 2px solid rgba(79, 46, 232, 0.4);
+    border-radius: 16px;
+}
+
+.shopping_booklist {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.shopping_list_title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.1875;
+    letter-spacing: -0.04em;
+    margin-bottom: 40px;
+    color: var(--text-dark-color);
+    margin-left: 330px;
+}
+
+.shopping_list_title_span {
+    color: var(--accent-color1);
+}
+
+.book-title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.125;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--text-dark-color);
+    margin-bottom: 4px;
+}
+
+.book-category {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.167;
+    letter-spacing: 0.03em;
+    color: var(--text-light-color);
+    margin-bottom: 8px;
+}
+
+.book-description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.128;
+    letter-spacing: -0.04em;
+    width: 193px;
+    height: 68px;
+    color: var(--text-dark-color);
+    margin-bottom: 14px;
+
+}
+
+.book-author {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: -0.04em;
+    color: var(--text-light-color);
+}
+
+.book-image-div {
+    width: 100%;
+}
+
+.market_places_div {
+    height: 16px;
+}
+
+.market_placers_list {
+    display: flex;
+}
+
+.marketplacer-icon-svg {
+    //width: 24px;
+    height: 16px
+}
+
+.shopping_booklist_pagination {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-left: 155px;
+}
+
+.btn {
+    width: 38px;
+    height: 38px;
+margin-right: 10px;
+    border-radius: 50%;
+    border: 1px solid #000000;
+}
+
+@media screen and (min-width: 768px) {
+    .btn {
+        margin-right: 24px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .btn {}
+}
+
+.btn:first-child {
+    margin-right: 5px;
+
+}
+
+.btn:hover {
+    background-color: #111111;
+    color: #B4AFAF;
+}
+
+.btn:focus {
+    background-color: #111111;
+    color: #B4AFAF;
+}
+
+.btn-two {
+    width: 38px;
+    height: 38px;
+    background: none;
+    margin-right: 5px;
+    border: 1px solid #000000;
+    border-radius: 100px;
+}
+
+@media screen and (min-width: 768px) {
+    .btn-two {
+        margin-right: 8px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .btn-two {
+        margin-right: 8px;
+    }
+}
+
+.btn-two :last-child {
+    margin: 0px;
+    padding: 0px;
+}
+
+.btn-two:hover {
+    background-color: #111111;
+    color: #B4AFAF;
+}
+
+.btn-two:focus {
+    background-color: #111111;
+    color: #B4AFAF;
+}
+
+.none {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .none {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .none {
+        display: block;
+    }
+}
+
+.btn-many {
+    width: 38px;
+    height: 38px;
+    border: 1px solid #000000;
+    border-radius: 100px;
+}
+
+.btn-many:hover {
+    background-color: #111111;
+    color: #B4AFAF;
+}
+
+.btn-many:focus {
+    background-color: #111111;
+    color: #B4AFAF;
+}
+
+.btn-three {
+    width: 38px;
+    height: 38px;
+    margin-left: 10px;
+    border: 1px solid #000000;
+    border-radius: 100px;
+}
+
+@media screen and (min-width: 768px) {
+    .btn-three {
+        margin-left: 24px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .btn-three {
+        margin-left: 24px;
+    }
+}
+
+.btn-three:last-child {
+    margin-left: 5px;
+}
+
+.btn-three:hover {
+    background-color: #EAC645;
+}
+
+.btn-three:focus {
+    background-color: #EAC645;
+}
+
+
+
+
+
+
+
+
+
+
+
+// .book_card{
+//     display: flex;
+//     padding: 14px;
+//     border: 2px solid rgba(79, 46, 232, 0.4);
+//     border-radius: 16px;
+// }
+// .shopping_booklist {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 20px;
+// }
+// .shopping_list_title{
+//     font-weight: 700;
+//     font-size: 32px;
+//     line-height: 1.1875;
+//     letter-spacing: -0.04em;
+//     margin-bottom: 40px;
+//     color: var(--text-dark-color);
+// }
+// .shopping_list_title_span{
+//     color: var(--accent-color1);
+// }
+// .book-title{
+//     font-weight: 700;
+//     font-size: 16px;
+//     line-height: 1.125;
+//     letter-spacing: -0.04em;
+//     text-transform: uppercase;
+//     color: var(--text-dark-color);
+//     margin-bottom: 4px;
+// }
+// .book-category{
+//     font-weight: 400;
+//     font-size: 12px;
+//     line-height: 1.167;
+//     letter-spacing: 0.03em;
+//     color: var(--text-light-color);
+//     margin-bottom: 8px;
+// }
+// .book-description{
+//     font-weight: 400;
+//     font-size: 16px;
+//     line-height: 1.128;
+//     letter-spacing: -0.04em;
+//     width: 193px;
+//     height: 68px;
+//     color: var(--text-dark-color);
+//     margin-bottom: 14px;
+
+// }
+// .book-author{
+//     font-style: italic;
+//     font-weight: 400;
+//     font-size: 12px;
+//     line-height: 1.17;
+//     letter-spacing: -0.04em;
+//     color: var(--text-light-color);
+// }
+// .book-image-div{
+//     width: 100%;
+// }
+// .market_places_div{
+//     height: 16px;
+// }
+// .market_placers_list{
+//     display: flex;
+// }
+// .marketplacer-icon-svg{
+//     //width: 24px;
+//     height: 16px
+
+// }
+
+
+
+
+
+
+
+// // Стилі для блоку shopping_list
+
+
+// .shopping-list-container{
+//     max-width: 335px;
+//     margin: 0 auto;
+// padding-left: 20px;
+// padding-right: 20px;    
+// }
+// @media screen and (min-width: 768px) {
+//     .shopping-list-container {
+//         max-width: 704px;
+//         margin: 0 auto;
+//         padding: 0px;
+//         padding-left: 40px;
+// padding-right: 40px;
+//     }
+// }
+// @media screen and (min-width: 1024px) {
+//     .shopping-list-container{
+//         max-width: 1158px;
+//         margin: 0 auto;
+//         padding-right: 24px;
+//         padding-left: 24px;
+//         padding-left: 40px;
+// padding-right: 40px;
+//         }
+//     }
+// .shopping-text{
+// margin-top: 40px;
+// padding-left: 20px;    
+// }
+// @media screen and (min-width: 768px){
+// .shopping-text{
+// padding-left: 40px;    
+// }
+// }
+// @media screen and (min-width: 1024px){
+// .shopping-text{
+// padding-left: 40px;    
+// }    
+// }
+
+// .book_card{
+//     display: flex;
+//     padding: 14px;
+//     border: 2px solid rgba(79, 46, 232, 0.4);
+//     border-radius: 16px;
+// }
+// .shopping_booklist {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 20px;
+// }
+// .shopping_list_title{
+//     font-weight: 700;
+//     font-size: 32px;
+//     line-height: 1.1875;
+//     letter-spacing: -0.04em;
+//     margin-bottom: 40px;
+//     color: var(--text-dark-color);
+// }
+// .shopping_list_title_span{
+//     color: var(--accent-color1);
+// }
+// .book-title{
+//     font-weight: 700;
+//     font-size: 16px;
+//     line-height: 1.125;
+//     letter-spacing: -0.04em;
+//     text-transform: uppercase;
+//     color: var(--text-dark-color);
+//     margin-bottom: 4px;
+// }
+// .book-category{
+//     font-weight: 400;
+//     font-size: 12px;
+//     line-height: 1.167;
+//     letter-spacing: 0.03em;
+//     color: var(--text-light-color);
+//     margin-bottom: 8px;
+// }
+// .book-description{
+//     font-weight: 400;
+//     font-size: 16px;
+//     line-height: 1.128;
+//     letter-spacing: -0.04em;
+//     width: 193px;
+//     height: 68px;
+//     color: var(--text-dark-color);
+//     margin-bottom: 14px;
+
+// }
+// .book-author{
+//     font-style: italic;
+//     font-weight: 400;
+//     font-size: 12px;
+//     line-height: 1.17;
+//     letter-spacing: -0.04em;
+//     color: var(--text-light-color);
+// }
+// .book-image-div{
+//     width: 100%;
+// }
+// .market_places_div{
+//     height: 16px;
+// }
+// .market_placers_list{
+//     display: flex;
+// }
+// .marketplacer-icon-svg{
+//     //width: 24px;
+//     height: 16px
+
+// }
+
+// .shopping_booklist_pagination{
+//  margin-top: 40px;  
+//  display: flex; 
+//  align-items: center;
+//     justify-content: center;
+//     margin-bottom: 40px;
+// }
+
+// .btn{
+//     width: 38px;
+//     height: 38px;
+    
+//     margin-right: 10px;
+//     border-radius: 50%;
+//     border: 1px solid #000000;
+// }
+// @media screen and (min-width: 768px){
+// .btn{
+// margin-right: 24px;
+// }    
+// }
+// @media screen and (min-width: 1024px){
+// .btn{
+
+//     }
+// }
+
+// .btn:first-child{
+//     margin-right: 5px;
+    
+// }
+// .btn:hover{
+//     background-color: #111111;
+//     color: #B4AFAF;
+// }
+// .btn:focus{
+//     background-color: #111111;
+//     color: #B4AFAF;
+// }
+
+// .btn-two{
+//     width: 38px;
+//     height: 38px;
+//     background: none;
+//     margin-right: 5px;
+//     border: 1px solid #000000;
+//     border-radius: 100px;
+// }
+// @media screen and (min-width: 768px){
+//     .btn-two{
+//         margin-right: 8px;
+//     }
+// }
+// @media screen and (min-width: 1024px){
+// .btn-two{
+//     margin-right: 8px;
+// }    
+// }
+
+// .btn-two :last-child{
+// margin: 0px;
+// padding: 0px;
+// }
+// .btn-two:hover{
+//     background-color: #111111;
+//     color: #B4AFAF;
+// }
+// .btn-two:focus{
+//     background-color: #111111;
+//     color: #B4AFAF;
+// }
+
+// .none{
+// display: none;    
+// }
+// @media screen and (min-width: 768px){
+// .none{
+// display: block;    
+// }    
+// }
+// @media screen and (min-width: 1024px){
+// .none{
+// display: block;    
+// }
+// }
+// .btn-many{
+//     width: 38px;
+//     height: 38px; 
+//     border: 1px solid #000000;
+//     border-radius: 100px;   
+// }
+
+// .btn-many:hover{
+//     background-color: #111111;
+//     color: #B4AFAF;
+// }
+// .btn-many:focus{
+//     background-color: #111111;
+//     color: #B4AFAF;
+// }
+
+// .btn-three{
+//     width: 38px;
+//     height: 38px;
+//     margin-left: 10px;
+//     border: 1px solid #000000;
+//     border-radius: 100px;
+// }
+// @media screen and (min-width: 768px){
+// .btn-three{
+// margin-left: 24px;    
+// }    
+// }
+// @media screen and (min-width: 768px){
+// .btn-three{
+// margin-left: 24px;    
+// }    
+// }
+
+// .btn-three:last-child{
+//     margin-left: 5px;
+// }
+// .btn-three:hover{
+//     background-color: #EAC645;
+// }
+// .btn-three:focus{
+//     background-color:#EAC645;
+// }

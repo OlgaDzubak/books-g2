@@ -1,21 +1,40 @@
-import axios from 'axios';
+// import axios from 'axios';
+import { booksAPI } from "./booksAPI";
 
 const categoryListBox = document.querySelector(".category-list-box");
 const categoryNames = document.querySelectorAll(".category-list-item");
-//const checkBoxEl = document.querySelector('#theme-switch-toggle');
+// const checkBoxEl = document.querySelector('#theme-switch-toggle');
 const URL = 'https://books-backend.p.goit.global/books/category-list';
 
-// Функція запиту на отримання назв категорій від бекенду
-let response = [];
-async function fetchCategoryList() {
+
+const booksApi = new booksAPI();
+async function  fetchCategoryList() {
     try {
-        response = await axios.get(`${URL}`);
-            return [];
-    } catch (error) {
-        console.log(error);
-        return [];
-    }
+        const response = await booksApi.getCategoryList();
+        //Якщо ми отримали на запит пустий масив даних (нічого не знайдено), виводимо повідомлення і виходимо з функції
+        if (response.data === 0) {
+            return Notify.failure("Sorry, there are no categories in that API.");
+        }
+        categoryListBox.innerHTML = createCategoryList();
+  } catch (error) {
+    // якщо запит повернув помилку, виводимо її (виводимо у консоль)
+    console.log(error);
+  }
 }
+
+
+
+// // Функція запиту на отримання назв категорій від бекенду
+// let response = [];
+// async function fetchCategoryList() {
+//     try {
+//         response = await axios.get(`${URL}`);
+//             return [];
+//     } catch (error) {
+//         console.log(error);
+//         return [];
+//     }
+// }
 
 // Формування списку категорій
 function createCategoryList() {

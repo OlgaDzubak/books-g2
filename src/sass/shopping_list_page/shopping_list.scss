@@ -788,7 +788,10 @@ margin-left: 24px;
 
 
 .null-page{
-    margin-left: 380px;
+        display: flex;
+            margin-top: 140px;
+            flex-direction: column;
+            align-items: center;
     margin-top: 140px;
 }
 

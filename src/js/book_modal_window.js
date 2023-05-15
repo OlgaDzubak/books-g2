@@ -9,7 +9,6 @@ const btnCloseModal = document.querySelector('.btn-modal-close');
 const btnAddEl = document.querySelector('.add');
 const btnRemoveEl = document.querySelector('.remove');
 const textEl = document.querySelector('.modal-message');
-/* console.log(divContainerEl); */
 
 const objScroll = {
     scrollPosition: 0,
@@ -17,7 +16,7 @@ const objScroll = {
         objScroll.scrollPosition = window.scrollY;
         document.body.style.cssText = `
         overflow: hidden;
-        position: fix;
+        position: fixed;
         top: -${objScroll.scrollPosition}px;
         left: 0;
         height: 100vh;
@@ -36,7 +35,7 @@ const objScroll = {
 divContainerEl.addEventListener('click', onReadId);
 
 function onReadId(event) {
-    objScroll.disabledScroll();
+    
     if (event.target.classList[0] === 'img-book' || event.target.classList[0] === 'owerlay') {
         book_Id = event.target.parentElement.parentElement.dataset.id;
         
@@ -53,40 +52,27 @@ function onReadId(event) {
 }
 
 async function createModalWindow(book_Id) {
-    
+    objScroll.disabledScroll();
     try {
         const respons = await books.getBookById(book_Id);
         const { author, book_image, description, title, buy_links } = respons.data;
-        const randerBox = document.querySelector('.rander-modal');
+        const randerBox = document.querySelector('.book-info');
+        const amazonEl = document.querySelector('#amazon');
+        const appleEl = document.querySelector('#apple');
+        const barnesEl = document.querySelector('#barnes');
+        amazonEl.attributes[0].value = buy_links[0].url;
+        appleEl.attributes[0].value = buy_links[1].url;
+        barnesEl.attributes[0].value = buy_links[2].url;
         randerBox.innerHTML = '';
-        const randerModal = `
-                <div class="book-info">
-                
+        const randerModal = `            
                 <img src="${book_image}" alt="${book_image}" class="img-modal">
-                
                 <div>
                 <p class="modal-name-book">${title}</p>
                 <p class="modal-author-book">${author}</p>
                 <p class="modal-description-book">${description}</p>
                 </div>
                 </div>
-                <ul class="list-link-market">
-                    <li class="item-link-market">
-                    <a href="${buy_links[0].url}" class="link-market">
-                        <img src="" alt="Logo Amazon" class="img-link-market">
-                    </a>
-                    </li>
-                    <li class="item-link-market">
-                    <a href="${buy_links[1].url}" class="link-market">
-                        <img src="" alt="Logo Apple books" class="img-link-market">
-                    </a>
-                    </li>
-                    <li class="item-link-market">
-                    <a href="${buy_links[2].url}" class="link-market">
-                        <img src="" alt="Logo Barnes and noble" class="img-link-market">
-                    </a>
-                    </li>
-                </ul>`
+                `
 
         randerBox.innerHTML = randerModal;
         divBackEl.classList.toggle('is-hidden');

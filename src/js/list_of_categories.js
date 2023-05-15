@@ -7,6 +7,7 @@ const categoryNames = document.querySelectorAll(".category-list-item");
 const URL = 'https://books-backend.p.goit.global/books/category-list';
 
 
+
 // Функція запиту на отримання назв категорій від бекенду
 let response = [];
 async function fetchCategoryList() {

@@ -3,6 +3,7 @@
 .header {
     padding-top: 17px;
     padding-bottom: 16px;
+    position: sticky;
 
     border: 1.5px solid #111111;
     border-radius: 0px 0px 8px 8px;
@@ -13,7 +14,7 @@
 
 @media screen and (max-width: 767px) {
     .header {
-        position: sticky;
+        
         width: 100vw;
         z-index: 100;
         top: 0;
@@ -68,7 +69,7 @@
     transition: background-color var(--transition), font-weight var(--transition);
 }
 .mobile-shopping-link {
-    padding: 9px 16px;
+    padding: 8px 16px;
     display: inline-flex;
     align-items: center;
     gap: 8px;

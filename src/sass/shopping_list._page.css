@@ -51,6 +51,7 @@ body {
   font-size: 12px;
   letter-spacing: 0.02em;
   background-color: var(--light-theme-background);
+  width: 100vw;
 }
 
 .list {
@@ -643,16 +644,20 @@ body.dark .button-see-more {
   color: var(--accent-color3);
 }
 
+.olala {
+  background: palevioletred;
+}
+
 .support-ukraine-container {
   position: absolute;
-  width: 335px;
-  height: 352px;
   left: 20px;
   top: 372px;
-  border-radius: 16px;
+  width: 335px;
+  height: 352px;
   padding-left: 40px;
   padding-top: 24px;
   padding-bottom: 20px;
+  border-radius: 16px;
   background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
   box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
 }
@@ -669,59 +674,25 @@ body.dark .button-see-more {
 .support-ukraine-title {
   font-size: 28px;
   line-height: 1.14;
-  /* identical to box height, or 114% */
   letter-spacing: -0.04em;
-  color: aquamarine;
-}
-
-.support-ukraine-gallery {
-  list-style: none;
-  counter-reset: my-awesome-counter;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-  margin-bottom: px;
-}
-
-.support_gallery_link_svg {
-  height: 32px;
-  width: 120px;
-}
-
-.support-ukraine-gallery li {
-  height: 18px;
-  font-size: 14px;
-  line-height: 1.29;
   color: #ffffff;
-  counter-increment: my-awesome-counter;
-  display: flex;
-  font-size: 0.8rem;
-  margin-bottom: 0.5rem;
 }
 
-.support-ukraine-gallery li::before {
-  content: "0" counter(my-awesome-counter);
-  font-size: 14px;
-  line-height: 1.29;
-  letter-spacing: -0.04em;
-  margin-right: 16px;
-  width: 14px;
-  height: 18px;
+.svg-support-ukraine {
+  fill: #ffffff;
 }
 
 .scroll-up-btn {
   position: absolute;
   bottom: 20px;
   left: 152px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 32px;
   height: 32px;
   border-radius: 50%;
   border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   background-color: #ffffff;
   transition-duration: 1000ms;
@@ -733,6 +704,52 @@ body.dark .button-see-more {
 
 .scroll-up-icon {
   fill: #4F2EE8;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #ffffff !important;
+}
+
+.swiper {
+  width: 159px !important;
+  height: 188px !important;
+  margin: 0 !important;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: flex-start !important;
+  align-items: center;
+  text-align: left !important;
+  width: 159px !important;
+  height: 32px !important;
+  font-size: 18px;
+  background: transparent;
+  background: green;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.swiper-button-next {
+  left: auto;
+  right: auto !important;
 }
 
 .book_card {

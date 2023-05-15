@@ -1,0 +1,178 @@
+
+
+.dark {
+    background-color: var(--dark-body-color);
+    color: var(--accent-color3);
+}
+
+body.dark {
+    background-color: var(--text-dark-color);
+    color: var(--accent-color3);
+}
+            // ---------------header-------------------//
+
+body.dark .header {
+    background-color: var(--text-dark-color);
+    color: var(--accent-color3);
+    border: 1.5px solid #ffffff;
+}
+
+body.dark .logo-link,
+body.dark .home-link,
+body.dark .shopping-link,
+body.dark .shopping-bag-icon,
+body.dark .burger-logo {
+    color: var(--accent-color3);
+    fill: var(--accent-color3);
+    stroke: var(--accent-color3);
+}
+
+body.dark .shopping-link:hover,
+body.dark .shopping-link:focus,
+body.dark .shopping-link:hover .shopping-bag-icon,
+body.dark .shopping-link:focus .shopping-bag-icon,
+body.dark .home-link:hover,
+body.dark .home-link:focus {
+    color: var(--text-dark-color);
+    fill: var(--text-dark-color);
+}
+
+//-------------------- list_of_categories---------------------//
+
+body.dark .category {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+body.dark .category:hover,
+body.dark .category:focus {
+    color: var(--accent-color2);
+}
+
+body.dark .category-title,
+body.dark .book-name,
+body.dark .button-see-more {
+    color: var(--accent-color3);
+}
+
+body.dark .title-theme-book {
+    color: var(--accent-color3);
+}
+
+body.dark .title-book {
+    color: var(--accent-color3);
+
+}
+
+body.dark .button-more {
+    color: var(--text-white-color);
+}
+
+body.dark #category-list-title {
+    color: var(--accent-color2);
+   
+}
+
+body.dark .category-list-item{
+    color: rgba(255,255,255,0.6);
+}
+
+body.dark .category-list-item:hover{
+    color: var(--accent-color2);
+    text-transform: uppercase;
+}
+
+
+// ----------autorization_modal_window----------//
+
+body.dark .modal {
+    background-color: black;
+    border-color: var(--accent-color3);
+    // border-radius: 18px;
+    // border: #ffffff;
+}
+
+body.dark .close-button {
+    color: var(--accent-color3)}
+
+body.dark .modalForm-input {
+       
+        border: 2px solid var(--text-white-color);
+        background-color: transparent;
+        color: var(--text-white-color);
+        }
+
+body.dark .modalForm-input::placeholder {
+            color: var(--text-white-color);
+        }
+
+body.dark .close-icon,
+body.dark .close-button
+{
+    fill: #ffffff;
+}
+
+body.dark .modalForm-icon.email{
+    fill: #ffffff;
+}
+
+body.dark .btnSingUp{
+    color:black;
+    background-color: var(--accent-color3);
+    &:hover,
+    &:focus {
+      background-color: var(--accent-color1);
+      border: 2px solid var(--text-dark-color);
+    }
+}
+
+body.dark .modalLink{
+    color: rgba(255,255,255,0.6);
+}
+
+body.dark .link-sing-up {
+    color: var(--accent-color1);
+}
+
+//-----------------shopping_list--------------//
+
+body.dark .shopping_list_title {
+    color: var(--accent-color3);
+}
+
+body.dark .book-title {
+    color: var(--accent-color3);
+}
+
+body.dark .book-description{
+    color: var(--text-white-color);
+}
+
+body.dark .btn-two,
+body.dark .btn-many
+{
+    color: var(--text-white-color);
+    background-color: black;
+    border-radius: 1px solid var(--accent-color3);
+    
+}
+
+// body.dark-theme .tui-pagination .tui-page-btn {
+//     color: #ffffff;
+//   }
+  
+//   body.dark .tui-pagination .tui-page-btn:hover,
+//   body.dark .tui-pagination .tui-page-btn:focus {
+//     color: var(--text-dark-color);
+//     background-color: var(--accent-color2);
+//   }
+  
+//   body.dark .tui-next,
+//   body.dark .tui-last,
+//   body.dark .tui-first,
+//   body.dark .tui-prev,
+//   body.dark .tui-last-child {
+//     background-color: #ffffff;
+//   }
+
+
+

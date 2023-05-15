@@ -17,18 +17,30 @@
       <include src="./partials/support_ukraine.html"></include>   
 
       <!------------------------------------------------------------------------------------------------>
-      <h2 class="shopping_list_title">Shopping <span class="shopping_list_title_span">List</span></h2>
-
-      <div class="shopping-list-container">
-        <ul class = "shopping_booklist list"></ul>         <!-- сюди рендериться список обраних книжок -->
-        <div class="shopping_booklist_pagination"></div>   <!-- це контейнер для пагінації -->
+      <div class="shopping-text">
+        <h2 class="shopping_list_title">Shopping <span class="shopping_list_title_span">List</span></h2>
       </div>
+        <div class="shopping-list-container">
+          <ul class = "shopping_booklist list"></ul>         <!-- сюди рендериться список обраних книжок -->
+          <div class="shopping_booklist_pagination">
+            <button class="btn"><<</button>
+              <button class="btn"><</button>
+              <button class="btn-two">1</button>
+              <button class="btn-two">2</button>
+              <button class="btn-two none">3</button>
+              <button class="btn-many">...</button>
+              <button class="btn-three">></button>
+              <button class="btn-three">>></button>
+          </div>   <!-- це контейнер для пагынації -->
+        </div>
+        
       <!----------------------------------------------------------------------------------------------->
 
     </div>
 
     <include src="./partials/footer.html"></include>
     <include src="./partials/mobile_menu.html"></include>
+    <include src="./partials/about_us_modal_window.html"></include>
 
     <script type="module" src="./shopping_list_page.js"></script>
   

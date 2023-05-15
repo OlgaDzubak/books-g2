@@ -4,7 +4,7 @@
     margin: 0;
     margin-top: 40px;
     padding: 0;
-    overflow-y: scroll;
+    overflow: scroll;
 }
 /* phone screen */
 @media screen and (min-width: 320px) {
@@ -26,23 +26,22 @@
 @media screen and (min-width: 1158px) {
     .category-list-box {
         max-width: 328px;
-margin-left: 24px;
+        margin-left: 24px;
     }
 }
 #category-list-title {
-    color: #4F2EE8;
-    font-weight: 700;
+    font-size: 18px;
+    color: var(--accent-color1);
     text-transform: uppercase;
 }
 .category-list-item {
-   // font-family: 'DM Sans';
-    font-weight: 400;
     font-size: 18px;
     line-height: 1.33;
     letter-spacing: -0.02em;
     color: rgba(17, 17, 17, 0.6);
     cursor: pointer;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
+    white-space: nowrap;
 }
 
 .homepage-books {
@@ -102,7 +101,7 @@ margin-left: 24px;
 }
 
 .author {
-   // font-family: 'DM Sans';
+    font-family: 'DM Sans';
     font-style: italic;
     font-weight: 400;
     font-size: 12px;
@@ -314,4 +313,3 @@ margin-left: 24px;
     
     color: var(--text-light-color);
 }
-

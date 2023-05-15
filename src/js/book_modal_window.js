@@ -73,17 +73,17 @@ async function createModalWindow(book_Id) {
                 <ul class="list-link-market">
                     <li class="item-link-market">
                     <a href="${buy_links[0].url}" class="link-market">
-                        <img src="./images/link-market/amazon.png" alt="Logo Amazon" class="img-link-market">
+                        <img src="" alt="Logo Amazon" class="img-link-market">
                     </a>
                     </li>
                     <li class="item-link-market">
                     <a href="${buy_links[1].url}" class="link-market">
-                        <img src="./images/link-market/apple-books.png" alt="Logo Apple books" class="img-link-market">
+                        <img src="" alt="Logo Apple books" class="img-link-market">
                     </a>
                     </li>
                     <li class="item-link-market">
                     <a href="${buy_links[2].url}" class="link-market">
-                        <img src="./images/link-market/barnes-and-noble.png" alt="Logo Barnes and noble" class="img-link-market">
+                        <img src="" alt="Logo Barnes and noble" class="img-link-market">
                     </a>
                     </li>
                 </ul>`

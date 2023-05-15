@@ -26,9 +26,10 @@
 @media screen and (min-width: 1158px) {
     .category-list-box {
         max-width: 328px;
-margin-left: 24px;
+        margin-left: 24px;
     }
 }
+
 #category-list-title {
     color: #4F2EE8;
     font-weight: 700;
@@ -313,4 +314,62 @@ margin-left: 24px;
     text-align: center;
     
     color: var(--text-light-color);
+}
+
+// Scroll up______________________________________________________
+// .scrool-up-cont{
+//     position: relative;}
+
+.btn-up-scroll {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    width: 54px;
+    height: 54px;
+    border-color: transparent;
+    background-color: var(--accent-color1);
+    border-radius: 50%;
+
+    transition: opacity var(--transition),
+    visibility var(--transition),
+    transform var(--transition);
+}
+
+.btn-up-scroll::before {
+    content: "";
+    width: 54px;
+    height: 54px;
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(79, 46, 232, 0.3);
+
+    transition: transform var(--transition);
+}
+
+.scrol-up-arrow{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    transform: translateY(50%);
+    pointer-events: none;
+}
+
+.btn-up-scroll:hover::before,
+.btn-up-scroll:focus::before
+{
+    transform: scale(1.25);
+}
+
+.btn-up-scroll.is-hidden-btn {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(100%);
 }

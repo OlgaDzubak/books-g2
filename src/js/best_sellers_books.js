@@ -54,6 +54,9 @@ async function createBestBook() {
             } else {
                 list.innerHTML = createMarcup(data, 5);
             }
+
+            const target = document.querySelector('.title-theme-book')
+            observer.observe(target)
         } else {
             Notify.failure("Sorry, there was a server error, please reload the page");
             return}}
@@ -130,4 +133,38 @@ function lastBlueWord(string) {
 }
     
     
+const btnScroll = document.querySelector('.btn-up-scroll');
+
+btnScroll.addEventListener('click', scrollUp)
+
+function scrollUp() {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    })
+
+    btnScroll.classList.add('is-hidden-btn')
+}
+
+var options = {
+    root: null,
+    threshold: 1.0
+}
+
+var observer = new IntersectionObserver(callback, options);
+
+function callback(entries) {
+    console.log(entries);
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            console.log('open');
+            btnScroll.classList.remove('is-hidden-btn')
+        } else {
+            console.log('close');
+            btnScroll.classList.add('is-hidden-btn')
+        }
+    })
+}
+
 

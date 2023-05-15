@@ -1,4 +1,4 @@
-/* import createOrderedBooksCards from "../tamplates/book-cards.hbs";
+import createOrderedBooksCards from "../tamplates/book-cards.hbs";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { booksAPI } from "./booksAPI";
 
@@ -52,10 +52,10 @@ async function getOrderedBookCard(book_id){
     }catch(error) {                             //якщо запит повернув помилку, обровляємо її (виводимо у консоль)
         console.log(error);
     }
-}*/
+}
 
 
-
+/*
 import createOrderedBooksCards from "../tamplates/book-cards.hbs";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { booksAPI } from "./booksAPI";

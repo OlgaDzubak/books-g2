@@ -2,6 +2,7 @@ import './js/shopping_list';
 import './js/support_ukraine';
 import './js/mobile_menu';
 import './js/about_us_modal_window'
+import './js/isChangeTheme';
 
 const shoppingListLinkEl = document.querySelector('.js-nav-shoppinglistlink');
 const mobileShoppingListLinkEl = document.querySelector('.js-mobile-nav-shoppinglistlink');

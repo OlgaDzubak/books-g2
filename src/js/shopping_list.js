@@ -18,6 +18,7 @@ if (orderedBooksId_str  === null){
     orderedBooksId.forEach(id => { getOrderedBookCard(id);});
 } 
 
+
 //-----------ОПИС ФУНКЦІЙ ---------------------------------------------------------
 
 const markup = `

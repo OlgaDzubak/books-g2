@@ -1,10 +1,10 @@
-// import axios from 'axios';
+import axios from 'axios';
+
 
 const categoryListBox = document.querySelector(".category-list-box");
-//const categoryNames = document.querySelectorAll(".category-list-item");
-const checkBoxEl = document.querySelector('#theme-switch-toggle');
+const categoryNames = document.querySelectorAll(".category-list-item");
+//const checkBoxEl = document.querySelector('#theme-switch-toggle');
 const URL = 'https://books-backend.p.goit.global/books/category-list';
-
 
 
 // Функція запиту на отримання назв категорій від бекенду

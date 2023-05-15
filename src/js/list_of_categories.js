@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 const categoryListBox = document.querySelector(".category-list-box");
 const categoryNames = document.querySelectorAll(".category-list-item");
 //const checkBoxEl = document.querySelector('#theme-switch-toggle');

@@ -9,10 +9,11 @@ openBtn.addEventListener('click', onOpenModal);
 closeBtn.addEventListener('click', onCloseModal);
 
 function onOpenModal() {
+  window.addEventListener('keydown', onEscKeyDown);
   backdrop.classList.remove('is-hidden');
-  console.log('aaa');
 }
 function onCloseModal() {
+  window.removeEventListener('keydown', onEscKeyDown);
   backdrop.classList.add('is-hidden');
 }
 
@@ -28,4 +29,10 @@ function onFormSubmit(e) {
     return Notiflix.Notify.failure('Please fill in all fields!');
   }
   modalForm.reset();
+}
+
+function onEscKeyDown(e) {
+  if (e.code === 'Escape') {
+    onCloseModal();
+  }
 }

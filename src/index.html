@@ -15,14 +15,24 @@
 
   <body>
 
-    <a href="./shopping_list_page.html">Перейти на shopping_list_page</a>
-
     <include src="./partials/header.html"></include>
-    <include src="./partials/homepage/list_of_categories.html"></include>
-    <include src="./partials/support_ukraine.html"></include>
-    <include src="./partials/homepage/best_sellers_books.html"></include>
-    <include src="./partials/homepage/category_books.html"></include>
+
+    <div class="container">
+
+      <div class="sidebar">
+        <include src="./partials/list_of_categories.html"></include>
+        <include src="./partials/support_ukraine.html"></include>
+      </div>
+      
+      <include src="./partials/best_sellers_books.html"></include>
+      <include src="./partials/category_books.html"></include>
+
+    </div>
+
     <include src="./partials/footer.html"></include>
+
+
+
     <include src="./partials/mobile_menu.html"></include>
     <include src="./partials/autorization_modal_window.html"></include>
     <include src="./partials/about_us_modal_window.html"></include>

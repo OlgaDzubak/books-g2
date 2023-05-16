@@ -2,8 +2,10 @@ import axios from 'axios';
 
 const categoryListBox = document.querySelector(".category-list-box");
 const categoryNames = document.querySelectorAll(".category-list-item");
-const checkBoxEl = document.querySelector('#theme-switch-toggle');
+//const checkBoxEl = document.querySelector('#theme-switch-toggle');
 const URL = 'https://books-backend.p.goit.global/books/category-list';
+
+
 
 // Функція запиту на отримання назв категорій від бекенду
 let response = [];
@@ -34,28 +36,28 @@ const getCategoryList = async () => {
 };
 getCategoryList();
 
-// Зміни стилів у списку під час вибору категорії (для світлої і темної тем дизайну)
-categoryListBox.addEventListener("click", choosingCategory);
-function choosingCategory(event) {
-    if (localStorage.getItem('theme') === 'dark') {
-        categoryNames.forEach(name => {
-            name.style.color = "rgba(255, 255, 255, 0.6)";
-            name.style.fontWeight = 400;
-            name.style.textTransform = "lowercase";
-            name.style.textTransform = "capitalize";
-        });
-        event.target.style.color = "#EAC645";
-        event.target.style.fontWeight = 700;
-        event.target.style.textTransform = "uppercase";
-    } else {
-        categoryNames.forEach(name => {
-            name.style.color = "rgba(17, 17, 17, 0.6)";
-            name.style.fontWeight = 400;
-            name.style.textTransform = "lowercase";
-            name.style.textTransform = "capitalize";
-        });
-        event.target.style.color = "#4F2EE8";
-        event.target.style.fontWeight = 700;
-        event.target.style.textTransform = "uppercase";
-    }
-}
+// // Зміни стилів у списку під час вибору категорії (для світлої і темної тем дизайну)
+// categoryListBox.addEventListener("click", choosingCategory);
+// function choosingCategory(event) {
+//     if (localStorage.getItem('theme') === 'dark') {
+//         categoryNames.forEach(name => {
+//             name.style.color = "rgba(255, 255, 255, 0.6)";
+//             name.style.fontWeight = 400;
+//             name.style.textTransform = "lowercase";
+//             name.style.textTransform = "capitalize";
+//         });
+//         event.target.style.color = "#EAC645";
+//         event.target.style.fontWeight = 700;
+//         event.target.style.textTransform = "uppercase";
+//     } else {
+//         categoryNames.forEach(name => {
+//             name.style.color = "rgba(17, 17, 17, 0.6)";
+//             name.style.fontWeight = 400;
+//             name.style.textTransform = "lowercase";
+//             name.style.textTransform = "capitalize";
+//         });
+//         event.target.style.color = "#4F2EE8";
+//         event.target.style.fontWeight = 700;
+//         event.target.style.textTransform = "uppercase";
+//     }
+// }

@@ -7,46 +7,44 @@
 // =========DESKTOP===========//
 @media screen and (min-width: 1440px) {}
 
-
-
 .support-ukraine-container {
   min-width: 335px;
 
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 40px;
-  // height: 352px; 
-
   padding-top: 24px;
-  padding-bottom: 20px; 
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 24px;
 
   border-radius: 16px;
-
   background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
   box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
 }
 
-@media screen and (min-width: 768px) {
-  .support-ukraine-container {
+.support-ukraine-container.support-ukraine-title-and-list{
+  padding-left: 40px;
+  padding-top: 24px;
+}
+
+@media screen and (min-width: 767.8px) {
+
+  .support-ukraine-title-and-list {
     width: 335px;
-    height: 472px;
-   // margin-left: auto;
-    margin-right: 0;
-    margin-top: 40px;
-    padding-bottom: 14px;
+    margin-bottom: 32px;;
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (max-width: 768px) and (min-width: 1440px) {
   .support-ukraine-container {
-    width: 356px;
     height: 490px;
+    width: 335px;
+  }
+  .support-ukraine-title-and-list {
 
-    padding-left: 49px;
-    padding-bottom: 24px;
-    margin-top: 86px;
-    margin-left: auto;
-    margin-right: auto;
+    padding-left: 40px;
+    margin-bottom: 40px; 
+    // margin-left: auto;
+    // margin-right: auto;
+    overflow-y: hidden;
   }
 }
 
@@ -55,13 +53,17 @@
       display: flex;
       align-items: flex-start;
       padding: 0px;
-      padding-left: 40px;
+      //padding-left: 40px;
       margin-bottom: 40px;
       gap: 12px;
   
     }
 
 @media screen and (max-width: 334px) {
+  // .support-ukraine-container {
+  //   height: 352px;
+
+  // }
   .support-ukraine-title {
     font-size: 26px;
     line-height: 1.14;
@@ -72,6 +74,10 @@
 }
 
 @media screen and (min-width: 335px) {
+  // .support-ukraine-container {
+  //   height: 352px;
+
+  // }
   .support-ukraine-title {
     font-size: 28px;
     line-height: 1.14;
@@ -205,7 +211,7 @@ body {
   width: 159px !important;
   height: 188px !important;
   margin: 0 !important;
-  padding-left: 40px;
+  //padding-left: 40px;
 
   
 }

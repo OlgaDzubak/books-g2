@@ -81,7 +81,7 @@ async function createModalWindow(book_Id) {
 
 
         randerBox.innerHTML = randerModal;
-        divBackEl.classList.toggle('is-hidden');
+        divBackEl.classList.remove('is-hidden');
         const dataJson = localStorage.getItem('key');
         const arrLs = JSON.parse(dataJson);
         if (arrLs.includes(book_Id)) {
@@ -102,7 +102,7 @@ btnCloseModal.addEventListener('click', onCloseModal);
 
 function onCloseModal() {
     objScroll.enabledScroll();
-    divBackEl.classList.toggle('is-hidden');
+    divBackEl.classList.add('is-hidden');
     btnRemoveEl.classList.add('is-hidden');
     btnAddEl.classList.add('is-hidden');
     textEl.classList.add('is-hidden');

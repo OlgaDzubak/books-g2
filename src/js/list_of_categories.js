@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { list } from './best_sellers_books';
 import { createMarcupCategoryBook } from './best_sellers_books';
-import { btnScroll } from './best_sellers_books';
+import { createBestBook } from './best_sellers_books';
 import { booksAPI } from './booksAPI';
 
 const categoryListBox = document.querySelector(".category-list-box");
@@ -70,20 +70,21 @@ getCategoryList();
 categoryListBox.addEventListener('click', loadCategory)
 
 async function loadCategory(event) {
-    btnScroll.classList.add('is-hidden-btn')
-    
+
     const {target} = event;
 
     if(!target.classList.contains('category-list-item')) {
         return
     } else {
-        console.log(target.id);
         let category = target.id.split(" ").join("%20");
-        const { data } = await fetchBooks.getBooksByCategory(category);
-
-        if (!btnScroll.classList.contains('is-hidden-btn')) {
-            btnScroll.classList.add('is-hidden-btn');
-        }
+        if (category === 'category-list-title') {
+            createBestBook();
+        } else {
+            const { data } = await fetchBooks.getBooksByCategory(category);
         list.innerHTML = createMarcupCategoryBook(data);
+        }
+
+        const { height: cardHeight } = list.lastElementChild.getBoundingClientRect();
+        window.scrollBy({top: -cardHeight, behavior: "smooth",});
     }
 }

@@ -14,7 +14,6 @@ const fetchBooks = new booksAPI();
 // Змінна та слухач на кнопку скарола
 const btnScroll = document.querySelector('.btn-up-scroll');
 btnScroll.addEventListener('click', scrollUp)
-btnScroll.classList.add('is-hidden-btn');
 
 // Функція для розмітки бест бук
 function createMarcup(arr, querty) {
@@ -59,9 +58,6 @@ async function createBestBook() {
             } else {
                 list.innerHTML = createMarcup(data, 5);
             }
-
-            const target = document.querySelector('.title-theme-book');
-            observer.observe(target);
         } else {
             Notify.failure("Sorry, there was a server error, please reload the page");
             return}}
@@ -101,10 +97,6 @@ if(arr.length){
 //Функція для списку книг в обраній категорії
 async function loadMore(event) {
     event.preventDefault();
-
-    if (!btnScroll.classList.contains('is-hidden-btn')) {
-        btnScroll.classList.add('is-hidden-btn');
-    }
         
     const { target } = event;
             
@@ -146,31 +138,22 @@ function lastBlueWord(string) {
 function scrollUp() {
     window.scrollTo({
         top: 0,
-        left: 0,
         behavior: 'smooth'
     })
 
     btnScroll.classList.add('is-hidden-btn')
 }
 
-const options = {
-    root: null,
-    threshold: 0
-}
+window.addEventListener('scroll', scrollTracker);
 
-var observer = new IntersectionObserver(goUpstairs, options);
-
-function goUpstairs(entries) {
-    console.log(entries);
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            btnScroll.classList.add('is-hidden-btn')
+function scrollTracker() {
+    const offset = window.pageYOffset;
+    const highDocument = document.documentElement.clientHeight;
+        if (offset > highDocument) {
+            btnScroll.classList.remove('is-hidden-btn');
         } else {
-            btnScroll.classList.remove('is-hidden-btn')
+            btnScroll.classList.add('is-hidden-btn');
         }
-    })
 }
 
-
-export {list, createMarcupCategoryBook, btnScroll}  
-
+export {list, createMarcupCategoryBook, createBestBook}

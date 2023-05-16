@@ -1,3 +1,5 @@
+
+
 const burgerBtnEl = document.querySelector('.js-open-mobile-menu');
 const mobileDivEl = document.querySelector('.js-mobile-menu');
 const iconOpenMobileMenu = document.querySelector('.icon-burger-mobile-menu');

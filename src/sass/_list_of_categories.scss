@@ -72,7 +72,6 @@
 .best-book-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .best-book-container:not(:last-child) {
@@ -174,6 +173,10 @@
         width: 180px;
     }
 
+    .best-book-container{
+        align-items: center;
+    }
+
     .item-book:not(:last-child),
     .item-book.category:not(:last-child) {
         margin-bottom: 40px;
@@ -189,6 +192,7 @@
 
     .button-more {
         margin-top: 8px;
+        align-self: center;
     }
 }
 

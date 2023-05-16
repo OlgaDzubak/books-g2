@@ -10,7 +10,7 @@
 
 
 .support-ukraine-container {
-  max-width: 335px;
+  min-width: 335px;
 
   margin-left: auto;
   margin-right: auto;
@@ -50,15 +50,16 @@
   }
 }
 
-.support-ukraine-text {
-  display: flex;
-  align-items: flex-start;
-  padding: 0px;
-  padding-left: 40px;
-  margin-bottom: 40px;
-  gap: 12px;
-
-}
+.support-ukraine-text-block {
+  
+      display: flex;
+      align-items: flex-start;
+      padding: 0px;
+      padding-left: 40px;
+      margin-bottom: 40px;
+      gap: 12px;
+  
+    }
 
 @media screen and (max-width: 334px) {
   .support-ukraine-title {
@@ -73,7 +74,17 @@
 @media screen and (min-width: 335px) {
   .support-ukraine-title {
     font-size: 28px;
+    line-height: 1.14;
     margin: 0px;
+
+    // font-family: 'DM Sans';
+      // font-style: normal;
+      // font-weight: 700;
+     
+      /* identical to box height, or 114% */
+    
+      letter-spacing: -0.04em;    
+      
   }
 }
 
@@ -91,32 +102,45 @@
 
 }
 
-.support-ukraine-gallery li {
+.support_gallery_item {
   height: 18px;
   font-size: 14px;
   line-height: 1.29;
   color: #ffffff;
   counter-increment: my-awesome-counter;
-  display: flex;
+  // display: flex;
 
 }
 
-.support-ukraine-gallery li::before {
-  content: "0" counter(my-awesome-counter);
-  font-size: 14px;
+// .support_gallery_item::before {
+//   content: "0" counter(my-awesome-counter);
+//   font-size: 14px;
 
+//   line-height: 1.29;
+//   letter-spacing: -0.04em;
+//   margin-right: 16px;
+
+//   width: 14px;
+//   height: 18px;
+// }
+.support_gallery_number{
+  font-size: 14px;
+  
   line-height: 1.29;
   letter-spacing: -0.04em;
   margin-right: 16px;
-
+  
   width: 14px;
   height: 18px;
 }
 
-.svg-support-ukraine {
+
+.support_gallery_link_img {
   // display: flex;
   // align-items: center;
   // justify-content: start ;
+  width: 100%;
+  height: 32px;
 }
 
 //____________
@@ -174,7 +198,7 @@ body {
   background: #eee;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   color: #ffffff !important;
-
+  // overflow: hidden;
 }
 
 .swiper {
@@ -182,6 +206,8 @@ body {
   height: 188px !important;
   margin: 0 !important;
   padding-left: 40px;
+
+  
 }
 
 @media screen and (min-width: 768px) {
@@ -190,7 +216,12 @@ body {
   }
 }
 
-.swiper-wrapper {}
+.swiper-wrapper {
+  height: 188px;
+  width: 159px;
+
+  // overflow: initial;
+}
 
 .swiper-slide {
   display: flex;
@@ -210,8 +241,8 @@ body {
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  // height: 100%;
+  object-fit: contain;
 }
 
 .swiper-button-next {

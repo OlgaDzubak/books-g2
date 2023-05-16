@@ -1,3 +1,12 @@
+.block-scroll {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
 .is-hidden {
     display: none;
 }
@@ -14,24 +23,41 @@
     padding-right: 20px;
 }
 
-.modal-container {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
-    max-width: 335px;
-    width: 100%;
-    /* height: 100%; */
-    max-height: 100vh;
-    background-color: rgb(255, 255, 255);
-    border: 2px solid #111111;
-    border-radius: 18px;
-    padding: 40px 24px;
-    display: flex;
-    flex-direction: column;
+@media screen and (max-width: 578.9px) {
+    .modal-container {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        /*  */
+        max-width: 335px;
+        width: 100%;
+        /* height: 100%; */
+        max-height: 100vh;
+        background-color: rgb(255, 255, 255);
+        border: 2px solid #111111;
+        border-radius: 18px;
+        padding: 40px 24px;
+
+    }
 }
+
+@media screen and (min-width: 579px) {
+    .modal-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* width: 100vw; */
+        max-height: 100vh;
+        background-color: rgb(255, 255, 255);
+        border: 2px solid #111111;
+        border-radius: 18px;
+        padding: 40px 24px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 
 .btn-modal-close {
     background-color: transparent;
@@ -54,9 +80,23 @@
     fill: currentColor;
 }
 
-/* .book-info {
+.rander-modal {
     display: flex;
-} */
+    flex-direction: column;
+}
+@media screen and (min-width: 579px) {
+    .rander-modal {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+}
+
+.book-info {
+    display: flex;
+    flex-direction: column;
+}
 
 .img-modal {
     /* display: block; */
@@ -70,9 +110,13 @@
     margin-right: auto;
     object-fit: cover;
 }
+@media screen and (min-width: 579px) {
+    .img-modal {
+        max-height: 281px;
+    }
+}
 
 .modal-name-book {
-    font-family: 'DM Sans';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -84,7 +128,7 @@
 }
 
 .modal-author-book {
-    font-family: 'DM Sans';
+    
     font-style: italic;
     font-weight: 400;
     font-size: 12px;
@@ -95,9 +139,8 @@
 }
 
 .modal-description-book {
-    max-height: 50px;
+    max-height: 90px;
     max-width: 287px;
-    font-family: 'DM Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -112,6 +155,8 @@
     display: flex;
     list-style: none;
     margin-top: 14px;
+    gap: 20px;
+    align-items: center;
 }
 
 .btn-box {
@@ -132,8 +177,8 @@
     border-radius: 40px;
     background-color: transparent;
     margin-top: 40px;
-
-    font-family: 'DM Sans';
+    width: 100%;
+    
     font-style: normal;
     font-weight: 700;
     font-size: 14px;

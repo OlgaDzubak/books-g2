@@ -6,8 +6,7 @@
     <title>Books-shopping list</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css">
     <link rel="stylesheet" href="./sass/shopping_list._page.scss" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    
   </head>
   <body>
 
@@ -15,21 +14,20 @@
 
     <div class = "container">
 
-    <div class = "sidebar">
       <include src="./partials/support_ukraine.html"></include>   
-    </div>
-
 
       <!------------------------------------------------------------------------------------------------>
-    <div class="shopping-list-div">
-
       <div class="shopping-text">
         <h2 class="shopping_list_title">Shopping <span class="shopping_list_title_span">List</span></h2>
       </div>
         <div class="shopping-list-container">
           <ul class = "shopping_booklist list"></ul>         <!-- сюди рендериться список обраних книжок -->
+          <div class="null-page">
+            <p class="p-page">This page is empty, add some books and <span class="span-page">proceed to order.</span> </p>
+            <img src="./images/shopping_list/stack_of_books_desktop@1x.png" alt="books">
+          </div>
           <div class="shopping_booklist_pagination">
- <!--<button class="btn"><<</button>
+           <!--<button class="btn"><<</button>
               <button class="btn"><</button>
               <button class="btn-two">1</button>
               <button class="btn-two">2</button>
@@ -38,8 +36,12 @@
               <button class="btn-three">></button>
               <button class="btn-three">>></button>-->
           </div>   <!-- це контейнер для пагынації -->
+
+          <div class="test">
+            <button class="adding">add</button>
+          </div>
         </div>
-    </div> 
+        
       <!----------------------------------------------------------------------------------------------->
 
     </div>

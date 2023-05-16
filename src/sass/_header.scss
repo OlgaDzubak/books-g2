@@ -5,6 +5,11 @@
     padding-bottom: 16px;
     position: sticky;
 
+    width: 100vw;
+    z-index: 100;
+    top: 0;
+    right: 0;
+
     border: 1.5px solid #111111;
     border-radius: 0px 0px 8px 8px;
 
@@ -12,15 +17,18 @@
     transition: background-color var(--transition)
 }
 
-@media screen and (max-width: 767px) {
-    .header {
-        
-        width: 100vw;
-        z-index: 100;
-        top: 0;
-        right: 0;
-    }
+.header .container{
+    flex-direction: row;
 }
+// @media screen and (max-width: 767px) {
+//     .header {
+        
+//         width: 100vw;
+//         z-index: 100;
+//         top: 0;
+//         right: 0;
+//     }
+// }
 
 .header-container {
     display: flex;

@@ -7,6 +7,9 @@
     border: 1.5px solid #111111;
     border-radius: 8px 8px 0px 0px;
 }
+.footer .container{
+    flex-direction: row;
+}
 
 .footer-container {
     display: flex;
@@ -15,7 +18,7 @@
 
 .team-name {
     letter-spacing: -.04em;
-    color: var(--logo-theme-light);
+    color: var(--accent-color3);
     align-items: center;
     gap: 8px;
     font-weight: 500;

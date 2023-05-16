@@ -7,9 +7,13 @@ import { booksAPI } from './booksAPI';
 
 // Змінна що зберігає дів куди добавляти розмітку
 const list = document.querySelector('.homepage-books')
-console.log(list);
 list.addEventListener('click', loadMore)
 const fetchBooks = new booksAPI();
+
+
+// Змінна та слухач на кнопку скарола
+const btnScroll = document.querySelector('.btn-up-scroll');
+btnScroll.addEventListener('click', scrollUp)
 
 // Функція для розмітки бест бук
 function createMarcup(arr, querty) {
@@ -130,4 +134,26 @@ function lastBlueWord(string) {
 }
     
     
+// Функції скролу____________________________________
+function scrollUp() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })
 
+    btnScroll.classList.add('is-hidden-btn')
+}
+
+window.addEventListener('scroll', scrollTracker);
+
+function scrollTracker() {
+    const offset = window.pageYOffset;
+    const highDocument = document.documentElement.clientHeight;
+        if (offset > highDocument) {
+            btnScroll.classList.remove('is-hidden-btn');
+        } else {
+            btnScroll.classList.add('is-hidden-btn');
+        }
+}
+
+export {list, createMarcupCategoryBook, createBestBook}

@@ -6,6 +6,16 @@
     padding: 0;
     overflow: scroll;
 }
+.category-list-box::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+    background-color: rgb(208, 208, 208);
+}
+.category-list-box::-webkit-scrollbar-thumb {
+    background-color: #bcbaba;
+    border-radius: 9em;
+    box-shadow: inset 1px 1px 10px #a5a5a5;
+}
 /* phone screen */
 @media screen and (min-width: 320px) {
     .category-list-box {
@@ -42,6 +52,15 @@
     cursor: pointer;
     margin-bottom: 32px;
     white-space: nowrap;
+    height: 24px;
+}
+.category-list-item:hover,
+.category-list-item:focus{
+    font-size: 16.9px;
+    letter-spacing: -0.07em;
+    color: var(--accent-color1);
+    text-transform: uppercase;
+
 }
 
 .homepage-books {
@@ -53,6 +72,7 @@
 .best-book-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .best-book-container:not(:last-child) {
@@ -135,6 +155,7 @@
 
 // Мобілка і планшет__________________________
 @media screen and (max-width: 1439px){
+   
     .homepage-books {
         margin-left: auto;
         margin-right: auto;

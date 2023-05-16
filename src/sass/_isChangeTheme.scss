@@ -81,6 +81,14 @@ body.dark .category-list-item:hover{
     text-transform: uppercase;
 }
 
+body.dark .category-list-box::-webkit-scrollbar{
+    background-color: rgb(179, 178, 178);
+}
+
+body.dark .category-list-box::-webkit-scrollbar-thumb {
+    background-color: #1f1d1d;
+    box-shadow: inset 1px 1px 10px #797a74;
+}
 
 // ----------autorization_modal_window----------//
 

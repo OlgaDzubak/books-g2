@@ -5,21 +5,12 @@ const fundsMarkup = createFundsMarkup(supportItems);
 
 galleryItemsContainer.insertAdjacentHTML('beforeend', fundsMarkup);
 
-function numberFounds(arr) {
-  for (let i = 0; i < arr.length; i += 1) {
-    console.log(arr[i]);
-  }
-}
-numberFounds(supportItems);
-
 function createFundsMarkup(supportItems) {
-  console.log(supportItems.children);
-
   return supportItems
     .map(({ title, url, img, id }) => {
-      return `
-            
-            <li class="support_gallery_item swiper-slide"><span class="support_gallery_number">${id}</span>
+      return `            
+            <li class="support_gallery_item swiper-slide">
+            <span class="support_gallery_number">${pad(id)}</span>
               <a class="support_gallery_link link" href="${url}">
                 <img class="support_gallery_link_img"  src="${img}" alt="${title}" height="32">  
             </a>
@@ -29,6 +20,9 @@ function createFundsMarkup(supportItems) {
     .join('');
 }
 
+function pad(value) {
+  return String(value).padStart(2, '0');
+}
 // console.log(supportItems);
 
 const swiper = new Swiper('.mySwiper', {
@@ -40,6 +34,7 @@ const swiper = new Swiper('.mySwiper', {
 
   navigation: {
     nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
 
   // breakpoints: {
@@ -53,8 +48,4 @@ const swiper = new Swiper('.mySwiper', {
   //   },
   // },
   // loopedSlides: 6,
-});
-
-document.querySelector('.scroll-up-btn').addEventListener('click', () => {
-  swiper.next();
 });

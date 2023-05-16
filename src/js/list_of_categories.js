@@ -1,9 +1,14 @@
 import axios from 'axios';
+import { list } from './best_sellers_books';
+import { createMarcupCategoryBook } from './best_sellers_books';
+import { btnScroll } from './best_sellers_books';
+import { booksAPI } from './booksAPI';
 
 const categoryListBox = document.querySelector(".category-list-box");
 const categoryNames = document.querySelectorAll(".category-list-item");
 //const checkBoxEl = document.querySelector('#theme-switch-toggle');
 const URL = 'https://books-backend.p.goit.global/books/category-list';
+const fetchBooks = new booksAPI()
 
 
 
@@ -61,3 +66,24 @@ getCategoryList();
 //         event.target.style.textTransform = "uppercase";
 //     }
 // }
+
+categoryListBox.addEventListener('click', loadCategory)
+
+async function loadCategory(event) {
+    btnScroll.classList.add('is-hidden-btn')
+    
+    const {target} = event;
+
+    if(!target.classList.contains('category-list-item')) {
+        return
+    } else {
+        console.log(target.id);
+        let category = target.id.split(" ").join("%20");
+        const { data } = await fetchBooks.getBooksByCategory(category);
+
+        if (!btnScroll.classList.contains('is-hidden-btn')) {
+            btnScroll.classList.add('is-hidden-btn');
+        }
+        list.innerHTML = createMarcupCategoryBook(data);
+    }
+}

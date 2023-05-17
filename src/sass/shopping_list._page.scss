@@ -85,7 +85,51 @@
     height: 68px;
     color: var(--text-dark-color);
     margin-bottom: 38px;
+    white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 193px;
+        /* Задайте власну ширину */
+        height: 60px;
 
+}
+
+@media screen and (min-width: 768px) {
+    .book-description {
+        font-weight: 400;
+            font-size: 16px;
+            line-height: 1.128;
+            letter-spacing: -0.04em;
+            // width: 193px;
+            height: 68px;
+            color: var(--text-dark-color);
+            margin-bottom: 38px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 508px;
+            /* Задайте власну ширину */
+            height: 53px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .book-description {
+        font-weight: 400;
+            font-size: 16px;
+            line-height: 1.128;
+            letter-spacing: -0.04em;
+            // width: 193px;
+            height: 68px;
+            color: var(--text-dark-color);
+            margin-bottom: 38px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            /* Задайте власну ширину */
+            height: 53px;
+    }
 }
 
 .book-author {
@@ -98,7 +142,19 @@
 }
 
 .book-image-div {
-    margin-right: 24px;
+    margin-right: 14px;
+}
+
+@media screen and (min-width: 768px) {
+    .book-image-div {
+        margin-right: 24px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .book-image-div {
+        margin-right: 24px;
+    }
 }
 
 .book-image{
@@ -114,13 +170,51 @@
 .market_placers_list {
    display: flex;
     position: absolute;
-    top: 150px;
+    top: 162px;
     right: 24px;
-    gap: 16px;
+    gap: 8px;
+    width: 80px;
+    height: 16px;
+}
+
+@media screen and (min-width: 768px) {
+    .market_placers_list {
+        display: flex;
+            position: absolute;
+            top: 150px;
+            right: 24px;
+            gap: 16px;
+            width: 140px;
+            height: 30px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .market_placers_list {
+        display: flex;
+            position: absolute;
+            top: 150px;
+            right: 24px;
+            gap: 16px;
+            width: 140px;
+            height: 30px;
+    }
 }
 
 .marketplacer_li_two{
-    margin-top: 9px;
+    margin-top: 4px;
+}
+
+@media screen and (min-width: 768px) {
+    .marketplacer_li_two {
+        margin-top: 9px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .marketplacer_li_two {
+        margin-top: 9px;
+    }
 }
 
 .image-bucket{
@@ -220,6 +314,48 @@
     text-transform: uppercase;
     color: var(--text-dark-color);
     margin-bottom: 4px;
+    white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 144px;
+        /* Задайте власну ширину */
+        height: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .book-title {
+        font-weight: 700;
+            font-size: 16px;
+            line-height: 1.125;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            color: var(--text-dark-color);
+            margin-bottom: 4px;
+            white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 100%;
+                /* Задайте власну ширину */
+                height: 20px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .book-title {
+        font-weight: 700;
+            font-size: 16px;
+            line-height: 1.125;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            color: var(--text-dark-color);
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            /* Задайте власну ширину */
+            height: 20px;
+    }
 }
 
 .book-category {
@@ -229,6 +365,46 @@
     letter-spacing: 0.03em;
     color: var(--text-light-color);
     margin-bottom: 8px;
+    white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 165px;
+        /* Задайте власну ширину */
+        height: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .book-category {
+        font-weight: 400;
+            font-size: 12px;
+            line-height: 1.167;
+            letter-spacing: 0.03em;
+            color: var(--text-light-color);
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            /* Задайте власну ширину */
+            height: 20px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .book-category {
+        font-weight: 400;
+            font-size: 12px;
+            line-height: 1.167;
+            letter-spacing: 0.03em;
+            color: var(--text-light-color);
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            /* Задайте власну ширину */
+            height: 20px;
+    }
 }
 
 
@@ -239,6 +415,46 @@
     line-height: 1.17;
     letter-spacing: -0.04em;
     color: var(--text-light-color);
+    white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 97px;
+        /* Задайте власну ширину */
+        height: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .book-author {
+        font-style: italic;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1.17;
+            letter-spacing: -0.04em;
+            color: var(--text-light-color);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            /* Задайте власну ширину */
+            height: 20px;
+}
+}
+
+@media screen and (min-width: 1440px) {
+    .book-author {
+        font-style: italic;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1.17;
+            letter-spacing: -0.04em;
+            color: var(--text-light-color);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            /* Задайте власну ширину */
+            height: 20px;
+    }
 }
 
 .book-image-div {

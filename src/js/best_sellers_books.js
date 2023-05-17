@@ -1,5 +1,5 @@
 
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
+// import { Notify } from 'notiflix/build/notiflix-notify-aio';
 //import SimpleLightbox from "simplelightbox";
 //import "simplelightbox/dist/simple-lightbox.min.css";
 import { booksAPI } from './booksAPI'; 
@@ -59,11 +59,11 @@ async function createBestBook() {
                 list.innerHTML = createMarcup(data, 5);
             }
         } else {
-            Notify.failure("Sorry, there was a server error, please reload the page");
+            // Notify.failure("Sorry, there was a server error, please reload the page");
             return}}
     catch (error) {
         console.error(error);
-        Notify.failure('Sorry, there was a server error, please reload the page');
+        // Notify.failure('Sorry, there was a server error, please reload the page');
     }   
 }
 

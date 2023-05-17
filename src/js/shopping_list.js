@@ -1,5 +1,5 @@
  import createOrderedBooksCards from "../tamplates/book-cards.hbs";
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
+// import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { booksAPI } from "./booksAPI";
 
 const paginationBtn = document.querySelector('div.shopping_booklist_pagination')
@@ -40,7 +40,7 @@ async function getOrderedBookCard(book_id){
 
         //Якщо ми отримали на запит пустий масив даних (нічого не знайдено), виводимо повідомлення і виходимо з функції
         if (response.data === 0){
-            return Notify.failure("Sorry, there are no book with that ID");
+            // return Notify.failure("Sorry, there are no book with that ID");
         }
         shoppingListDiv.innerHTML += createOrderedBooksCards(response.data);
         paginationBtn.innerHTML = markup;

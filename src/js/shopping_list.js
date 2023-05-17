@@ -40,7 +40,7 @@ async function getOrderedBookCard(book_id){
 
         //Якщо ми отримали на запит пустий масив даних (нічого не знайдено), виводимо повідомлення і виходимо з функції
         if (response.data === 0){
-            return Notify.failure("Sorry, there are no book with that ID");
+            // return Notify.failure("Sorry, there are no book with that ID");
         }
         shoppingListDiv.innerHTML += createOrderedBooksCards(response.data);
         paginationBtn.innerHTML = markup;

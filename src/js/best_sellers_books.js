@@ -7,13 +7,13 @@ import { booksAPI } from './booksAPI';
 
 // Змінна що зберігає дів куди добавляти розмітку
 const list = document.querySelector('.homepage-books')
-list.addEventListener('click', loadMore)
+// list.addEventListener('click', loadMore)
 const fetchBooks = new booksAPI();
 
 
 // Змінна та слухач на кнопку скарола
-const btnScroll = document.querySelector('.btn-up-scroll');
-btnScroll.addEventListener('click', scrollUp)
+// const btnScroll = document.querySelector('.btn-up-scroll');
+// btnScroll.addEventListener('click', scrollUp)
 
 // Функція для розмітки бест бук
 function createMarcup(arr, querty) {
@@ -71,52 +71,52 @@ async function createBestBook() {
 // createBestBook()
 
 // Функція для розмітки книг за категорією
-function createMarcupCategoryBook(arr) {
-if(arr.length){
-        const markup = arr.map(({_id, book_image, author, title}) => 
-        `<li class="item-book" data-id="${_id}">
-        <div class="img-owerlay">
-        <img src="${book_image}" alt="${title}" class="img-book">
-        <div class="owerlay">
-        <p class="owerlay-content">quick view</p>
-        </div>
-        </div>
-        <p class="title-book">${shortTitle(title, 17)}</p>
-        <p class="author">${shortTitle(author, 34)}</p>
-        </li>`
-        ).join('')
+// function createMarcupCategoryBook(arr) {
+// if(arr.length){
+//         const markup = arr.map(({_id, book_image, author, title}) => 
+//         `<li class="item-book" data-id="${_id}">
+//         <div class="img-owerlay">
+//         <img src="${book_image}" alt="${title}" class="img-book">
+//         <div class="owerlay">
+//         <p class="owerlay-content">quick view</p>
+//         </div>
+//         </div>
+//         <p class="title-book">${shortTitle(title, 17)}</p>
+//         <p class="author">${shortTitle(author, 34)}</p>
+//         </li>`
+//         ).join('')
 
-        return `<h2 class="title-theme-book">${lastBlueWord(arr[0].list_name)}</h2><ul class="list-books category">${markup}</ul>`
-    } else {
-        return `<div class="off-books">
-        <p class="off-books-text">Sorry, there are no books in this category, please choose another category</p>
-        </div>`
-    }
-}
+//         return `<h2 class="title-theme-book">${lastBlueWord(arr[0].list_name)}</h2><ul class="list-books category">${markup}</ul>`
+//     } else {
+//         return `<div class="off-books">
+//         <p class="off-books-text">Sorry, there are no books in this category, please choose another category</p>
+//         </div>`
+//     }
+// }
 
 //Функція для списку книг в обраній категорії
-async function loadMore(event) {
-    event.preventDefault();
+// async function loadMore(event) {
+//     event.preventDefault();
         
-    const { target } = event;
+//     const { target } = event;
             
-    try {
-        if(!target.classList.contains('js-btn-more')) { 
-            return;
-        } else {
-            let category = target.dataset.category.split(" ").join("%20");
-            const { data } = await fetchBooks.getBooksByCategory(category);
-            list.innerHTML = createMarcupCategoryBook(data);
+//     try {
+//         if(!target.classList.contains('js-btn-more')) { 
+//             return;
+//         } else {
+//             let category = target.dataset.category.split(" ").join("%20");
+//             const { data } = await fetchBooks.getBooksByCategory(category);
+//             list.innerHTML = createMarcupCategoryBook(data);
 
-    // Робимо Scroll на початок сторінки після її завантаження, щоб одразу була видка категорія книжок
-    const { height: cardHeight } = list.lastElementChild.getBoundingClientRect();
-    window.scrollBy({top: -cardHeight, behavior: "smooth",});
-    }
-    } catch (error) {
-        console.error(error);
-        Notify.failure('Sorry, there was a server error, please reload the page');
-    }
-}
+//     // Робимо Scroll на початок сторінки після її завантаження, щоб одразу була видка категорія книжок
+//     const { height: cardHeight } = list.lastElementChild.getBoundingClientRect();
+//     window.scrollBy({top: -cardHeight, behavior: "smooth",});
+//     }
+//     } catch (error) {
+//         console.error(error);
+//         Notify.failure('Sorry, there was a server error, please reload the page');
+//     }
+// }
 
 // Функція що скорочує title i author на книгаг до вказаного числа символів та додає три крапки в кінці
 function shortTitle(string, value) {
@@ -134,26 +134,26 @@ function lastBlueWord(string) {
 }
     
     
-// Функції скролу____________________________________
-function scrollUp() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    })
+// // Функції скролу____________________________________
+// function scrollUp() {
+//     window.scrollTo({
+//         top: 0,
+//         behavior: 'smooth'
+//     })
 
-    btnScroll.classList.add('is-hidden-btn')
-}
+//     btnScroll.classList.add('is-hidden-btn')
+// }
 
-window.addEventListener('scroll', scrollTracker);
+// window.addEventListener('scroll', scrollTracker);
 
-function scrollTracker() {
-    const offset = window.pageYOffset;
-    const highDocument = document.documentElement.clientHeight;
-        if (offset > highDocument) {
-            btnScroll.classList.remove('is-hidden-btn');
-        } else {
-            btnScroll.classList.add('is-hidden-btn');
-        }
-}
+// function scrollTracker() {
+//     const offset = window.pageYOffset;
+//     const highDocument = document.documentElement.clientHeight;
+//         if (offset > highDocument) {
+//             btnScroll.classList.remove('is-hidden-btn');
+//         } else {
+//             btnScroll.classList.add('is-hidden-btn');
+//         }
+// }
 
-export {list, createMarcupCategoryBook, createBestBook}
+export {createBestBook}

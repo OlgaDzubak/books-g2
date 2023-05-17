@@ -1,9 +1,14 @@
 import axios from 'axios';
+import { list } from './best_sellers_books';
+import { createMarcupCategoryBook } from './best_sellers_books';
+import { createBestBook } from './best_sellers_books';
+import { booksAPI } from './booksAPI';
 
 const categoryListBox = document.querySelector(".category-list-box");
 const categoryNames = document.querySelectorAll(".category-list-item");
 //const checkBoxEl = document.querySelector('#theme-switch-toggle');
 const URL = 'https://books-backend.p.goit.global/books/category-list';
+const fetchBooks = new booksAPI()
 
 
 
@@ -61,3 +66,25 @@ getCategoryList();
 //         event.target.style.textTransform = "uppercase";
 //     }
 // }
+
+categoryListBox.addEventListener('click', loadCategory)
+
+async function loadCategory(event) {
+
+    const {target} = event;
+
+    if(!target.classList.contains('category-list-item')) {
+        return
+    } else {
+        let category = target.id.split(" ").join("%20");
+        if (category === 'category-list-title') {
+            createBestBook();
+        } else {
+            const { data } = await fetchBooks.getBooksByCategory(category);
+        list.innerHTML = createMarcupCategoryBook(data);
+        }
+
+        const { height: cardHeight } = list.lastElementChild.getBoundingClientRect();
+        window.scrollBy({top: -cardHeight, behavior: "smooth",});
+    }
+}

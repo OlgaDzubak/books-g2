@@ -1,11 +1,14 @@
 import Notiflix from 'notiflix';
 
 const openBtn = document.querySelector('.jsOpenBtn');
+const openBtnMobile = document.querySelector('.jsOpenBtn-mobile');
+
 const backdrop = document.querySelector('.backdrop');
 const closeBtn = document.querySelector('.close-button');
 const modalForm = document.querySelector('.modalForm');
 
 openBtn.addEventListener('click', onOpenModal);
+openBtnMobile.addEventListener('click', onOpenModal);
 closeBtn.addEventListener('click', onCloseModal);
 
 function onOpenModal() {

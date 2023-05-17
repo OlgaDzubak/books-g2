@@ -8,7 +8,7 @@
     width: 100vw;
     z-index: 100;
     top: 0;
-        right: 0;
+    right: 0;
 
     border: 1.5px solid #111111;
     border-radius: 0px 0px 8px 8px;
@@ -17,6 +17,9 @@
     transition: background-color var(--transition)
 }
 
+.header .container{
+    flex-direction: row;
+}
 // @media screen and (max-width: 767px) {
 //     .header {
         
@@ -263,7 +266,7 @@
 
     .mobile-menu {
         position: fixed;
-        z-index: 2;
+        z-index: 10;
         top: 0;
         right: 0;
         left: 0;

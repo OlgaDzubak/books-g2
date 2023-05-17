@@ -1,21 +1,23 @@
-/* import createOrderedBooksCards from "../tamplates/book-cards.hbs";
+ import createOrderedBooksCards from "../tamplates/book-cards.hbs";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { booksAPI } from "./booksAPI";
 
 const paginationBtn = document.querySelector('div.shopping_booklist_pagination')
 const shoppingListDiv = document.querySelector('ul.shopping_booklist');
+const firstPage = document.querySelector('div.null-page');
+const removeCard =  document.querySelector('div.closer')
 shoppingListDiv.innerHTML = "";
 const booksApi = new booksAPI();
 const LOCALSTORAGE_KEY = "orderedBookID";
-localStorage.setItem(LOCALSTORAGE_KEY,JSON.stringify(["643282b1e85766588626a080","643282b1e85766588626a081","643282b1e85766588626a082"]));
+//localStorage.setItem(LOCALSTORAGE_KEY,JSON.stringify(["643282b1e85766588626a080","643282b1e85766588626a081","643282b1e85766588626a082"]));
 
 let orderedBooksId = [];   
 const orderedBooksId_str = localStorage.getItem(LOCALSTORAGE_KEY);
-if (orderedBooksId_str  === null){
+if (orderedBooksId_str === null) {
     shoppingListDiv.innerHTML = '<p class="ampty-shopping-list-msg">There is no books in the shopping list yet. Pleas choose books in the catalogue.</p>';
 } else{
-    orderedBooksId = JSON.parse(orderedBooksId_str);
-    orderedBooksId.forEach(id => { getOrderedBookCard(id);});
+   orderedBooksId = JSON.parse(orderedBooksId_str);
+   orderedBooksId.forEach(id => { getOrderedBookCard(id);});
 } 
 
 //-----------ОПИС ФУНКЦІЙ ---------------------------------------------------------
@@ -41,7 +43,8 @@ async function getOrderedBookCard(book_id){
             return Notify.failure("Sorry, there are no book with that ID");
         }
         shoppingListDiv.innerHTML += createOrderedBooksCards(response.data);
-        paginationBtn.innerHTML = markup;   // рендеримо картку книжки
+        paginationBtn.innerHTML = markup;
+        firstPage.innerHTML = ''   // рендеримо картку книжки
 
         //перевіряємо чи не пустий опис кнжки
         const description = document.querySelector('.book-description');
@@ -51,11 +54,11 @@ async function getOrderedBookCard(book_id){
     }catch(error) {                             //якщо запит повернув помилку, обровляємо її (виводимо у консоль)
         console.log(error);
     }
-}*/
+}
 
 
 
-import createOrderedBooksCards from "../tamplates/book-cards.hbs";
+/*import createOrderedBooksCards from "../tamplates/book-cards.hbs";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { booksAPI } from "./booksAPI";
 
@@ -117,4 +120,4 @@ async function getOrderedBookCard(book_id) {
     // якщо запит повернув помилку, виводимо її (виводимо у консоль)
     console.log(error);
   }
-}
+}*/

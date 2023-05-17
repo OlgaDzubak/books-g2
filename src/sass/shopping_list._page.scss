@@ -119,16 +119,16 @@
             font-size: 16px;
             line-height: 1.128;
             letter-spacing: -0.04em;
-            // width: 193px;
             height: 68px;
             color: var(--text-dark-color);
             margin-bottom: 38px;
             white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            width: 100%;
-            /* Задайте власну ширину */
-            height: 53px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 808px;
+                /* Задайте власну ширину */
+                height: 53px;
+            
     }
 }
 

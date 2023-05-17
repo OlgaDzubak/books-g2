@@ -102,7 +102,7 @@ const removeCard =  document.querySelector('div.closer')
 shoppingListDiv.innerHTML = "";
 const booksApi = new booksAPI();
 const LOCALSTORAGE_KEY = "orderedBookID";
- localStorage.setItem(LOCALSTORAGE_KEY,JSON.stringify(["643282b1e85766588626a083","643282b1e85766588626a084","643282b1e85766588626a082"]));
+ localStorage.setItem(LOCALSTORAGE_KEY,JSON.stringify(["643282b1e85766588626a086","643282b1e85766588626a084","643282b1e85766588626a082"]));
 
 let orderedBooksId = [];   
 const orderedBooksId_str = localStorage.getItem(LOCALSTORAGE_KEY);
@@ -162,21 +162,21 @@ async function getOrderedBookCard(book_id){
           <ul class="market_placers_list list">
 
             <li class="marketplacer_li_two">
-              <a href="${response.data.buy_links.url}" class="marketplacer_li_link link">
+              <a href="${response.data.buy_links[0].url}" class="marketplacer_li_link link">
                 <img class="image-market" src="${photoItemsOne[0].img}" alt="amazon">
                 
               </a>
             </li>
 
             <li class="marketplacer_li">
-              <a href="#" class="marketplacer_li_link link">
+              <a href="${response.data.buy_links[1].url}" class="marketplacer_li_link link">
                 <img src="${photoItemsTwo[0].img}" alt="apple-books">
                 
               </a>
             </li>
 
             <li class="marketplacer_li">
-              <a href="#" class="marketplacer_li_link link">
+              <a href="${response.data.buy_links[2].url}" class="marketplacer_li_link link">
                 <img src="${photoItemsThree[0].img}" alt="barnes-and-noble">
               </a>
             </li>

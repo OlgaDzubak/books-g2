@@ -88,7 +88,7 @@ async function createModalWindow(book_Id) {
         }
     } catch (error) {
         console.error(error);
-        // Notify.failure('Sorry, there was a server error, please reload the page');
+        Notify.failure('Sorry, there was a server error, please reload the page');
     }
     
 };

@@ -29,7 +29,7 @@ function onFormSubmit(e) {
   const inputPassword = modalForm.elements.password.value;
 
   if (inputName === '' || inputEmail === '' || inputPassword === '') {
-    // return Notiflix.Notify.failure('Please fill in all fields!');
+    return Notiflix.Notify.failure('Please fill in all fields!');
   }
   modalForm.reset();
 }

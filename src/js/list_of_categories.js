@@ -1,16 +1,12 @@
 import axios from 'axios';
-//import { list } from './best_sellers_books';
-//import { createMarcupCategoryBook } from './best_sellers_books';
-//import { createBestBook } from './best_sellers_books';
-//import { booksAPI } from './booksAPI';
+import { list } from './best_sellers_books';
+import { createMarcupCategoryBook } from './best_sellers_books';
+import { createBestBook } from './best_sellers_books';
+import { booksAPI } from './booksAPI';
 
 const categoryListBox = document.querySelector(".category-list-box");
-//const categoryNames = document.querySelectorAll(".category-list-item");
-//const checkBoxEl = document.querySelector('#theme-switch-toggle');
 const URL = 'https://books-backend.p.goit.global/books/category-list';
-//const fetchBooks = new booksAPI()
-console.log(axios);
-console.log(categoryListBox);
+const fetchBooks = new booksAPI()
 
 // Функція запиту на отримання назв категорій від бекенду
 async function fetchCategoryList() {
@@ -34,13 +30,14 @@ function createCategoryList(data) {
     return categoryListHTML;
 };
 
-// Відправлення запиту і формування списку під час завантаження сторінки 
 
-export const getCategoryList = async () => {
+
+// Відправлення запиту і формування списку під час завантаження сторінки 
+const getCategoryList = async () => {
     let data = await fetchCategoryList();
     categoryListBox.innerHTML = createCategoryList(data);
 };
-// getCategoryList();
+getCategoryList();
 
 // // Зміни стилів у списку під час вибору категорії (для світлої і темної тем дизайну)
 // categoryListBox.addEventListener("click", choosingCategory);
@@ -68,24 +65,24 @@ export const getCategoryList = async () => {
 //     }
 // }
 
-// categoryListBox.addEventListener('click', loadCategory)
+categoryListBox.addEventListener('click', loadCategory)
 
-// async function loadCategory(event) {
+async function loadCategory(event) {
 
-//     const {target} = event;
+    const {target} = event;
 
-//     if(!target.classList.contains('category-list-item')) {
-//         return
-//     } else {
-//         let category = target.id.split(" ").join("%20");
-//         if (category === 'category-list-title') {
-//             createBestBook();
-//         } else {
-//             const { data } = await fetchBooks.getBooksByCategory(category);
-//         list.innerHTML = createMarcupCategoryBook(data);
-//         }
+    if(!target.classList.contains('category-list-item')) {
+        return
+    } else {
+        let category = target.id.split(" ").join("%20");
+        if (category === 'category-list-title') {
+            createBestBook();
+        } else {
+            const { data } = await fetchBooks.getBooksByCategory(category);
+        list.innerHTML = createMarcupCategoryBook(data);
+        }
 
-//         const { height: cardHeight } = list.lastElementChild.getBoundingClientRect();
-//         window.scrollBy({top: -cardHeight, behavior: "smooth",});
-//     }
-// }
+        const { height: cardHeight } = list.lastElementChild.getBoundingClientRect();
+        window.scrollBy({top: -cardHeight, behavior: "smooth",});
+    }
+}

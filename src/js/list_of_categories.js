@@ -1,23 +1,23 @@
 import axios from 'axios';
-import { list } from './best_sellers_books';
-import { createMarcupCategoryBook } from './best_sellers_books';
-import { createBestBook } from './best_sellers_books';
-import { booksAPI } from './booksAPI';
+//import { list } from './best_sellers_books';
+//import { createMarcupCategoryBook } from './best_sellers_books';
+//import { createBestBook } from './best_sellers_books';
+//import { booksAPI } from './booksAPI';
 
 const categoryListBox = document.querySelector(".category-list-box");
-const categoryNames = document.querySelectorAll(".category-list-item");
+//const categoryNames = document.querySelectorAll(".category-list-item");
 //const checkBoxEl = document.querySelector('#theme-switch-toggle');
 const URL = 'https://books-backend.p.goit.global/books/category-list';
-const fetchBooks = new booksAPI()
-
-
+//const fetchBooks = new booksAPI()
+console.log(axios);
+console.log(categoryListBox);
 
 // Функція запиту на отримання назв категорій від бекенду
-let response = [];
 async function fetchCategoryList() {
     try {
-        response = await axios.get(`${URL}`);
-            return [];
+        const response= await axios.get(`${URL}`);
+
+        return response.data;
     } catch (error) {
         console.log(error);
         return [];
@@ -25,9 +25,9 @@ async function fetchCategoryList() {
 }
 
 // Формування списку категорій
-function createCategoryList() {
+function createCategoryList(data) {
     let categoryListHTML = `<h3 id="category-list-title" class="category-list-item">All categories</h3>`;
-    response.data.forEach(category => {
+    data.forEach(category => {
         const categoryLink = `<p id="${category.list_name}" class="category-list-item">${category.list_name}</p>`;
         categoryListHTML += categoryLink;
     });
@@ -35,6 +35,7 @@ function createCategoryList() {
 };
 
 // Відправлення запиту і формування списку під час завантаження сторінки 
+
 export const getCategoryList = async () => {
     let data = await fetchCategoryList();
     categoryListBox.innerHTML = createCategoryList(data);
@@ -67,24 +68,24 @@ export const getCategoryList = async () => {
 //     }
 // }
 
-categoryListBox.addEventListener('click', loadCategory)
+// categoryListBox.addEventListener('click', loadCategory)
 
-async function loadCategory(event) {
+// async function loadCategory(event) {
 
-    const {target} = event;
+//     const {target} = event;
 
-    if(!target.classList.contains('category-list-item')) {
-        return
-    } else {
-        let category = target.id.split(" ").join("%20");
-        if (category === 'category-list-title') {
-            createBestBook();
-        } else {
-            const { data } = await fetchBooks.getBooksByCategory(category);
-        list.innerHTML = createMarcupCategoryBook(data);
-        }
+//     if(!target.classList.contains('category-list-item')) {
+//         return
+//     } else {
+//         let category = target.id.split(" ").join("%20");
+//         if (category === 'category-list-title') {
+//             createBestBook();
+//         } else {
+//             const { data } = await fetchBooks.getBooksByCategory(category);
+//         list.innerHTML = createMarcupCategoryBook(data);
+//         }
 
-        const { height: cardHeight } = list.lastElementChild.getBoundingClientRect();
-        window.scrollBy({top: -cardHeight, behavior: "smooth",});
-    }
-}
+//         const { height: cardHeight } = list.lastElementChild.getBoundingClientRect();
+//         window.scrollBy({top: -cardHeight, behavior: "smooth",});
+//     }
+// }

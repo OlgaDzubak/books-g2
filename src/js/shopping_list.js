@@ -14,7 +14,7 @@ const LOCALSTORAGE_KEY = "orderedBookID";
 let orderedBooksId = [];   
 const orderedBooksId_str = localStorage.getItem(LOCALSTORAGE_KEY);
 if (orderedBooksId_str === null) {
-    shoppingListDiv.innerHTML = '<p class="ampty-shopping-list-msg">There is no books in the shopping list yet. Pleas choose books in the catalogue.</p>';
+    shoppingListDiv.innerHTML = '';
 } else{
    orderedBooksId = JSON.parse(orderedBooksId_str);
    orderedBooksId.forEach(id => { getOrderedBookCard(id);});

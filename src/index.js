@@ -15,14 +15,14 @@
 // mobileHomeLinkEl.classList.toggle('mobile-selected');
 
 import {createBestBook} from './js/best_sellers_books';
-import { getCategoryList } from './js/list_of_categories';
-import { renderFundsMurkup } from './js/support_ukraine';
+// import { getCategoryList } from './js/list_of_categories';
+// import { renderFundsMurkup } from './js/support_ukraine';
 
 console.log(createBestBook);
-console.log(getCategoryList);
+// console.log(getCategoryList);
 
 createBestBook();
-getCategoryList();
-renderFundsMurkup();
+// getCategoryList();
+// renderFundsMurkup();
 
 

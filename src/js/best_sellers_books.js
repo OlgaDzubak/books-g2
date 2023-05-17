@@ -156,4 +156,4 @@ function lastBlueWord(string) {
 //         }
 // }
 
-export {createBestBook}
+export {list, createBestBook}

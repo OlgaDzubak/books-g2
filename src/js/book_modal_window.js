@@ -2,7 +2,6 @@ import { booksAPI } from './booksAPI';
 
 const books = new booksAPI;
 let book_Id;
-/* let arrayLS = []; */   // Замінити на загальноприйнятий
 const divContainerEl = document.querySelector('.homepage-books');
 const divBackEl = document.querySelector('.back');
 const btnCloseModal = document.querySelector('.btn-modal-close');
@@ -25,9 +24,6 @@ const objScroll = {
         window.scroll({top: objScroll.scrollPosition})
     },
 }
-
-
-/* localStorage.setItem('key', JSON.stringify(arrayLS)) */    // Замінити на загальноприйнятий
 
 divContainerEl.addEventListener('click', onReadId);
 
@@ -81,16 +77,15 @@ async function createModalWindow(book_Id) {
 
 
         randerBox.innerHTML = randerModal;
-        divBackEl.classList.remove('is-hidden');
-        const dataJson = localStorage.getItem('key');
+        divBackEl.classList.toggle('is-hidden');
+        const dataJson = localStorage.getItem('orderedBookID');
         const arrLs = JSON.parse(dataJson);
-        if (arrLs.includes(book_Id)) {
+        if (arrLs === null || !arrLs.includes(book_Id)) {
+            btnAddEl.classList.remove('is-hidden');
+        } else {
             btnRemoveEl.classList.remove('is-hidden');
             textEl.classList.remove('is-hidden');
-        } else {
-            btnAddEl.classList.remove('is-hidden');
         }
-
     } catch (error) {
         console.error(error);
         // Notify.failure('Sorry, there was a server error, please reload the page');
@@ -102,7 +97,7 @@ btnCloseModal.addEventListener('click', onCloseModal);
 
 function onCloseModal() {
     objScroll.enabledScroll();
-    divBackEl.classList.add('is-hidden');
+    divBackEl.classList.toggle('is-hidden');
     btnRemoveEl.classList.add('is-hidden');
     btnAddEl.classList.add('is-hidden');
     textEl.classList.add('is-hidden');
@@ -115,21 +110,24 @@ function addLocalStorage() {
     btnAddEl.classList.add('is-hidden');
     btnRemoveEl.classList.remove('is-hidden');
     textEl.classList.remove('is-hidden');
-    const dataJson = localStorage.getItem('key');
-    const arrLs = JSON.parse(dataJson); //book_Id
+    const dataJson = localStorage.getItem('orderedBookID');
+    let arrLs = JSON.parse(dataJson); //book_Id
+    console.log(arrLs)
+    if (arrLs === null) {
+        arrLs = [];
+    }
     arrLs.push(book_Id);
-    localStorage.setItem('key', JSON.stringify(arrLs));
+    localStorage.setItem('orderedBookID', JSON.stringify(arrLs));
 };
 
 function removeLocalStorage() {
     btnAddEl.classList.remove('is-hidden');
     btnRemoveEl.classList.add('is-hidden');
     textEl.classList.add('is-hidden');
-    const dataJson = localStorage.getItem('key');
+    const dataJson = localStorage.getItem('orderedBookID');
     const arrLs = JSON.parse(dataJson);
     let i = arrLs.indexOf(book_Id);
     arrLs.splice(i, 1);
-    localStorage.removeItem('key')
-    localStorage.setItem('key', JSON.stringify(arrLs));
+    localStorage.removeItem('orderedBookID')
+    localStorage.setItem('orderedBookID', JSON.stringify(arrLs));
 };
-//commit

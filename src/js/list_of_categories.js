@@ -35,11 +35,11 @@ function createCategoryList() {
 };
 
 // Відправлення запиту і формування списку під час завантаження сторінки 
-const getCategoryList = async () => {
+export const getCategoryList = async () => {
     let data = await fetchCategoryList();
     categoryListBox.innerHTML = createCategoryList(data);
 };
-getCategoryList();
+// getCategoryList();
 
 // // Зміни стилів у списку під час вибору категорії (для світлої і темної тем дизайну)
 // categoryListBox.addEventListener("click", choosingCategory);

@@ -10,9 +10,12 @@ const scrollDown = document.querySelector('.scroll-down-btn');
 scrollUp.addEventListener('click', scrollDownslide);
 scrollDown.addEventListener('click', scrollUpslide);
 
-const fundsMarkup = createFundsMarkup(supportItems);
 
-galleryItemsContainer.insertAdjacentHTML('beforeend', fundsMarkup);
+
+export function renderFundsMurkup(){
+  const fundsMarkup = createFundsMarkup(supportItems);
+  galleryItemsContainer.insertAdjacentHTML('beforeend', fundsMarkup);
+}
 
 function createFundsMarkup(supportItems) {
   return supportItems

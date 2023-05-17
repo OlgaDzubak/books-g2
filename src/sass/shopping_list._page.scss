@@ -113,9 +113,18 @@
 
 .market_placers_list {
    display: flex;
-position: absolute;
-    top: 159px;
+    position: absolute;
+    top: 150px;
     right: 24px;
+    gap: 16px;
+}
+
+.marketplacer_li_two{
+    margin-top: 9px;
+}
+
+.image-bucket{
+    
 }
 
 .marketplacer-icon-svg {
@@ -147,7 +156,7 @@ position: absolute;
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) {
     .shopping-list-container {
         max-width: 1158px;
        // margin: 0 auto;
@@ -160,16 +169,16 @@ position: absolute;
 
 .shopping-text {
     margin-top: 40px;
-    padding-left: 20px;
+    //padding-left: 20px;
 }
 
 @media screen and (min-width: 768px) {
     .shopping-text {
-        padding-left: 40px;
+       // padding-left: 40px;
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) {
     .shopping-text {
         padding-left: 40px;
     }
@@ -474,4 +483,7 @@ margin-right: 10px;
         border: none;
         border-radius: 20px;
         color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 }

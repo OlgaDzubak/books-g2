@@ -156,4 +156,4 @@ function lastBlueWord(string) {
 //         }
 // }
 
-export {list, createBestBook}
+export {list, createMarcupCategoryBook, createBestBook}

@@ -1,63 +1,3 @@
-/* import createOrderedBooksCards from "../tamplates/book-cards.hbs";
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { booksAPI } from "./booksAPI";
-
-const paginationBtn = document.querySelector('div.shopping_booklist_pagination')
-const shoppingListDiv = document.querySelector('ul.shopping_booklist');
-const firstPage = document.querySelector('div.null-page');
-const removeCard =  document.querySelector('div.closer')
-shoppingListDiv.innerHTML = "";
-const booksApi = new booksAPI();
-const LOCALSTORAGE_KEY = "orderedBookID";
-//localStorage.setItem(LOCALSTORAGE_KEY,JSON.stringify(["643282b1e85766588626a080","643282b1e85766588626a081","643282b1e85766588626a082"]));
-
-let orderedBooksId = [];   
-const orderedBooksId_str = localStorage.getItem(LOCALSTORAGE_KEY);
-if (orderedBooksId_str === null) {
-    shoppingListDiv.innerHTML = '';
-} else{
-   orderedBooksId = JSON.parse(orderedBooksId_str);
-   orderedBooksId.forEach(id => { getOrderedBookCard(id);});
-} 
-
-//-----------ОПИС ФУНКЦІЙ ---------------------------------------------------------
-
-const markup = `
-           <button class="btn"><<</button>
-              <button class="btn"><</button>
-              <button class="btn-two">1</button>
-              <button class="btn-two">2</button>
-              <button class="btn-two none">3</button>
-              <button class="btn-many">...</button>
-              <button class="btn-three">></button>
-              <button class="btn-three">>></button>
-`
-
-async function getOrderedBookCard(book_id){
-    console.log("book_id=",book_id);
-    try {
-        const response = await booksApi.getBookById(book_id);  
-
-        //Якщо ми отримали на запит пустий масив даних (нічого не знайдено), виводимо повідомлення і виходимо з функції
-        if (response.data === 0){
-            // return Notify.failure("Sorry, there are no book with that ID");
-        }
-        shoppingListDiv.innerHTML += createOrderedBooksCards(response.data);
-        paginationBtn.innerHTML = markup;
-        firstPage.innerHTML = ''   // рендеримо картку книжки
-
-        //перевіряємо чи не пустий опис кнжки
-        const description = document.querySelector('.book-description');
-        if (description.textContent === ""){
-            description.textContent = "No description";
-        }
-    }catch(error) {                             //якщо запит повернув помилку, обровляємо її (виводимо у консоль)
-        console.log(error);
-    }
-}*/
-
-
-//import createOrderedBooksCards from "../tamplates/book-cards.hbs";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { booksAPI } from "./booksAPI";
 import amazon from '/src/images/png/amazon.png';
@@ -195,67 +135,38 @@ async function getOrderedBookCard(book_id){
     }
 }
 
+// const fVlist = document.querySelector('.favorite-list');
 
-/*import createOrderedBooksCards from "../tamplates/book-cards.hbs";
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { booksAPI } from "./booksAPI";
+// createMarcupFavorite(localArray.favorite, fVlist);
 
-const paginationBtn = document.querySelector('div.shopping_booklist_pagination')
-const testBtn = document.querySelector('div.test')
-const removeBtn = document.querySelector('div.closer')
-const shoppingListDiv = document.querySelector('ul.shopping_booklist');
-const pagePag = document.querySelector('div.null-page')
-shoppingListDiv.innerHTML = "";
-const booksApi = new booksAPI();
-const LOCALSTORAGE_KEY = "orderedBookID";
-//localStorage.setItem(LOCALSTORAGE_KEY,JSON.stringify(["643282b1e85766588626a084","643282b1e85766588626a081","643282b1e85766588626a082"]));
+// fVlist.addEventListener('click', deleteBook)
 
-let orderedBooksId = [];   
-const orderedBooksId_str = localStorage.getItem(LOCALSTORAGE_KEY);
-if (orderedBooksId_str  === null){
-    shoppingListDiv.innerHTML = '<p class="ampty-shopping-list-msg">There is no books in the shopping list yet. Pleas choose books in the catalogue.</p>';
-} else{
-    orderedBooksId = JSON.parse(orderedBooksId_str);
-    orderedBooksId.forEach(id => { getOrderedBookCard(id);});
-} 
+// function deleteBook(event) {
+//     event.preventDefault()
+//     const book = findBook(event.target);
+    
 
-//-----------ОПИС ФУНКЦІЙ ---------------------------------------------------------
+//     if(event.target.classList.contains('js-link')) {
+//         createModal(book);
+//     }
 
-const markup = `<div class="shopping_booklist_pagination">
-           <button class="btn"><<</button>
-              <button class="btn"><</button>
-              <button class="btn-two">1</button>
-              <button class="btn-two">2</button>
-              <button class="btn-two none">3</button>
-              <button class="btn-many">...</button>
-              <button class="btn-three">></button>
-              <button class="btn-three">>></button>
-          </div>`
+//     if(event.target.classList.contains('js-delete')) {
+//         localStorage.removeItem(common.KEY_FAVORITE);
+//         const removeBook = localArray.favorite.findIndex(item => item.name === book.name);
+//         localArray.favorite.splice(removeBook, 1);
+//         console.log(localArray.favorite);
+//         localStorage.setItem(common.KEY_FAVORITE, JSON.stringify(localArray.favorite));
+//         createMarcupFavorite(localArray.favorite, fVlist);
+//     }
 
-async function getOrderedBookCard(book_id) {
-    console.log("book_id=", book_id);
-    try {
-        const response = await booksApi.getBookById(book_id);
+//     if (event.target.classList.contains('js-basket')) {
+//         const book = findBook((event.target));
+//         const inStorage = localArray.basket.some(({id}) => id === book.id);
+//         if (inStorage) {
+//             return
+//         }
+//         localArray.basket.push(book);
+//         localStorage.setItem(common.KEY_BASKET, JSON.stringify(localArray.basket))
+//     }
 
-        //Якщо ми отримали на запит пустий масив даних (нічого не знайдено), виводимо повідомлення і виходимо з функції
-        if (response.data === 0) {
-            return Notify.failure("Sorry, there are no book with that ID");
-        }
-        shoppingListDiv.innerHTML = '';
-        paginationBtn.innerHTML = '';    // рендеримо картку книжки
-
-         // Функція для оновлення розмітки при кліку на кнопку
-        function updateMarkup() {
-        shoppingListDiv.innerHTML += createOrderedBooksCards(response.data);
-        pagePag.innerHTML = markup;
-        
-        }
-        
-    // Додаємо обробник події для кнопки
-        
-    testBtn.addEventListener('click', updateMarkup);
-  } catch (error) {
-    // якщо запит повернув помилку, виводимо її (виводимо у консоль)
-    console.log(error);
-  }
-}*/
+// }

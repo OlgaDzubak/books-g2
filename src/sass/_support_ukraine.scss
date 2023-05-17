@@ -1,30 +1,17 @@
-// ==========MOBILE========//
-@media screen and (max-width: 767px) {}
-
-// /==========TABLET========== //
-@media screen and (min-width: 768px) {}
-
-// =========DESKTOP===========//
-@media screen and (min-width: 1440px) {}
 
 .support-ukraine-container {
   min-width: 335px;
-
+  max-height: 490px;
 
   padding-top: 24px;  
   padding-bottom: 20px;
-  padding-top: 24px;
-  padding-bottom: 24px;
-
 
   border-radius: 16px;
   background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
   box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
 }
 
-
 .support-ukraine-container.support-ukraine-title-and-list {
-
   padding-left: 40px;
   padding-top: 24px;
 }
@@ -42,6 +29,7 @@
     height: 490px;
     width: 335px;
   }
+
   .support-ukraine-title-and-list {
     padding-left: 40px;
     margin-bottom: 40px;
@@ -52,7 +40,6 @@
 }
 
 .support-ukraine-text-block {
-
   display: flex;
   align-items: flex-start;
   padding: 0px;
@@ -68,25 +55,22 @@
     line-height: 1.14;
     letter-spacing: -0.04em;
     margin: 0;
-    color: #ffffff;
+    color: var(--accent-color3);
   }
 }
 
 @media screen and (min-width: 335px) {
-  // .support-ukraine-container {
-  //   height: 352px;
-
-  // }
   .support-ukraine-title {
     font-size: 28px;
     line-height: 1.14;
     margin: 0px;
     letter-spacing: -0.04em;
+    color: var(--accent-color3);
   }
 }
 
 .svg-support-ukraine {
-  fill: #ffffff;
+  fill: var(--accent-color3);
 }
 
 //____________
@@ -123,7 +107,7 @@
   height: 32px;
   font-size: 14px;
   line-height: 1.29;
-  color: #ffffff; 
+  color: var(--accent-color3); 
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -140,9 +124,9 @@
   height: 18px;
 }
 
-.support_gallery_link {
+// .support_gallery_link {
   
-}
+// }
 
 .support_gallery_link img{ 
   height: 32px;
@@ -166,7 +150,7 @@
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: var(--accent-color3);
 
   transition-duration: 1000ms;  
 }
@@ -189,6 +173,7 @@
 }
 
 .scroll-up-icon {
-  fill: #4F2EE8;
+  fill: var(--accent-color1);
 }
+
 

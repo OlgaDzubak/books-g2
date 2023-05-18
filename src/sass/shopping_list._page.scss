@@ -15,6 +15,9 @@
     border-radius: 16px;
     width: 335px;
 }
+.shopping-list-container {
+    padding-bottom: 40px;
+}
 
 @media screen and (min-width: 768px) {
     .book_card {
@@ -217,9 +220,6 @@
     }
 }
 
-.image-bucket{
-    
-}
 
 .marketplacer-icon-svg {
     //width: 24px;
@@ -261,16 +261,16 @@
     }
 }
 
-.shopping-text {
-    margin-top: 40px;
-    //padding-left: 20px;
-}
+// .shopping-text {
+//     margin-top: 40px;
+//     //padding-left: 20px;
+// }
 
-@media screen and (min-width: 768px) {
-    .shopping-text {
-       // padding-left: 40px;
-    }
-}
+// @media screen and (min-width: 768px) {
+//     .shopping-text {
+//        // padding-left: 40px;
+//     }
+// }
 
 @media screen and (min-width: 1440px) {
     .shopping-text {
@@ -457,10 +457,6 @@
     }
 }
 
-.book-image-div {
-    
-    
-}
 
 
 .market_places_div {
@@ -524,9 +520,6 @@ margin-right: 10px;
     }
 }
 
-@media screen and (min-width: 1024px) {
-    .btn {}
-}
 
 .btn:first-child {
     margin-right: 5px;

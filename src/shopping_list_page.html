@@ -14,7 +14,31 @@
 
     <div class = "container">
 
-      <include src="./partials/support_ukraine.html"></include>   
+    <div class="support-ukraine-container-shoping">
+      <div class="support-ukraine-text-block">
+        <h2 class="support-ukraine-title">Support Ukraine</h2>
+        <svg class="svg-support-ukraine" width="20" height="32">
+          <use href="/src/images/svg/sprite.svg#ukrainian_gerb_icon"></use>
+        </svg>
+      </div>
+
+  <!-- Slider -->
+  <div class="support-ukraine-container-slider">
+    <ul class="support-ukraine-gallery slider-line"></ul>
+  </div>
+
+  <button type="button" class="scroll-up-btn" style="display: none">
+    <svg class="scroll-up-icon scroll-up-btn-rotate" width="24" height="24">
+      <use href="/src/images/svg/sprite.svg#icon_scroll_up"></use>
+    </svg>
+  </button>
+  <button type="button" class="scroll-down-btn">
+    <svg class="scroll-up-icon" width="24" height="24">
+      <use href="/src/images/svg/sprite.svg#icon_scroll_up"></use>
+    </svg>
+  </button>
+  
+</div>  
 
       <!------------------------------------------------------------------------------------------------>
       <div class="obch">
@@ -22,7 +46,7 @@
         <h2 class="shopping_list_title">Shopping <span class="shopping_list_title_span">List</span></h2>
       </div>
         <div class="shopping-list-container">
-          <ul class = "shopping_booklist list"></ul>         <!-- сюди рендериться список обраних книжок -->
+          <ul class = "shopping_booklist list"></ul>  <!-- сюди рендериться список обраних книжок -->
           <div class="null-page">
             <p class="p-page">This page is empty, add some books and <span class="span-page">proceed to order.</span> </p>
             <img src="./images/shopping_list/stack_of_books_desktop@1x.png" alt="books">

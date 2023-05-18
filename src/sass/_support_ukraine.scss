@@ -1,3 +1,20 @@
+@media screen and (max-width: 1439.8px) {
+.support-ukraine-container-shoping{
+    display: none;
+  }
+}
+
+.support-ukraine-container-shoping{
+    min-width: 335px;
+    max-height: 490px;
+  
+    padding-top: 24px;
+    padding-bottom: 20px;
+  
+    border-radius: 16px;
+    background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
+    box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
+}
 
 .support-ukraine-container {
   min-width: 335px;
@@ -11,7 +28,7 @@
   box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
 }
 
-.support-ukraine-container.support-ukraine-title-and-list {
+.support-ukraine-container .support-ukraine-title-and-list {
   padding-left: 40px;
   padding-top: 24px;
 }

@@ -38,23 +38,13 @@ const bucketCard = [
 // const paginationBtn = document.querySelector('div.shopping_booklist_pagination')
 const shoppingListDiv = document.querySelector('ul.shopping_booklist');
 const firstPage = document.querySelector('div.null-page');
+shoppingListDiv.addEventListener('click', removeBook)
 
-// const removeCard =  document.querySelector('div.closer')
-shoppingListDiv.innerHTML = "";
-// const booksApi = new booksAPI();
+// Ключ локал стореджа та парс даних з локала в масив
 const LOCALSTORAGE_KEY = "orderedBookID";
-//  localStorage.setItem(LOCALSTORAGE_KEY,JSON.stringify(["643282b1e85766588626a086","643282b1e85766588626a084","643282b1e85766588626a082"]));
-
-// let orderedBooksId = [];   
 const orderedBooksId_str = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
-console.log(orderedBooksId_str);
-// if (orderedBooksId_str === null) {
-//     shoppingListDiv.innerHTML = '';
-// } else{
-//    orderedBooksId = JSON.parse(orderedBooksId_str);
-//    orderedBooksId.forEach(id => { getOrderedBookCard(id);});
-// } 
 
+// Функція формування та відправлення паралельного запиту
 async function fetchBook(arr) {
 
   const arrayOfPromises = arr.map(async Id => {
@@ -62,84 +52,92 @@ async function fetchBook(arr) {
     return response
   });
 
-  // 2. Запускаємо усі проміси паралельно і чекаємо на їх завершення
-  const books = await Promise.all(arrayOfPromises);
-  console.log(books);
-  return books
+  // Запускаємо усі проміси паралельно і чекаємо на їх завершення
+  return await Promise.all(arrayOfPromises);
 }
 
+// Функція створення розмітки 
 async function createMarcup(arr) {
-  const markup = arr.map(({book_image, list_name, author, title, description, buy_links}) => 
+  const markup = arr.map(({_id, book_image, list_name, author, title, description = 'No description', buy_links}) => 
   `<li class="book_card">
-  <div class="book-image-div">
-    <img class="book-image" src=${book_image} alt=${title}>
-  </div>
+    <div class="book-image-div">
+      <img class="book-image" src=${book_image} alt=${title}>
+    </div>
 
-  <div class="book_information">
-    <p class="book-title">${title}</p>
-    <p class="book-category">${list_name}</p>
-    <p class="book-description">${description}</p>
-    <p class="book-author">${author}</p>
-  </div>
+    <div class="book_information">
+      <p class="book-title">${title}</p>
+      <p class="book-category">${list_name}</p>
+      <p class="book-description">${description}</p>
+      <p class="book-author">${author}</p>
+    </div>
 
-<div class="closer">
-  <button class="closer-btn">
-  <img class="image-bucket" src="${bucketCard[0].img}" alt="amazon">
-  </button>
-</div>
+    <div class="closer">
+      <button data-id="${_id}" class="closer-btn">
+        <img class="image-bucket" src="${bucketCard[0].img}" alt="amazon">
+      </button>
+    </div>
 
-  <div class="market_places_div">
-    <ul class="market_placers_list list">
+    <div class="market_places_div">
+      <ul class="market_placers_list list">
+        <li class="marketplacer_li_two">
+          <a href="${buy_links[0].url}" class="marketplacer_li_link link">
+            <img class="image-market" src="${photoItemsOne[0].img}" alt="amazon">  
+          </a>
+        </li>
 
-          <li class="marketplacer_li_two">
-            <a href="${buy_links[0].url}" class="marketplacer_li_link link">
-              <img class="image-market" src="${photoItemsOne[0].img}" alt="amazon">
-              
-            </a>
-          </li>
+        <li class="marketplacer_li">
+          <a href="${buy_links[1].url}" class="marketplacer_li_link link">
+            <img src="${photoItemsTwo[0].img}" alt="apple-books">      
+          </a>
+        </li>
 
-          <li class="marketplacer_li">
-            <a href="${buy_links[1].url}" class="marketplacer_li_link link">
-              <img src="${photoItemsTwo[0].img}" alt="apple-books">
-              
-            </a>
-          </li>
-
-          <li class="marketplacer_li">
-            <a href="${buy_links[2].url}" class="marketplacer_li_link link">
-              <img src="${photoItemsThree[0].img}" alt="barnes-and-noble">
-            </a>
-          </li>
-</div>
-</li>`
-  ).join('')
+        <li class="marketplacer_li">
+          <a href="${buy_links[2].url}" class="marketplacer_li_link link">
+            <img src="${photoItemsThree[0].img}" alt="barnes-and-noble">
+          </a>
+        </li>
+    </div>
+  </li>`).join('')
 
   return markup
-  }
+}
 
+// Центральна функція, робить перевірки, запит та відмальовує
 async function createShoppingList() {
-  const arrrr = [];
+  shoppingBook = [];
   const response = await fetchBook(orderedBooksId_str);
 
 if (response.length) {
   firstPage.style.display = "none";
 
-  
-  response.forEach(({data}) => arrrr.push(data))
-  console.log(arrrr)
+  response.forEach(({data}) => shoppingBook.push(data));
 
-  const read = await createMarcup(arrrr);
-  console.log(read);
-  shoppingListDiv.innerHTML = read;
+  console.log(shoppingBook);
+  const markup = await createMarcup(shoppingBook);
+  shoppingListDiv.innerHTML = markup;
 } else {
+  shoppingListDiv.innerHTML = '';
   firstPage.style.display = "block";
 }
-
 }
   
-
 createShoppingList();
 
+// Функція видалення книг з шопінг листа
+async function removeBook(event) {
+  const {target} = event;
+
+  if (!target.classList.contains('closer-btn')) {
+    return
+  } else {
+    const Id = target.dataset.id;
+    localStorage.removeItem(LOCALSTORAGE_KEY);
+    const bookDelete = orderedBooksId_str.indexOf(Id);
+    orderedBooksId_str.splice(bookDelete, 1);
+    localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(orderedBooksId_str));
+    return await createShoppingList();
+  }
+}
 
 
 //-----------ОПИС ФУНКЦІЙ ---------------------------------------------------------
@@ -224,38 +222,3 @@ createShoppingList();
 //     }
 // }
 
-// const fVlist = document.querySelector('.favorite-list');
-
-// createMarcupFavorite(localArray.favorite, fVlist);
-
-// fVlist.addEventListener('click', deleteBook)
-
-// function deleteBook(event) {
-//     event.preventDefault()
-//     const book = findBook(event.target);
-    
-
-//     if(event.target.classList.contains('js-link')) {
-//         createModal(book);
-//     }
-
-//     if(event.target.classList.contains('js-delete')) {
-//         localStorage.removeItem(common.KEY_FAVORITE);
-//         const removeBook = localArray.favorite.findIndex(item => item.name === book.name);
-//         localArray.favorite.splice(removeBook, 1);
-//         console.log(localArray.favorite);
-//         localStorage.setItem(common.KEY_FAVORITE, JSON.stringify(localArray.favorite));
-//         createMarcupFavorite(localArray.favorite, fVlist);
-//     }
-
-//     if (event.target.classList.contains('js-basket')) {
-//         const book = findBook((event.target));
-//         const inStorage = localArray.basket.some(({id}) => id === book.id);
-//         if (inStorage) {
-//             return
-//         }
-//         localArray.basket.push(book);
-//         localStorage.setItem(common.KEY_BASKET, JSON.stringify(localArray.basket))
-//     }
-
-// }

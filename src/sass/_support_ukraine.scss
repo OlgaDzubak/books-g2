@@ -1,3 +1,13 @@
+.shoping-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.shoping-top {
+  flex-grow: 1;
+}
+
 @media screen and (max-width: 1439.8px) {
 .support-ukraine-container-shoping{
     display: none;

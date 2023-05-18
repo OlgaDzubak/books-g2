@@ -34,20 +34,24 @@ function pad(value) {
 }
 
 let offset = 0; //смещение
+let slidesPerView = 0; // к-во слайдов в окне
 
 function scrollUpslide() {
   offset += 52;
 
   if (window.innerWidth < 767) {
-    if (offset > 259) {
+    slidesPerView = 4;
+    if (offset > (supportItems.length - slidesPerView) * 52) {
       scrollDown.style.display = 'none';
       scrollUp.style.removeProperty('display');
     }
-  } else if (offset > 155) {
-    scrollDown.style.display = 'none';
-    scrollUp.style.removeProperty('display');
+  } else if (window.innerWidth >= 767) {
+    slidesPerView = 6;
+    if (offset > (supportItems.length - slidesPerView) * 52) {
+      scrollDown.style.display = 'none';
+      scrollUp.style.removeProperty('display');
+    }
   }
-
   sliderLine.style.bottom = offset + 'px';
 }
 
@@ -59,5 +63,3 @@ function scrollDownslide() {
   }
   sliderLine.style.bottom = offset + 'px';
 }
-
-console.log(window.innerWidth);

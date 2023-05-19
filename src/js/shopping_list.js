@@ -45,6 +45,7 @@ shoppingListDiv.addEventListener('click', removeBook)
 const LOCALSTORAGE_KEY = "orderedBookID";
 const orderedBooksId_str = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
 
+
 // Функція формування та відправлення паралельного запиту
 async function fetchBook(arr) {
 
@@ -111,7 +112,7 @@ async function createMarcup(arr) {
 
 // Центральна функція, робить перевірки, запит та відмальовує
 async function createShoppingList() {
-  const shoppingBook = [];
+  let shoppingBook = [];
   const response = await fetchBook(orderedBooksId_str);
   countShoppingBook(orderedBooksId_str)
 

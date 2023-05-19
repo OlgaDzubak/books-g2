@@ -14,10 +14,12 @@ closeBtn.addEventListener('click', onCloseModal);
 function onOpenModal() {
   window.addEventListener('keydown', onEscKeyDown);
   backdrop.classList.remove('is-hidden');
+  document.body.classList.add('modalNonScroll');
 }
 function onCloseModal() {
   window.removeEventListener('keydown', onEscKeyDown);
   backdrop.classList.add('is-hidden');
+  document.body.classList.remove('modalNonScroll');
 }
 
 modalForm.addEventListener('submit', onFormSubmit);

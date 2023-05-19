@@ -1,10 +1,11 @@
-// import { Notify } from 'notiflix/build/notiflix-notify-aio';
-// import { booksAPI } from "./booksAPI";
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import amazon from '/src/images/png/amazon.png';
 import appleBook from '/src/images/png/apple-books.png';
 import Barners from '/src/images/png/barnes-and-noble.png';
 import bucketTrash from '/src/images/png/trash-03.png'
 import axios from "axios";
+import { countShoppingBook } from './header';
+
 
 
 
@@ -47,6 +48,8 @@ const orderedBooksId_str = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
 // Функція формування та відправлення паралельного запиту
 async function fetchBook(arr) {
 
+  try {
+    
   const arrayOfPromises = arr.map(async Id => {
     const response = await axios.get(`https://books-backend.p.goit.global/books/${Id}`);
     return response
@@ -54,6 +57,10 @@ async function fetchBook(arr) {
 
   // Запускаємо усі проміси паралельно і чекаємо на їх завершення
   return await Promise.all(arrayOfPromises);
+  } catch (error) {
+    Notify.failure('Sorry, there was a server error, please reload the page');
+  }
+
 }
 
 // Функція створення розмітки 
@@ -104,8 +111,9 @@ async function createMarcup(arr) {
 
 // Центральна функція, робить перевірки, запит та відмальовує
 async function createShoppingList() {
-  shoppingBook = [];
+  const shoppingBook = [];
   const response = await fetchBook(orderedBooksId_str);
+  countShoppingBook(orderedBooksId_str)
 
 if (response.length) {
   firstPage.style.display = "none";
@@ -135,9 +143,21 @@ async function removeBook(event) {
     const bookDelete = orderedBooksId_str.indexOf(Id);
     orderedBooksId_str.splice(bookDelete, 1);
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(orderedBooksId_str));
+    countShoppingBook(orderedBooksId_str)
     return await createShoppingList();
   }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 //-----------ОПИС ФУНКЦІЙ ---------------------------------------------------------

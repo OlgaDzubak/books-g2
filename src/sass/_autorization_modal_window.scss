@@ -1,3 +1,7 @@
+.modalNonScroll {
+  overflow: hidden;
+}
+
 .backdrop {
   position: fixed;
   padding: 214px 20px;
@@ -5,7 +9,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--accent-color1);
+  background-color: hsla(251, 80%, 55%, 0.5);
   z-index: 999;
 }
 

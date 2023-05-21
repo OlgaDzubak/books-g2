@@ -528,6 +528,31 @@ input:checked+.slider:before {
     border-radius: 50%;
 }
 
+.shopping-link{
+    position: relative;
+}
+
+.count-shopping-list{
+position: absolute;
+bottom: 0;
+right: 8px;
+background-color: var(--accent-color1);
+text-align: center;
+display: none;
+
+border-radius: 50%;
+width: 17px;
+height: 17px;
+padding: 2px;
+}
+
+.count-length{
+    color: var(--accent-color3);
+    font-size: 10px;
+    display: inline-flex;
+   transform: translateY(-3px);
+}
+
 // .dark {
 //     background-color: var(--dark-body-color);
 //     color: var(--accent-color3);

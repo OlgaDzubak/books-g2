@@ -1,4 +1,5 @@
 import { booksAPI } from './booksAPI';
+import { countShoppingBook } from './header';
 
 const books = new booksAPI;
 let book_Id;
@@ -8,6 +9,8 @@ const btnCloseModal = document.querySelector('.btn-modal-close');
 const btnAddEl = document.querySelector('.add');
 const btnRemoveEl = document.querySelector('.remove');
 const textEl = document.querySelector('.modal-message');
+
+
 
 const objScroll = {
     scrollPosition: 0,
@@ -118,6 +121,7 @@ function addLocalStorage() {
     }
     arrLs.push(book_Id);
     localStorage.setItem('orderedBookID', JSON.stringify(arrLs));
+    countShoppingBook(arrLs)
 };
 
 function removeLocalStorage() {
@@ -130,4 +134,8 @@ function removeLocalStorage() {
     arrLs.splice(i, 1);
     localStorage.removeItem('orderedBookID')
     localStorage.setItem('orderedBookID', JSON.stringify(arrLs));
+    countShoppingBook(arrLs)
 };
+
+
+

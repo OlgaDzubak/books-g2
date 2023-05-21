@@ -76,13 +76,18 @@ async function loadCategory(event) {
     } else {
         let category = target.id.split(" ").join("%20");
         if (category === 'category-list-title') {
+            list.innerHTML = '';
             createBestBook();
         } else {
+            list.innerHTML ='';
+            list.classList.add('loader');
             const { data } = await fetchBooks.getBooksByCategory(category);
-        list.innerHTML = createMarcupCategoryBook(data);
-        }
+            list.classList.remove('loader');
+            list.innerHTML = createMarcupCategoryBook(data);
 
-        const { height: cardHeight } = list.lastElementChild.getBoundingClientRect();
-        window.scrollBy({top: -cardHeight, behavior: "smooth",});
+            
+            const { height: cardHeight } = list.lastElementChild.getBoundingClientRect();
+            window.scrollBy({top: -cardHeight, behavior: "smooth",});
+        }
     }
 }

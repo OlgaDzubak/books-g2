@@ -114,11 +114,10 @@ async function createMarcup(arr) {
 async function createShoppingList() {
   let shoppingBook = [];
   const response = await fetchBook(orderedBooksId_str);
-  countShoppingBook(orderedBooksId_str)
-
-if (response.length) {
+  countShoppingBook(orderedBooksId_str);
   firstPage.style.display = "none";
 
+if (response.length) {
   response.forEach(({data}) => shoppingBook.push(data));
 
   console.log(shoppingBook);

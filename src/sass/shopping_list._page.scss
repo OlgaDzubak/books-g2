@@ -699,6 +699,12 @@ margin-right: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
+
+        transition: background-color var(--transition);
+}
+
+.closer-btn:hover{
+    background-color: #f42b2b;
 }
 
 .marketplacer_li_link{

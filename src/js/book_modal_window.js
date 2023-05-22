@@ -10,8 +10,6 @@ const btnAddEl = document.querySelector('.add');
 const btnRemoveEl = document.querySelector('.remove');
 const textEl = document.querySelector('.modal-message');
 
-
-
 const objScroll = {
     scrollPosition: 0,
     disabledScroll() {
@@ -78,7 +76,6 @@ async function createModalWindow(book_Id) {
         appleEl.attributes[0].value = buy_links[1].url;
         barnesEl.attributes[0].value = buy_links[2].url;
 
-
         randerBox.innerHTML = randerModal;
         divBackEl.classList.toggle('is-hidden');
         const dataJson = localStorage.getItem('orderedBookID');
@@ -115,7 +112,7 @@ function addLocalStorage() {
     textEl.classList.remove('is-hidden');
     const dataJson = localStorage.getItem('orderedBookID');
     let arrLs = JSON.parse(dataJson); //book_Id
-    console.log(arrLs)
+    /* console.log(arrLs) */
     if (arrLs === null) {
         arrLs = [];
     }
@@ -136,6 +133,4 @@ function removeLocalStorage() {
     localStorage.setItem('orderedBookID', JSON.stringify(arrLs));
     countShoppingBook(arrLs)
 };
-
-
 

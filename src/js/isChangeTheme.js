@@ -1,15 +1,19 @@
 const checkBoxEl = document.querySelector('#theme-switch-toggle');
 const body = document.querySelector('body');
+
 /* import { addDarkClassToModal } from './book_modal_window'; */
 // Фукнція що вішає слухача подій на перемикач тем і при кліку якщо є темна тема
 //  в локалсторадж - видаляє її, в усіх інших випадках - встановлює темну тему в локалсторадж
+const divContainerBackEl = document.querySelector('.back')
+const arrTagEl = [...body.childNodes];
 const checkLS = localStorage.getItem('theme')
+
 if (checkLS === null || checkLS === '') {
   checkBoxEl.checked = false;
 } else {
   checkBoxEl.checked = true;
 }
-if (document.location.pathname === "/index.html") {
+if (arrTagEl.includes(divContainerBackEl)) {
     addDarkClassToModal()
   }
 
@@ -19,14 +23,12 @@ checkBoxEl.addEventListener('change', (event) => {
   console.dir(checkBoxEl.checked);
     if (localStorage.getItem('theme') === 'dark') {
       localStorage.removeItem('theme');
-      /* checkBoxEl.checked = false; */
     }
     else {
       localStorage.setItem('theme', 'dark')
-      /* checkBoxEl.checked = true; */
     }
   addDarkClassToHTML()
-  if (document.location.pathname === "/index.html") {
+  if (arrTagEl.includes(divContainerBackEl)) {
     addDarkClassToModal()
   }
   

@@ -1,67 +1,67 @@
 .footer {
-    background: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
-    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
-    height: 72px;
-    padding-top: 17px;
-    padding-bottom: 16px;
-    border: 1.5px solid #111111;
-    border-radius: 8px 8px 0px 0px;
-    margin-top: 40px;
+  background: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+  height: 72px;
+  padding-top: 17px;
+  padding-bottom: 16px;
+  border: 1.5px solid #111111;
+  border-radius: 8px 8px 0px 0px;
+  margin-top: 40px;
 }
-.footer .container{
-    flex-direction: row;
+.footer .container {
+  flex-direction: row;
 }
 
 .footer-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .team-name {
-    letter-spacing: -.04em;
-    color: var(--accent-color3);
-    align-items: center;
-    gap: 8px;
-    font-weight: 500;
-    display: flex;
+  letter-spacing: -0.04em;
+  color: var(--accent-color3);
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  display: flex;
 }
 
 .about-us-btn {
-    position: relative;
-    width: 134px;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 13px 14px 12px;
-    background: var(--accent-color1);
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.29;
-    letter-spacing: -0.04em;
-    color: var(--accent-color3);
-    border: 1.5px solid #111111;
-    border-radius: 18px;
-    transition: background var(--transition), color var(--transition);
-    margin-left: 20px;
+  position: relative;
+  width: 134px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 14px 12px;
+  background: var(--accent-color1);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  color: var(--accent-color3);
+  border: 1.5px solid #111111;
+  border-radius: 18px;
+  transition: background var(--transition), color var(--transition);
+  margin-left: 20px;
 }
 
 .about-us-btn:hover,
 .about-us-btn:focus {
-   color: var(--text-dark-color);
-   background: var(--accent-color3);
+  color: var(--text-dark-color);
+  background: var(--accent-color3);
 }
 // ===========Modal window ABOUT US===============
 .about-us-backdrop {
-    position: fixed;
-    z-index: 999;
-    padding: 20px 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--accent-color1);
+  position: fixed;
+  z-index: 999;
+  padding: 20px 20px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color1);
 }
 // .about-us-close-area {
 // position: sticky;
@@ -69,113 +69,112 @@
 // }
 
 .about-us-backdrop.is-hidden {
-    opacity: 0;
-    pointer-events: none;
+  opacity: 0;
+  pointer-events: none;
 }
 .about-us-modal {
-    overflow-y: auto;
-    z-index: 1000;
-    padding-top: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
-    height: 80%;
-   width: 335px;
-    background-color: var(--light-theme-background);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  overflow-y: auto;
+  z-index: 1000;
+  padding-top: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 80%;
+  width: 335px;
+  background-color: var(--light-theme-background);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-    border-radius: 18px;
+  border-radius: 18px;
 
-    @media screen and (min-width: 768px) {
-        min-width: 579px;
-        padding-top: 80px;
-        padding-left: 40px;
-        padding-right: 40px;
-        padding-bottom: 40px;
-    }
+  @media screen and (min-width: 768px) {
+    min-width: 579px;
+    padding-top: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+  }
 }
 .about-us-close-button {
-    position: absolute;
-    
-    background-color: transparent;
-    border-color: transparent;
-    width: 20px;
-    height: 20px;
-    top: 14px;
-    right: 14px;
-    cursor: pointer;
+  position: absolute;
 
-    @media screen and (min-width: 768px) {
-        top: 24px;
-        right: 24px;
-    }
+  background-color: transparent;
+  border-color: transparent;
+  width: 20px;
+  height: 20px;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    top: 24px;
+    right: 24px;
+  }
 }
 .about-us-close-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
 
-    @media screen and (min-width: 768px) {
-        width: 14px;
-        height: 14px;
-    }
+  @media screen and (min-width: 768px) {
+    width: 14px;
+    height: 14px;
+  }
 }
 .about-us-item {
-    margin-bottom: 18px;
+  margin-bottom: 18px;
 }
 .about-us-img {
-    width: 287px;
-    height: 287px;
-    border: var(--text-dark-color);
-    margin-bottom: 14px;
+  width: 287px;
+  height: 287px;
+  border: var(--text-dark-color);
+  margin-bottom: 14px;
 }
 .about-us-title {
-    font-family: 'DM Sans';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: calc(18/16);
-        letter-spacing: -0.04em;
-    
-        color: var(--text-dark-color);
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(18 / 16);
+  letter-spacing: -0.04em;
 
-        margin-bottom: 18px;
+  color: var(--text-dark-color);
+
+  margin-bottom: 18px;
 }
 .about-us-text {
-    font-family: 'DM Sans';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: calc(18/14);
-           
-        letter-spacing: -0.04em;
-    
-        color: var(--text-dark-color);
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(18 / 14);
+
+  letter-spacing: -0.04em;
+
+  color: var(--text-dark-color);
 }
 @media screen and (min-width: 768px) {
-.about-us-item {
+  .about-us-item {
     display: flex;
     align-items: center;
-}
+  }
 
-.about-us-img {
+  .about-us-img {
     margin-right: 24px;
     margin-bottom: 0;
     width: 192px;
     height: 192px;
-}
-.about-us-title {
-    
+  }
+  .about-us-title {
     font-size: 24px;
-    line-height: calc(28/24);
-    margin-bottom: 20px;    
-}
-.about-us-item {
+    line-height: calc(28 / 24);
     margin-bottom: 20px;
-}
+  }
+  .about-us-item {
+    margin-bottom: 20px;
+  }
 }

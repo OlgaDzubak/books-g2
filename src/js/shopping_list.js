@@ -143,10 +143,12 @@ async function createShoppingList() {
   }
 
   response.forEach(({ data }) => shoppingBook.push(data));
+  paginationList.innerHTML = '';
 
   if (shoppingBook.length > rows) {
-    paginationList.innerHTML = '';
-    mainPagination(shoppingBook, rows, currentPage);
+    createPagination(shoppingBook, rows, currentPage);
+    sliceArrayBooks(shoppingBook, rows, currentPage);
+    controlPage(currentPage);
   } else {
     shoppingListDiv.innerHTML = await createMarcup(shoppingBook);
   }
@@ -162,6 +164,13 @@ async function sliceArrayBooks(arr, rows, page) {
   const start = rows * page;
   const end = start + rows;
   const paginateArr = arr.slice(start, end);
+  console.log(paginateArr);
+
+  if (!paginateArr.length) {
+    currentPage = page - 1;
+    createShoppingList();
+    return;
+  }
 
   const markup = await createMarcup(paginateArr);
 
@@ -170,7 +179,7 @@ async function sliceArrayBooks(arr, rows, page) {
 }
 
 // Функція яка створює кнопки пагінації в залежності від розміру масиву
-function createPagination(arr, rows, currentPage) {
+function createPagination(arr, rows) {
   const pagesCount = Math.ceil(arr.length / rows);
 
   if (arr.length <= rows) {
@@ -204,10 +213,4 @@ function controlPage(page) {
       button.classList.remove('active');
     }
   }
-}
-
-function mainPagination(shoppingBook, rows, currentPage) {
-  createPagination(shoppingBook, rows, currentPage);
-  sliceArrayBooks(shoppingBook, rows, currentPage);
-  controlPage(currentPage);
 }

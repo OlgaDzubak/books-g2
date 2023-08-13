@@ -36,6 +36,8 @@ shoppingListDiv.addEventListener('click', removeBook);
 
 // Дів рендеру кнопок пагінації та случач для перемикання сторінок + масив книг які відображати і констнта кількості книг на сторінці
 const paginationList = document.querySelector('.shopping_booklist_pagination');
+const rows = 3;
+let currentPage = 0;
 
 // Ключ локал стореджа та парс даних з локала в масив
 const LOCALSTORAGE_KEY = 'orderedBookID';
@@ -123,7 +125,6 @@ async function removeBook(event) {
     localStorage.removeItem(LOCALSTORAGE_KEY);
     const bookDelete = orderedBooksId_str.indexOf(bookId);
     orderedBooksId_str.splice(bookDelete, 1);
-    // orderedBooksId_str.filter(({id}) => id !== bookId);
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(orderedBooksId_str));
     countShoppingBook(orderedBooksId_str);
     return await createShoppingList();
@@ -135,8 +136,6 @@ async function createShoppingList() {
   const response = await fetchBook(orderedBooksId_str);
   countShoppingBook(orderedBooksId_str);
   const shoppingBook = [];
-  let currentPage = 0;
-  const rows = 3;
 
   if (!response.length) {
     shoppingListDiv.innerHTML = '';
@@ -146,9 +145,8 @@ async function createShoppingList() {
   response.forEach(({ data }) => shoppingBook.push(data));
 
   if (shoppingBook.length > rows) {
-    createPagination(shoppingBook, rows, currentPage);
-    sliceArrayBooks(shoppingBook, rows, currentPage);
-    controlPage(currentPage);
+    paginationList.innerHTML = '';
+    mainPagination(shoppingBook, rows, currentPage);
   } else {
     shoppingListDiv.innerHTML = await createMarcup(shoppingBook);
   }
@@ -185,10 +183,10 @@ function createPagination(arr, rows, currentPage) {
     button.classList.add('btn-two');
 
     button.addEventListener('click', event => {
-      let page = Number(event.target.textContent) - 1;
+      currentPage = Number(event.target.textContent) - 1;
 
-      sliceArrayBooks(arr, rows, page);
-      controlPage(page);
+      sliceArrayBooks(arr, rows, currentPage);
+      controlPage(currentPage);
     });
 
     paginationList.append(button);
@@ -206,4 +204,10 @@ function controlPage(page) {
       button.classList.remove('active');
     }
   }
+}
+
+function mainPagination(shoppingBook, rows, currentPage) {
+  createPagination(shoppingBook, rows, currentPage);
+  sliceArrayBooks(shoppingBook, rows, currentPage);
+  controlPage(currentPage);
 }

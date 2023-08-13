@@ -36,7 +36,6 @@ shoppingListDiv.addEventListener('click', removeBook);
 
 // Дів рендеру кнопок пагінації та случач для перемикання сторінок + масив книг які відображати і констнта кількості книг на сторінці
 const paginationList = document.querySelector('.shopping_booklist_pagination');
-// paginationList.addEventListener('click', controlPage);
 
 // Ключ локал стореджа та парс даних з локала в масив
 const LOCALSTORAGE_KEY = 'orderedBookID';
@@ -147,8 +146,9 @@ async function createShoppingList() {
   response.forEach(({ data }) => shoppingBook.push(data));
 
   if (shoppingBook.length > rows) {
-      createPagination(shoppingBook, rows, currentPage);
-      sliceArrayBooks(shoppingBook, rows, currentPage);
+    createPagination(shoppingBook, rows, currentPage);
+    sliceArrayBooks(shoppingBook, rows, currentPage);
+    controlPage(currentPage);
   } else {
     shoppingListDiv.innerHTML = await createMarcup(shoppingBook);
   }
@@ -185,19 +185,25 @@ function createPagination(arr, rows, currentPage) {
     button.classList.add('btn-two');
 
     button.addEventListener('click', event => {
-      currentPage = Number(event.target.textContent) - 1;
-      console.log(currentPage);
+      let page = Number(event.target.textContent) - 1;
 
-      if (currentPage + 1 === Number(event.target.textContent)) {
-        button.classList.add('active');
-      }
-
-      console.log(arr);
-      sliceArrayBooks(arr, rows, currentPage);
+      sliceArrayBooks(arr, rows, page);
+      controlPage(page);
     });
 
-    
     paginationList.append(button);
   }
 }
 
+// Додає клас активної сторінки
+function controlPage(page) {
+  for (const button of paginationList.children) {
+    if (Number(button.textContent) - 1 === page) {
+      button.classList.add('active');
+    }
+
+    if (Number(button.textContent) - 1 !== page) {
+      button.classList.remove('active');
+    }
+  }
+}

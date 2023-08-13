@@ -647,3 +647,8 @@
 .marketplacer_li_link {
   mix-blend-mode: luminosity;
 }
+
+.btn-two.active {
+  color: var(--accent-color3);
+  background-color: var(--accent-color2);
+}

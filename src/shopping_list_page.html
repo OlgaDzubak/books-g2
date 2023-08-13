@@ -11,98 +11,75 @@
     <link rel="stylesheet" href="./sass/shopping_list._page.scss" />
   </head>
   <body>
-    <div class="shoping-wrapper">
-      <div class="shoping-top">
-        <include src="./partials/header.html"></include>
+    <include src="./partials/header.html"></include>
 
-        <div class="container">
-          <div class="support-ukraine-container-shoping">
-            <div class="support-ukraine-text-block">
-              <h2 class="support-ukraine-title">Support Ukraine</h2>
-              <svg class="svg-support-ukraine" width="20" height="32">
-                <use
-                  href="/src/images/svg/sprite.svg#ukrainian_gerb_icon"
-                ></use>
-              </svg>
-            </div>
-
-            <!-- Slider -->
-            <div class="support-ukraine-container-slider">
-              <ul class="support-ukraine-gallery slider-line"></ul>
-            </div>
-
-            <button type="button" class="scroll-up-btn" style="display: none">
-              <svg
-                class="scroll-up-icon scroll-up-btn-rotate"
-                width="24"
-                height="24"
-              >
-                <use href="/src/images/svg/sprite.svg#icon_scroll_up"></use>
-              </svg>
-            </button>
-            <button type="button" class="scroll-down-btn">
-              <svg class="scroll-up-icon" width="24" height="24">
-                <use href="/src/images/svg/sprite.svg#icon_scroll_up"></use>
-              </svg>
-            </button>
-          </div>
-
-          <!------------------------------------------------------------------------------------------------>
-          <div class="obch">
-            <div class="shopping-text">
-              <h2 class="shopping_list_title">
-                Shopping <span class="shopping_list_title_span">List</span>
-              </h2>
-            </div>
-            <div class="shopping-list-container">
-              <ul class="shopping_booklist list"></ul>
-              <!-- сюди рендериться список обраних книжок -->
-              <div class="null-page">
-                <p class="p-page">
-                  This page is empty, add some books and
-                  <span class="span-page">proceed to order.</span>
-                </p>
-                <img
-                  src="./images/shopping_list/stack_of_books_desktop@1x.png"
-                  alt="books"
-                />
-              </div>
-              <div class="shopping_booklist_pagination">
-                <!--<button class="btn"><<</button>
-                  <button class="btn"><</button>
-                  <button class="btn-two">1</button>
-                  <button class="btn-two">2</button>
-                  <button class="btn-two none">3</button>
-                  <button class="btn-many">...</button>
-                  <button class="btn-three">></button>
-                  <button class="btn-three">>></button>-->
-              </div>
-              <!-- це контейнер для пагынації -->
-
-              <!--<div class="test">
-                <button class="adding">add</button>
-                <img src="./images/png/amazon_test.jpg" alt="amazon">
-                  </div>
-                </div>
-              </div>-->
-
-              <!----------------------------------------------------------------------------------------------->
-
-              <include src="./partials/mobile_menu.html"></include>
-              <include src="./partials/about_us_modal_window.html"></include>
-            </div>
-          </div>
+    <div class="container">
+      <div class="support-ukraine-container-shoping">
+        <div class="support-ukraine-text-block">
+          <h2 class="support-ukraine-title">Support Ukraine</h2>
+          <svg class="svg-support-ukraine" width="20" height="32">
+            <use href="/src/images/svg/sprite.svg#ukrainian_gerb_icon"></use>
+          </svg>
         </div>
+
+        <!-- Slider -->
+        <div class="support-ukraine-container-slider">
+          <ul class="support-ukraine-gallery slider-line"></ul>
+        </div>
+
+        <button type="button" class="scroll-up-btn" style="display: none">
+          <svg
+            class="scroll-up-icon scroll-up-btn-rotate"
+            width="24"
+            height="24"
+          >
+            <use href="/src/images/svg/sprite.svg#icon_scroll_up"></use>
+          </svg>
+        </button>
+        <button type="button" class="scroll-down-btn">
+          <svg class="scroll-up-icon" width="24" height="24">
+            <use href="/src/images/svg/sprite.svg#icon_scroll_up"></use>
+          </svg>
+        </button>
       </div>
 
-      <include src="./partials/footer.html"></include>
+      <!------------------------------------------------------------------------------------------------>
+      <div class="shopping-wrapper">
+        <h2 class="shopping_list_title">
+          Shopping <span class="shopping_list_title_span">List</span>
+        </h2>
+
+        <ul class="shopping_booklist list">
+          <!-- сюди рендериться список обраних книжок -->
+        </ul>
+
+        <div class="shopping_booklist_pagination">
+          
+        </div>
+      </div>
+        <!-- <div class="null-page">
+          <p class="p-page">
+            This page is empty, add some books and
+            <span class="span-page">proceed to order.</span>
+          </p>
+          <img
+            src="./images/shopping_list/stack_of_books_desktop@1x.png"
+            alt="books"
+          />
+        </div> -->
+
+        <!----------------------------------------------------------------------------------------------->
     </div>
+
+    <include src="./partials/mobile_menu.html"></include>
+    <include src="./partials/about_us_modal_window.html"></include>
+    <include src="./partials/footer.html"></include>
     <include src="./partials/mobile_menu.html"></include>
     <include src="./partials/about_us_modal_window.html"></include>
     <include src="./partials/autorization_modal_window.html"></include>
 
-
+    
     <script type="module" src="./shopping_list_page.js"></script>
-//    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   </body>
 </html>

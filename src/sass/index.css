@@ -96,6 +96,7 @@ img {
   flex-direction: column;
   row-gap: 40px;
   align-items: center;
+  margin-top: 40px;
 }
 
 @media screen and (max-width: 320px) {
@@ -117,7 +118,7 @@ img {
   .sidebar {
     flex-direction: row;
     margin-left: 0px;
-    margin-top: 40px;
+   // margin-top: 40px;
     margin-bottom: 60px;
     justify-content: space-between;
   }
@@ -626,7 +627,7 @@ input:checked + .slider:before {
 
 .category-list-box {
   margin: 0;
-//  margin-top: 40px;
+ // margin-top: 40px;
   padding: 0;
   overflow-y: scroll;
 }

@@ -96,7 +96,6 @@ img {
   flex-direction: column;
   row-gap: 40px;
   align-items: center;
-  margin-top: 40px;
 }
 
 @media screen and (max-width: 320px) {

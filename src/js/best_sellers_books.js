@@ -138,10 +138,10 @@ function shortTitle(string, value) {
 function subStrCount(str, subStr){
   const step = subStr.lenght;
   let count = 0;
-  let pos = helpStr.indexOf(subSt);
+  let pos = str.indexOf(subSt);
   while (pos >= 0) {
     count++;
-    pos = helpStr.indexOf(subSt, pos+step);
+    pos = str.indexOf(subSt, pos+step);
   }
   return count;  
 }

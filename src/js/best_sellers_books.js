@@ -130,9 +130,9 @@ function shortTitle(string, value) {
         case 1:  return string.slice(0, Number(value-1)) + '...';
         default: return string.slice(0, Number(value-2)) + '...';
       }
-    else{
+  }else{
       return string;
-    }
+  }
 }
 
 // Функція, яка підраховує кількість входжень рядка subStr в str
@@ -144,7 +144,7 @@ function subStrCount(str, subStr){
     count+=;
     pos = helpStr.indexOf(subSt, pos+step);
   }
-    return count;  
+  return count;  
 }
 
   

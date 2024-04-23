@@ -141,7 +141,7 @@ function subStrCount(str, subStr){
   let count = 0;
   let pos = helpStr.indexOf(subSt);
   while (pos >= 0) {
-    count=+;
+    count++;
     pos = helpStr.indexOf(subSt, pos+step);
   }
   return count;  

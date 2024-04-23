@@ -28,7 +28,7 @@ function createMarcup(arr, querty) {
                 <p class="owerlay-content">quick view</p>
             </div>
             </div>
-            <p class="title-book">${shortTitle(title, 15)}</p>
+            <p class="title-book">${shortTitle(title, 17)}</p>
             <p class="author">${shortTitle(author, 34)}</p>
             </li>`).join('');
 
@@ -122,12 +122,32 @@ async function loadMore(event) {
 
 // Функція що скорочує title i author на книгаг до вказаного числа символів та додає три крапки в кінці
 function shortTitle(string, value) {
+    const spaceCount = subStrCount(string, " ");
     if(string.length > Number(value)) {
-        return string.slice(0, Number(value)) + '...';
+        if (spaceCount>1){
+           return string.slice(0, Number(value)) + '...';
+        }else if(spaceCount=1){
+           return string.slice(0, Number(value-1)) + '...';
+        }else{
+           return string.slice(0, Number(value-2)) + '...';
+        }
+       // return string.slice(0, Number(value)) + '...';
     }
     return string
 }
 
+// Функція, яка підраховує кількість входжень рядка subStr в str
+function subStrCount(str, subStr){
+  const helpStr = str;
+  let count = 0;
+  while helpStr.indexOf(subStr)>=0 {
+    count+=;
+    helpStr = helpStr.replace(subStr, "");
+  }
+    return count;  
+}
+
+  
 // Функція що робить синім кольором останнє слово 
 function lastBlueWord(string) {
     const arrWord = string.split(" ");

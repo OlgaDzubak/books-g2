@@ -122,11 +122,17 @@ async function loadMore(event) {
 
 // Функція що скорочує title i author на книгаг до вказаного числа символів та додає три крапки в кінці
 function shortTitle(string, value) {
-    const spaceCount = subStrCount(string, " ");
-    if(string.length > Number(value)){
-       return string.slice(0, Number(value)) + '...';
+  const spaceCount = subStrCount(string, " ");
+    
+  if(string.length > Number(value)){
+      switch (spaceCount){
+        case 0:  return string.slice(0, Number(value)) + '...';
+        case 1:  return string.slice(0, Number(value-1)) + '...';
+        default: return string.slice(0, Number(value-2)) + '...';
+      }
+    else{
+      return string;
     }
-    return string
 }
 
 // Функція, яка підраховує кількість входжень рядка subStr в str

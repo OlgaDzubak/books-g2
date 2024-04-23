@@ -123,11 +123,10 @@ async function loadMore(event) {
 // Функція що скорочує title i author на книгаг до вказаного числа символів та додає три крапки в кінці
 function shortTitle(string, value) {
   if(string.length > Number(value)){
-     // switch (subStrCount(string, " ")){
-     //   case 0: 
-      return string.slice(0, Number(value)) + '...';
-     //   case 1:  return string.slice(0, Number(value-1)) + '...';
-     //default: return string.slice(0, Number(value-2)) + '...';
+     switch (subStrCount(string, " ")){
+       case 0: return string.slice(0, Number(value)) + '...';
+       case 1:  return string.slice(0, Number(value-1)) + '...';
+       default: return string.slice(0, Number(value-2)) + '...';
       }
   }else{
       return string;

@@ -28,7 +28,7 @@ function createMarcup(arr, querty) {
                 <p class="owerlay-content">quick view</p>
             </div>
             </div>
-            <p class="title-book">${shortTitle(title, 17)}</p>
+            <p class="title-book">${shortTitle(title, 15)}</p>
             <p class="author">${shortTitle(author, 34)}</p>
             </li>`).join('');
 

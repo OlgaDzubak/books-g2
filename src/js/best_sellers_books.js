@@ -130,15 +130,16 @@ function shortTitle(string, value) {
 }
 
 // Функція, яка підраховує кількість входжень рядка subStr в str
-// function subStrCount(str, subStr){
-//   const helpStr = str;
-//   let count = 0;
-//   while helpStr.indexOf(subStr)>=0 {
-//     count+=;
-//     helpStr = helpStr.replace(subStr, "");
-//   }
-//     return count;  
-// }
+function subStrCount(str, subStr){
+  const step = subStr.lenght;
+  let count = 0;
+  let pos = helpStr.indexOf(subSt);
+  while (pos >= 0) {
+    count+=;
+    pos = helpStr.indexOf(subSt, pos+step);
+  }
+    return count;  
+}
 
   
 // Функція що робить синім кольором останнє слово 

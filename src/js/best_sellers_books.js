@@ -43,31 +43,32 @@ function createMarcup(arr, querty) {
 
 // Початкова функція яка робить запит та промальовує бест бук
 async function createBestBook() {
-    const pageWidth = document.documentElement.scrollWidth;
-    list.classList.add('loader')
+   // const pageWidth = document.documentElement.scrollWidth;
+  //  list.classList.add('loader')
 
-    try {
-        const { data } = await fetchBooks.getTopBooks();
-        console.log("data=", data);
-        countShoppingBook(JSON.parse(localStorage.getItem('orderedBookID')));
+    // try {
+    //     // const { data } = await fetchBooks.getTopBooks();
+    //     console.log("data=", data);
+    //    // countShoppingBook(JSON.parse(localStorage.getItem('orderedBookID')));
 
-        if (data.length) {
-            if (pageWidth < 768) {
-                list.innerHTML = createMarcup(data, 1);
-            } else if (pageWidth < 1440 && pageWidth >= 768) {
-                list.innerHTML = createMarcup(data, 3);
-            } else {
-                list.innerHTML = createMarcup(data, 5);
-            }
-            list.classList.remove('loader');
-        } else {
-            list.classList.remove('loader');
-            Notify.failure("Sorry, there was a server error, please reload the page");
-            return}}
-    catch (error) {
-        console.error(error);
-        Notify.failure('Sorry, there was a server error, please reload the page');
-    }   
+    //     if (data.length) {
+    //         if (pageWidth < 768) {
+    //             list.innerHTML = createMarcup(data, 1);
+    //         } else if (pageWidth < 1440 && pageWidth >= 768) {
+    //             list.innerHTML = createMarcup(data, 3);
+    //         } else {
+    //             list.innerHTML = createMarcup(data, 5);
+    //         }
+    //         list.classList.remove('loader');
+    //     } else {
+    //         list.classList.remove('loader');
+    //         Notify.failure("Sorry, there was a server error, please reload the page");
+    //         return}}
+    // catch (error) {
+    //     console.error(error);
+    //     Notify.failure('Sorry, there was a server error, please reload the page');
+    // }  
+  return;
 }
 
 // Виклик даної функції для промальовки всього при завантажені сторінки

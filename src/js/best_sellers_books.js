@@ -44,7 +44,7 @@ function createMarcup(arr, querty) {
 // Початкова функція яка робить запит та промальовує бест бук
 async function createBestBook() {
    const pageWidth = document.documentElement.scrollWidth;
-   list.classList.add('loader')
+  // list.classList.add('loader')
 
     try {
         // const { data } = await fetchBooks.getTopBooks();
@@ -59,7 +59,7 @@ async function createBestBook() {
             } else {
                 list.innerHTML = createMarcup(data, 5);
             }
-            list.classList.remove('loader');
+        //    list.classList.remove('loader');
         } else {
             list.classList.remove('loader');
             Notify.failure("Sorry, there was a server error, please reload the page");

@@ -47,9 +47,9 @@ async function createBestBook() {
   // list.classList.add('loader')
 
     try {
-        // const { data } = await fetchBooks.getTopBooks();
+        const { data } = await fetchBooks.getTopBooks();
         console.log("data=", data);
-       // countShoppingBook(JSON.parse(localStorage.getItem('orderedBookID')));
+        countShoppingBook(JSON.parse(localStorage.getItem('orderedBookID')));
 
         if (data.length) {
             if (pageWidth < 768) {
@@ -59,7 +59,7 @@ async function createBestBook() {
             } else {
                 list.innerHTML = createMarcup(data, 5);
             }
-        //    list.classList.remove('loader');
+            list.classList.remove('loader');
         } else {
             list.classList.remove('loader');
             Notify.failure("Sorry, there was a server error, please reload the page");

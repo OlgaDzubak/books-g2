@@ -59,9 +59,9 @@ async function createBestBook() {
             } else {
                 list.innerHTML = createMarcup(data, 5);
             }
-            list.classList.remove('loader');
+            //list.classList.remove('loader');
         } else {
-            list.classList.remove('loader');
+            //list.classList.remove('loader');
             Notify.failure("Sorry, there was a server error, please reload the page");
             return}}
     catch (error) {

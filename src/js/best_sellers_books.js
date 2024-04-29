@@ -49,7 +49,7 @@ async function createBestBook() {
     try {
         const { data } = await fetchBooks.getTopBooks();
         console.log("data=", data);
-        //countShoppingBook(JSON.parse(localStorage.getItem('orderedBookID')));
+        countShoppingBook(JSON.parse(localStorage.getItem('orderedBookID')));
 
         if (data.length) {
             if (pageWidth < 768) {

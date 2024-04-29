@@ -72,7 +72,7 @@ async function createBestBook() {
 }
 
 // Виклик даної функції для промальовки всього при завантажені сторінки
-//createBestBook()
+createBestBook()
 
 // Функція для розмітки книг за категорією
 function createMarcupCategoryBook(arr) {
